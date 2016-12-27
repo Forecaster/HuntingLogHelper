@@ -1,0 +1,75 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pc_logix.huntingloghelper.ScrollingActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Gladiator"
+        android:orderInCategory="100"
+        android:title="Gladiator"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Pugilist"
+        android:orderInCategory="100"
+        android:title="Pugilist"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Marauder"
+        android:orderInCategory="100"
+        android:title="Marauder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Lancer"
+        android:orderInCategory="100"
+        android:title="Lancer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Archer"
+        android:orderInCategory="100"
+        android:title="Archer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Rogue"
+        android:orderInCategory="100"
+        android:title="Rogue"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Conjurer"
+        android:orderInCategory="100"
+        android:title="Conjurer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Thaumaturge"
+        android:orderInCategory="100"
+        android:title="Thaumaturge"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Arcanist"
+        android:orderInCategory="100"
+        android:title="Arcanist"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Twin_Adder"
+        android:orderInCategory="100"
+        android:title="Twin Adder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Maelstrom"
+        android:orderInCategory="100"
+        android:title="Maelstrom"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Immortal_Flames"
+        android:orderInCategory="100"
+        android:title="Immortal Flames"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Welcome"
+        android:orderInCategory="100"
+        android:title="Home"
+        app:showAsAction="never" />
+</menu>

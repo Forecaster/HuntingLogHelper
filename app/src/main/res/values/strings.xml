@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Hunting Log Helper</string>
+    <string name="gladiator">
+        <b>Gladiator</b>\n
+        |-<b>Rank 1</b>\n
+        |-<b><u>Western Thanalan</u></b>\n
+        |-- The Eighty Sins of Sasamo\n
+        |--- Little Ladybug x3  (x27,y24)\n
+        |--- Cactuar x3 (x27,y24)\n
+        |-- Hammerlea\n
+        |--- Hammer Beak x3 (x26,y22)\n
+        |--- Earth Sprite x3 (x22,y27)\n
+        |-- Horizon\'s Edge\n
+        |--- Dusty Mongrel x3 (x22,y21)\n
+        |-<b><u>Central Thanalan</u></b>\n
+        |-- Spineless Basin\n
+        |--- Star Marmot x3 (x20,y27)\n
+        |--- Snapping Shrew x3 (x25,y31)\n
+        |-- Black Brush\n
+        |--- Antling Worker x3 (x17,y15)\n
+        |--- Spriggan Graverobber x3 (x16,y23)\n
+        |--- Qiqirn Shellsweeper x3 (x17,y19)\n
+        |-- The Clutch\n
+        |--- Antling Soldier x3 (x23,y19)\n
+        |\n
+        |-<b>Rank 2</b>\n
+        |-<b><u>Bleh Place</u></b>\n
+        |-- Bleh SubPlace\n
+        |--- Bleh x66 baddy (x999,y999)\n
+        |-- Bleh SubPlace2\n
+    </string>
+
+      <string name="pugilist">
+          <b>Pugilist</b>\n
+          |-Rank 1\n
+    </string>
+
+    <string name="marauder">
+        Marauder\n
+    </string>
+
+    <string name="lancer">
+        <b>Lancer</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="archer">
+        <b>Archer</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="rogue">
+        <b>Rogue</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="conjurer">
+        <b>Congurer</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="thaumaturge">
+        <b>Thaumaturge</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="arcanist">
+        <b>Arcanist</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="twin_adder">
+        <b>Order of the Twin Adder</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="maelstrom">
+        <b>Maelstrom</b>\n
+        |-Rank 1\n
+    </string>
+
+    <string name="immortal_flames">
+        <b>Immortal Flames</b>\n
+        |-Rank 1\n
+    </string>
+    <string name="welcome_text">
+        "Welcome!"
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
