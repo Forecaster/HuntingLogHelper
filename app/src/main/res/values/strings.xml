@@ -4,30 +4,143 @@
         <b>Gladiator</b>\n
         |-<b>Rank 1</b>\n
         |-<b><u>Western Thanalan</u></b>\n
-        |-- The Eighty Sins of Sasamo\n
+        |-- <u>The Eighty Sins of Sasamo</u>\n
         |--- Little Ladybug x3  (x27,y24)\n
         |--- Cactuar x3 (x27,y24)\n
-        |-- Hammerlea\n
+        |-- <u>Hammerlea</u>\n
         |--- Hammer Beak x3 (x26,y22)\n
         |--- Earth Sprite x3 (x22,y27)\n
-        |-- Horizon\'s Edge\n
+        |-- <u>Horizon\'s Edge</u>\n
         |--- Dusty Mongrel x3 (x22,y21)\n
         |-<b><u>Central Thanalan</u></b>\n
-        |-- Spineless Basin\n
+        |-- <u>Spineless Basin</u>\n
         |--- Star Marmot x3 (x20,y27)\n
         |--- Snapping Shrew x3 (x25,y31)\n
-        |-- Black Brush\n
+        |-- <u>Black Brush</u>\n
         |--- Antling Worker x3 (x17,y15)\n
         |--- Spriggan Graverobber x3 (x16,y23)\n
         |--- Qiqirn Shellsweeper x3 (x17,y19)\n
-        |-- The Clutch\n
+        |-- <u>The Clutch</u>\n
         |--- Antling Soldier x3 (x23,y19)\n
         |\n
         |-<b>Rank 2</b>\n
-        |-<b><u>Bleh Place</u></b>\n
-        |-- Bleh SubPlace\n
-        |--- Bleh x66 baddy (x999,y999)\n
-        |-- Bleh SubPlace2\n
+        |-<b><u>Western Thanalan</u></b>\n
+        |-- <u>Horizon\'s Edge</u>\n
+        |--- Bomb x3 (x27,y17)\n
+		|--- Copper Coblyn x3 (x27,y17)\n
+        |-- <u>The Eighty Sins of Sasamo</u>\n
+		|--- Giant Tortoise x3 (x26,y23)\n
+		|-- <u>The Footfalls</u>\n
+		|--- Thickshell x3 (x16,y16)\n
+		|--- Scaphite x3 (x17,y14)\n
+		|--- Bloated Bogy x3 (x13,y11)\n
+		|-<b><u>Central Thanalan</u></b>\n
+		|-- <u>The Clutch</u>\n
+		|--- Cochineal Cactuar x3 (x24,y19)\n
+		|--- Quiveron Guard x3 (x24,y21)\n
+		|-<b><u>Eastern Thanalan</u></b>\n
+		|-- <u>Sandgate</u>\n
+		|--- Tuco Tuco x3 (x11,y19)\n
+		|-- <u>Drybone</u>\n
+		|--- Myotragus Billy x3 (x18,y24)\n
+		|--- Vandalous Imp x3 (x14,y18)\n
+		|--- Rotting Noble x3 (x14,y16)\n
+		|\n
+		|-<b>Rank 3</b>\n
+		|-<b><u>Upper La Noscea</u></b>\n
+		|-- <u>Oakwood</u>\n
+		|--- Stoneshell x4 (x14,y24)\n
+		|-- <u>Fool Falls</u>\n
+		|--- Coeurl Pup x4 (x9,y20)\n
+		|-<b><u>Outer La Noscea</u></b>\n
+		|-- <u>The Long Climb</u>\n
+		|--- Pteroc x3 (x15,y18)\n
+		|-<b><u>Eastern La Noscea</u></b>\n
+		|-- <u>Bloodshore</u>\n
+		|--- Apkallu x4 (x28,y36)\n
+		|-<b><u>Eastern Thanalan</u></b>\n
+		|-- <u>Wellwick Wood</u>\n
+		|--- Qiqirn Roerunner x4 (x24,y23)\n
+		|-<b><u>Western Thanalan</u></b>\n
+		|-- <u>The Footfalls</u>\n
+		|--- Lead Coblyn x4 (x13,y10)\n
+		|-<b><u>Southern Thanalan</u></b>\n
+		|-- <u>Broken Water</u>\n
+		|--- Sabotender x4 (x14,y13)\n
+		|-<b><u>South Shroud</u></b>\n
+		|-- <u>Upper Paths</u>\n
+		|--- Kedtrap x3 (x21,y20)\n
+		|--- Overgrown Offering x4 (x18,y19)\n
+		|-- <u>Silent Arbor</u>\n
+		|--- Goblin Thug x4 (x27,y20)\n
+		|--- Coeurlclaw Cutter x4 (x28,y21)\n
+		|-<b><u>North Shroud</u></b>\n
+		|-- <u>Alder Springs</u>\n
+		|--- Balloon x4 (x17,y26)\n
+		|\n
+		|-<b>Rank 4</b>\n
+		|-<b><u>Central Shroud</u></b>\n
+		|-- <u>Haukke Manor (Landmark)</u>\n
+		|--- Floating Eye x4 (x10,y23)\n
+		|-- <u>Sorrel Haven</u>\n
+		|--- Death Gaze x4 (x16,y21)\n
+		|-<b><u>South Shroud</u></b>\n
+		|-- <u>Lower Paths</u>\n
+		|--- Adamantoise x3 (x17,y30)\n
+		|-- <u>Snakemolt</u>\n
+		|--- Treant x4 (x22,y23)\n
+		|-<b><u>Upper La Noscea</u></b>\n
+		|-- <u>Bronze Lake</u>\n
+		|--- Mamool Ja Sophist x3 (x27,y23)\n
+		|--- Uragnite x4 (x29,y24)\n
+		|-<b><u>Outer La Noscea</u></b>\n
+		|-- <u>The Long Climb</u>\n
+		|--- Velociraptor x4 (x19,y15)\n
+		|-- <u>Iron Lake</u>\n
+		|--- Grenade x3 (x22,y13)\n
+		|-<b><u>Southern Thanalan</u></b>\n
+		|-- <u>Sagolii Desert</u>\n
+		|--- Sandworm x4 (x17,y33)\n
+		|--- Fallen Wizard x4 (x20,y37)\n
+		|-<b><u>Coerthas Central Highlands</u></b>\n
+		|-- <u>Dragonhead</u>\n
+		|--- Snow Wolf Pup x4 (x21,y29)\n
+		|--- Vodoriga x4 (x27,y14)\n
+		|-- <u>Whitebrim</u>\n
+		|--- Hippocerf x4 (x8,y20)\n
+		|\n
+		|-<b>Rank 5</b>\n
+		|-<b><u>Western La Noscea</u></b>\n
+		|-- <u>The Isles of Umbra</u>\n
+		|--- Preying Mantis x5 (x15,y34)\n
+		|--- Lammergeyer x2 (x12,y36)\n
+		|--- Dead Man\'s Moan x5 (x12,y36)\n
+		|-<b><u>Eastern La Noscea</u></b>\n
+		|-- <u>Agelyss Wise</u>\n
+		|--- 2nd Cohort Hoplomachus x5 (x25,y21)\n
+		|-<b><u>East Shroud</u></b>\n
+		|-- <u>Larkscall</u>\n
+		|--- Old Growth Treant x5 (x26,y20)\n
+		|--- 3rd Cohort Eques x2 (x29,y21)\n
+		|--- Morbol x2 (x23,y21)\n
+		|-<b><u>North Shroud</u></b>\n
+		|-- <u>Proud Creek</u>\n
+		|--- Dullahan x5 (x22,y19)\n
+		|-<b><u>Mor Dhona</u></b>\n
+		|-- <u>Fogfens</u>\n
+		|--- Mudpuppy x5 (x13,y11)\n
+		|-- <u>North Silvertear</u>\n
+		|--- Lake Cobra x5 (x27,y13)\n
+		|--- Gigas Bhikkhu x5 (x33,y15)\n
+		|-<b><u>Coerthas Central Highlands</u></b>\n
+		|-- <u>Boulder Downs</u>\n
+		|--- Giant Lugger x3 (x13,y27)\n
+		|-<b><u>Southern Thanalan</u></b>\n
+		|-- <u>Zanr\'ak</u>\n
+		|--- Tempered Orator x5 (x22,y19)\n
+		|-<b><u>Northern Thanalan</u></b>\n
+		|-- <u>Bluefog</u>\n
+		|--- Basilisk x5 (x25,y21)\n
     </string>
 
       <string name="pugilist">
