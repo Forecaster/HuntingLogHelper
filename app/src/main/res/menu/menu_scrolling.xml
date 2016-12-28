@@ -2,74 +2,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.pc_logix.huntingloghelper.MainActivity">
-    <item
+    <!--<item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Gladiator"
-        android:orderInCategory="100"
-        android:title="Gladiator"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Pugilist"
-        android:orderInCategory="100"
-        android:title="Pugilist"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Marauder"
-        android:orderInCategory="100"
-        android:title="Marauder"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Lancer"
-        android:orderInCategory="100"
-        android:title="Lancer"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Archer"
-        android:orderInCategory="100"
-        android:title="Archer"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Rogue"
-        android:orderInCategory="100"
-        android:title="Rogue"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Conjurer"
-        android:orderInCategory="100"
-        android:title="Conjurer"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_Thaumaturge"
-        android:orderInCategory="100"
-        android:title="Thaumaturge"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
     <item
         android:id="@+id/action_Arcanist"
-        android:orderInCategory="100"
+        android:orderInCategory="69"
         android:title="Arcanist"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_Twin_Adder"
-        android:orderInCategory="100"
-        android:title="Twin Adder"
+        android:id="@+id/action_Archer"
+        android:orderInCategory="70"
+        android:title="Archer"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_Maelstrom"
-        android:orderInCategory="100"
-        android:title="Maelstrom"
+        android:id="@+id/action_Conjurer"
+        android:orderInCategory="71"
+        android:title="Conjurer"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Gladiator"
+        android:orderInCategory="72"
+        android:title="Gladiator"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Lancer"
+        android:orderInCategory="73"
+        android:title="Lancer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Marauder"
+        android:orderInCategory="74"
+        android:title="Marauder"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Pugilist"
+        android:orderInCategory="75"
+        android:title="Pugilist"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Rogue"
+        android:orderInCategory="77"
+        android:title="Rogue"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Thaumaturge"
+        android:orderInCategory="78"
+        android:title="Thaumaturge"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_Immortal_Flames"
-        android:orderInCategory="100"
+        android:orderInCategory="90"
         android:title="Immortal Flames"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_Welcome"
-        android:orderInCategory="100"
-        android:title="Home"
+        android:id="@+id/action_Maelstrom"
+        android:orderInCategory="91"
+        android:title="Maelstrom"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Twin_Adder"
+        android:orderInCategory="92"
+        android:title="Twin Adder"
         app:showAsAction="never" />
 </menu>

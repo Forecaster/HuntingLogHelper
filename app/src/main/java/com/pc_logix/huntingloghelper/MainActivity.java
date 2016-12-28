@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         dbHelper = new DBHelper(this.getApplicationContext());
+
+        TextView t=(TextView)findViewById(R.id.content);
+        t.setText(getResources().getText(R.string.welcome_text));
     }
 
     @Override
@@ -41,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        /* if (id == R.id.action_settings) {
             Intent myIntent = new Intent(this, SettingsActivity.class);
             startActivity(myIntent);
-        } else if (id == R.id.action_Gladiator) {
+        } else*/ if (id == R.id.action_Gladiator) {
             LogViewActivity.myClass = "Gladiator";
             Intent myIntent = new Intent(this, LogViewActivity.class);
             startActivity(myIntent);
@@ -92,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
             LogViewActivity.myClass = "Thaumaturge";
             Intent myIntent = new Intent(this, LogViewActivity.class);
             startActivity(myIntent);
-        } else if (id == R.id.action_Welcome) {
-            TextView t=(TextView)findViewById(R.id.content);
-            t.setText(getResources().getText(R.string.welcome_text));
         }
         return super.onOptionsItemSelected(item);
     }
