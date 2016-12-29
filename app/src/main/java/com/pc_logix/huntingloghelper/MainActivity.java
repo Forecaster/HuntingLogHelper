@@ -44,10 +44,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /* if (id == R.id.action_settings) {
-            Intent myIntent = new Intent(this, SettingsActivity.class);
-            startActivity(myIntent);
-        } else*/ if (id == R.id.action_Gladiator) {
+        if (id == R.id.action_Gladiator) {
             LogViewActivity.myClass = "Gladiator";
             Intent myIntent = new Intent(this, LogViewActivity.class);
             startActivity(myIntent);

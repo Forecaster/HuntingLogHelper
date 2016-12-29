@@ -65,13 +65,9 @@ public class LogViewActivity extends AppCompatActivity  {
         try {
             DBHelper dbHelper = new DBHelper(this.getApplicationContext());
             newDB = dbHelper.getWritableDatabase();
-            Log.e("HuntingLog", "SELECT * FROM " +
-                    tableName +
-                    " where class='" + myClass + "' ORDER BY rank, region, area");
             Cursor c = newDB.rawQuery("SELECT * FROM " +
                     tableName +
-                    " where class='" + myClass + "' ORDER BY rank, region, area", null);
-
+                    " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
             if (c != null ) {
                 if (c.moveToFirst()) {
                     do {
@@ -86,6 +82,8 @@ public class LogViewActivity extends AppCompatActivity  {
                         enemy + " X" + num + "\n" +
                         "Location: X" + x_loc + " Y:" + y_loc);
                     }while (c.moveToNext());
+                } else {
+                    results.add("No data");
                 }
             }
         } catch (SQLiteException se ) {
