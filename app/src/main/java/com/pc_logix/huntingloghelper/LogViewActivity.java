@@ -146,7 +146,7 @@ public class LogViewActivity extends AppCompatActivity  {
                         int done = c.getInt(c.getColumnIndex("done"));
                         results.add("Rank: " + rank + " Area: " + region + " - " + area + "\n" +
                         enemy + " X" + num + "\n" +
-                        "Location: X" + x_loc + " Y:" + y_loc);
+                        "Location X:" + x_loc + " Y:" + y_loc);
                     }while (c.moveToNext());
                 } else {
                     results.add("No data");
