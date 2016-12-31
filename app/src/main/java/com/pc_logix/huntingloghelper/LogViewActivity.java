@@ -11,17 +11,24 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
-public class LogViewActivity extends AppCompatActivity  {
+public class LogViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    public static String myClass;
+    protected static String myClass;
     private ArrayList<String> results = new ArrayList<String>();
-    private String tableName = DBHelper.tableName;
-    private SQLiteDatabase newDB;
+    private ArrayList<Integer> done = new ArrayList<Integer>();
+    private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
+    protected static String tableName = DBHelper.tableName;
+    protected static SQLiteDatabase newDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +60,6 @@ public class LogViewActivity extends AppCompatActivity  {
 
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
-        Log.e("Hunting Log", "Selected " + id);
         if (id == 16908332) {
             Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
             startActivityForResult(myIntent, 0);
@@ -108,6 +114,9 @@ public class LogViewActivity extends AppCompatActivity  {
                 LogViewActivity.myClass = "Thaumaturge";
                 Intent myIntent = new Intent(this, LogViewActivity.class);
                 startActivity(myIntent);
+            } else if (id == R.id.action_settings) {
+                Intent myIntent = new Intent(this, MySettings.class);
+                startActivity(myIntent);
             }
             return super.onOptionsItemSelected(item);
         }
@@ -115,18 +124,19 @@ public class LogViewActivity extends AppCompatActivity  {
 
     private void displayResultList() {
         ListView listView = (ListView) findViewById(R.id.loglist);
-        //listView.addHeaderView(tView);
-
-        //listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, results));
         listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, results));
         listView.setTextFilterEnabled(true);
         listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(this);
         // we want multiple clicks
         listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-
+        for (Integer pos : done) {
+            listView.setItemChecked(pos, true);
+        }
     }
 
     private void openAndQueryDatabase() {
+        int loop = 0;
         try {
             DBHelper dbHelper = new DBHelper(this.getApplicationContext());
             newDB = dbHelper.getWritableDatabase();
@@ -139,14 +149,19 @@ public class LogViewActivity extends AppCompatActivity  {
                         String region = c.getString(c.getColumnIndex("region"));
                         String area = c.getString(c.getColumnIndex("area"));
                         String enemy = c.getString(c.getColumnIndex("enemy"));
+                        int id = c.getInt(c.getColumnIndex("_id"));
                         int rank = c.getInt(c.getColumnIndex("rank"));
                         int num = c.getInt(c.getColumnIndex("num"));
                         int x_loc = c.getInt(c.getColumnIndex("x_loc"));
                         int y_loc = c.getInt(c.getColumnIndex("y_loc"));
-                        int done = c.getInt(c.getColumnIndex("done"));
+                        int isDone = c.getInt(c.getColumnIndex("done"));
+                        ids.put(loop, id);
                         results.add("Rank: " + rank + " Area: " + region + " - " + area + "\n" +
                         enemy + " X" + num + "\n" +
                         "Location X:" + x_loc + " Y:" + y_loc);
+                        if (isDone == 1)
+                            done.add(loop);
+                        loop++;
                     }while (c.moveToNext());
                 } else {
                     results.add("No data");
@@ -158,5 +173,42 @@ public class LogViewActivity extends AppCompatActivity  {
             newDB.close();
         }
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        DBHelper dbHelper = new DBHelper(this.getApplicationContext());
+        newDB = dbHelper.getWritableDatabase();
+        Log.e("Hunting Log", "ID: " + ids.get(position));
+        CheckedTextView ctv = (CheckedTextView)view;
+        if(ctv.isChecked()) {
+            newDB.beginTransaction();
+            Cursor cursor = newDB.rawQuery("UPDATE " +
+                    LogViewActivity.tableName +
+                    " SET done = 1 where class='" + myClass + "' AND _id = " + ids.get(position), null);
+            if (cursor != null) {
+                if (cursor.moveToFirst()) {
+
+                }
+                cursor.close();
+            }
+            newDB.setTransactionSuccessful();
+            newDB.endTransaction();
+            newDB.close();
+        } else {
+            newDB.beginTransaction();
+            Cursor cursor = newDB.rawQuery("UPDATE " +
+                    LogViewActivity.tableName +
+                    " SET done = 0 where class='" + myClass + "' AND _id = " + ids.get(position), null);
+            if (cursor != null) {
+                if (cursor.moveToFirst()) {
+
+                }
+                cursor.close();
+            }
+            newDB.setTransactionSuccessful();
+            newDB.endTransaction();
+            newDB.close();
+        }
     }
 }

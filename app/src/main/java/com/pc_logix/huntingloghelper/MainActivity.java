@@ -92,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
             LogViewActivity.myClass = "Thaumaturge";
             Intent myIntent = new Intent(this, LogViewActivity.class);
             startActivity(myIntent);
+        } else if (id == R.id.action_settings) {
+            Intent myIntent = new Intent(this, MySettings.class);
+            startActivity(myIntent);
         }
         return super.onOptionsItemSelected(item);
     }
