@@ -93,8 +93,8 @@ public class MySettings extends AppCompatActivity {
                     case DialogInterface.BUTTON_NEGATIVE:
                         // No button clicked
                         // do nothing
-                        //Toast.makeText(MySettings.this, "No Clicked",
-                        //        Toast.LENGTH_LONG).show();
+                        Toast.makeText(MySettings.this, "Canceled",
+                                Toast.LENGTH_LONG).show();
                         break;
                 }
             }
