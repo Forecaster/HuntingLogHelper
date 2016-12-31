@@ -156,7 +156,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
                         int y_loc = c.getInt(c.getColumnIndex("y_loc"));
                         int isDone = c.getInt(c.getColumnIndex("done"));
                         ids.put(loop, id);
-                        results.add("Rank: " + rank + " Area: " + region + " - " + area + "\n" +
+                        results.add("Rank: " + rank + "\nArea: " + region + " - " + area + "\n" +
                         enemy + " X" + num + "\n" +
                         "Location X:" + x_loc + " Y:" + y_loc);
                         if (isDone == 1)

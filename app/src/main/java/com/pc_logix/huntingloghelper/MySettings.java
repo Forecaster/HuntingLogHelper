@@ -81,7 +81,8 @@ public class MySettings extends AppCompatActivity {
                                 " SET done = 0", null);
                         if (cursor != null) {
                             if (cursor.moveToFirst()) {
-
+                                Toast.makeText(MySettings.this, "Done",
+                                        Toast.LENGTH_LONG).show();
                             }
                             cursor.close();
                         }
