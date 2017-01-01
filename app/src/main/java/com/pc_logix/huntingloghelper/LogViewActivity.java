@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +27,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
     protected static String myClass;
     private ArrayList<String> results = new ArrayList<String>();
     private ArrayList<Integer> done = new ArrayList<Integer>();
+    private ArrayList<String> ranks = new ArrayList<String>();
     private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
     protected static String tableName = DBHelper.tableName;
     protected static SQLiteDatabase newDB;
@@ -37,7 +39,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         setupActionBar();
         setContentView(R.layout.activity_log_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        openAndQueryDatabase();
+        openAndQueryDatabase("all");
         displayResultList();
     }
 
@@ -123,6 +125,33 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private void displayResultList() {
+        Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+        spinner.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, ranks));
+        spinner.setSelection(0, false);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            Boolean canRun = false;
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long id) {
+                if (canRun == true) {
+                    openAndQueryDatabase(Integer.toString(1));
+                    displayResultList();
+                    Log.e("Hunting Log", "Meh");
+                } else {
+                    canRun = true;
+                }
+                //Toast.makeText(getBaseContext(),list.get(position), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
         ListView listView = (ListView) findViewById(R.id.loglist);
         listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, results));
         listView.setTextFilterEnabled(true);
@@ -135,14 +164,32 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         }
     }
 
-    private void openAndQueryDatabase() {
+    private void openAndQueryDatabase(String rankIn) {
         int loop = 0;
+        Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+        spinner.setAdapter(null);
+        spinner.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, ranks));
         try {
             DBHelper dbHelper = new DBHelper(this.getApplicationContext());
             newDB = dbHelper.getWritableDatabase();
-            Cursor c = newDB.rawQuery("SELECT * FROM " +
-                    tableName +
-                    " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+            Cursor c;
+            if (rankIn.equals("all")) {
+                c = newDB.rawQuery("SELECT * FROM " +  tableName +
+                        " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+            } else {
+                c = newDB.rawQuery("SELECT * FROM " + tableName +
+                        " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+            }
+            Cursor c2 = newDB.rawQuery("SELECT * FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
+            ranks.add("All");
+            if (c2 != null) {
+                if (c2.moveToFirst()) {
+                    do {
+                        ranks.add(Integer.toString(c2.getInt(c.getColumnIndex("rank"))));
+                    }while (c2.moveToNext());
+                }
+            }
             if (c != null ) {
                 if (c.moveToFirst()) {
                     do {
