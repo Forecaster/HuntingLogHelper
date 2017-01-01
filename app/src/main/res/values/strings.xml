@@ -2,7 +2,8 @@
     <string name="app_name">Hunting Log Helper</string>
 
     <string name="welcome_text">
-        "Welcome!"
+        Welcome!\n
+        This app was created to help keep up with the npcs needed to complete the various hunting logs in FFXIV.
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_settings">Settings</string>
