@@ -52,7 +52,6 @@
         android:orderInCategory="78"
         android:title="Thaumaturge"
         app:showAsAction="never" />
-
     <item
         android:id="@+id/action_Immortal_Flames"
         android:orderInCategory="90"

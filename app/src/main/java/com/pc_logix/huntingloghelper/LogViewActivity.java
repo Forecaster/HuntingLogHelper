@@ -1,6 +1,5 @@
 package com.pc_logix.huntingloghelper;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,7 +18,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class LogViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -29,17 +27,19 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Integer> done = new ArrayList<Integer>();
     private ArrayList<String> ranks = new ArrayList<String>();
     private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
-    protected static String tableName = DBHelper.tableName;
+    private String selectedRank;
+    protected static String tableName = DBHelper.huntingLogsTable;
     protected static SQLiteDatabase newDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //myClass = MainActivity.myClass;
-        this.setTitle(myClass);
+        this.setTitle(myClass + " " + getCompletionAmount(myClass));
+        selectedRank = "all";
         setupActionBar();
         setContentView(R.layout.activity_log_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        openAndQueryDatabase("all");
+        openAndQueryDatabase(selectedRank);
         displayResultList();
     }
 
@@ -53,11 +53,67 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        menu.findItem(R.id.action_Arcanist).setTitle(getCompletionAmount("Arcanist"));
+        menu.findItem(R.id.action_Archer).setTitle(getCompletionAmount("Archer"));
+        menu.findItem(R.id.action_Conjurer).setTitle(getCompletionAmount("Conjurer"));
+        menu.findItem(R.id.action_Gladiator).setTitle(getCompletionAmount("Gladiator"));
+        menu.findItem(R.id.action_Lancer).setTitle(getCompletionAmount("Lancer"));
+        menu.findItem(R.id.action_Marauder).setTitle(getCompletionAmount("Marauder"));
+        menu.findItem(R.id.action_Pugilist).setTitle(getCompletionAmount("Pugilist"));
+        menu.findItem(R.id.action_Rogue).setTitle(getCompletionAmount("Rogue"));
+        menu.findItem(R.id.action_Thaumaturge).setTitle(getCompletionAmount("Thaumaturge"));
+        menu.findItem(R.id.action_Immortal_Flames).setTitle(getCompletionAmount("Immortal Flames"));
+        menu.findItem(R.id.action_Maelstrom).setTitle(getCompletionAmount("Maelstrom"));
+        menu.findItem(R.id.action_Twin_Adder).setTitle(getCompletionAmount("Order of the Twin Adder"));
         return true;
+    }
+
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        if (menu != null) {
+            menu.findItem(R.id.action_Arcanist).setTitle(getCompletionAmount("Arcanist"));
+            menu.findItem(R.id.action_Archer).setTitle(getCompletionAmount("Archer"));
+            menu.findItem(R.id.action_Conjurer).setTitle(getCompletionAmount("Conjurer"));
+            menu.findItem(R.id.action_Gladiator).setTitle(getCompletionAmount("Gladiator"));
+            menu.findItem(R.id.action_Lancer).setTitle(getCompletionAmount("Lancer"));
+            menu.findItem(R.id.action_Marauder).setTitle(getCompletionAmount("Marauder"));
+            menu.findItem(R.id.action_Pugilist).setTitle(getCompletionAmount("Pugilist"));
+            menu.findItem(R.id.action_Rogue).setTitle(getCompletionAmount("Rogue"));
+            menu.findItem(R.id.action_Thaumaturge).setTitle(getCompletionAmount("Thaumaturge"));
+            menu.findItem(R.id.action_Immortal_Flames).setTitle(getCompletionAmount("Immortal Flames"));
+            menu.findItem(R.id.action_Maelstrom).setTitle(getCompletionAmount("Maelstrom"));
+            menu.findItem(R.id.action_Twin_Adder).setTitle(getCompletionAmount("Order of the Twin Adder"));
+        }
+        return super.onMenuOpened(featureId, menu);
+    }
+
+    public String getCompletionAmount(String classIn) {
+        DBHelper dbHelper = new DBHelper(this.getApplicationContext());
+        newDB = dbHelper.getWritableDatabase();
+        int total = 0;
+        int done = 0;
+        Cursor c;
+            c = newDB.rawQuery("SELECT * FROM " +  tableName +
+                    " where class='" + classIn + "'", null);
+            Log.e("Hunting Helper", "SELECT * FROM " +  tableName +
+                    " where class='" + classIn + "'");
+        if (c != null ) {
+            if (c.moveToFirst()) {
+                do {
+                    total++;
+                    if (c.getInt(c.getColumnIndex("done")) == 1) {
+                        done++;
+                    }
+                } while (c.moveToNext());
+            }
+        }
+        int percent = (done * 100) / total;
+        return classIn + " " + Integer.toString(percent) +"%";
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
@@ -65,6 +121,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         if (id == 16908332) {
             Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
             startActivityForResult(myIntent, 0);
+            //this.finish();
             return true;
         } else {
             //noinspection SimplifiableIfStatement
@@ -128,21 +185,20 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
         spinner.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, ranks));
-        spinner.setSelection(0, false);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             Boolean canRun = false;
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long id) {
                 if (canRun == true) {
-                    openAndQueryDatabase(Integer.toString(1));
+                    selectedRank = arg0.getSelectedItem().toString();
+                    Log.e("Hunting Log", "Selected rank " + selectedRank);
+                    openAndQueryDatabase(selectedRank.toLowerCase());
                     displayResultList();
-                    Log.e("Hunting Log", "Meh");
+                    arg0.setSelection(position);
                 } else {
                     canRun = true;
                 }
-                //Toast.makeText(getBaseContext(),list.get(position), Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -153,7 +209,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
 
         });
         ListView listView = (ListView) findViewById(R.id.loglist);
-        listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, results));
+        listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.checkedTextView1, results));
         listView.setTextFilterEnabled(true);
         listView.setItemsCanFocus(false);
         listView.setOnItemClickListener(this);
@@ -165,21 +221,40 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private void openAndQueryDatabase(String rankIn) {
+        Log.e("Hunting Log", rankIn);
         int loop = 0;
+        results.clear();
+        done.clear();
+        ids.clear();
+
+        ListView listView = (ListView) findViewById(R.id.loglist);
+        listView.setAdapter(null);
+        listView.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.checkedTextView1, results));
+        listView.setTextFilterEnabled(true);
+        listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(this);
+        // we want multiple clicks
+        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
         spinner.setAdapter(null);
+        ranks.clear();
         spinner.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, ranks));
         try {
             DBHelper dbHelper = new DBHelper(this.getApplicationContext());
             newDB = dbHelper.getWritableDatabase();
             Cursor c;
-            if (rankIn.equals("all")) {
+            if (rankIn.toLowerCase().equals("all")) {
                 c = newDB.rawQuery("SELECT * FROM " +  tableName +
                         " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+                Log.e("Hunting Helper", "SELECT * FROM " +  tableName +
+                        " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc");
             } else {
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
                         " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+                Log.e("Hunting Helper", "SELECT * FROM " + tableName +
+                        " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, area, y_loc, x_loc");
             }
             Cursor c2 = newDB.rawQuery("SELECT * FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
             ranks.add("All");
@@ -219,7 +294,6 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         } finally {
             newDB.close();
         }
-
     }
 
     @Override
@@ -227,7 +301,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         DBHelper dbHelper = new DBHelper(this.getApplicationContext());
         newDB = dbHelper.getWritableDatabase();
         Log.e("Hunting Log", "ID: " + ids.get(position));
-        CheckedTextView ctv = (CheckedTextView)view;
+        CheckedTextView ctv = (CheckedTextView)view.findViewById(R.id.checkedTextView1);
         if(ctv.isChecked()) {
             newDB.beginTransaction();
             Cursor cursor = newDB.rawQuery("UPDATE " +
@@ -257,5 +331,6 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
             newDB.endTransaction();
             newDB.close();
         }
+        this.setTitle(myClass + " " + getCompletionAmount(myClass));
     }
 }

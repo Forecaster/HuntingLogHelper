@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -23,13 +26,28 @@ import android.widget.Toast;
 public class MySettings extends AppCompatActivity {
 
     protected static SQLiteDatabase newDB;
-
+    String strVersion;
+    String strVersionCode;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        PackageManager manager = this.getPackageManager();
+        PackageInfo info;
+        try {
+            info = manager.getPackageInfo(this.getPackageName(), 0);
+            strVersion = "Version: " + info.versionName;
+            strVersionCode = " Build: "+ info.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
         setContentView(R.layout.layout);
         Button btn = (Button) findViewById(R.id.button);
+        TextView versionText = (TextView) findViewById(R.id.versionText);
+        versionText.setText(strVersion + strVersionCode + " DB Version " + DBHelper.version);
         btn.setOnClickListener(new OnClickListener() {
 
             @Override
