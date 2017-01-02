@@ -12,6 +12,7 @@
         "given for monsters needed inside of dungeons, only the dungeon locations are given."
     </string>
     <string name="action_settings">Settings</string>
+    <string name="action_markAll">Complete List</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->

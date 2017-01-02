@@ -100,8 +100,6 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
         Cursor c;
             c = newDB.rawQuery("SELECT * FROM " +  tableName +
                     " where class='" + classIn + "'", null);
-            Log.e("Hunting Helper", "SELECT * FROM " +  tableName +
-                    " where class='" + classIn + "'");
         if (c != null ) {
             if (c.moveToFirst()) {
                 do {
@@ -176,6 +174,27 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
             } else if (id == R.id.action_settings) {
                 Intent myIntent = new Intent(this, MySettings.class);
                 startActivity(myIntent);
+            } else if (id == R.id.action_markAll) {
+                ListView listView = (ListView) findViewById(R.id.loglist);
+                View v;
+                newDB.beginTransaction();
+                for (int i = 0; i < listView.getCount(); i++) {
+                    v = listView.getChildAt(i);
+                    listView.setItemChecked(i, true);
+                    Cursor cursor = newDB.rawQuery("UPDATE " +
+                            LogViewActivity.tableName +
+                            " SET done = 1 where class='" + myClass + "' AND _id = " + ids.get(i), null);
+                    if (cursor != null) {
+                        if (cursor.moveToFirst()) {
+
+                        }
+                        cursor.close();
+                    }
+                }
+                newDB.setTransactionSuccessful();
+                newDB.endTransaction();
+                newDB.close();
+                this.setTitle(getCompletionAmount(myClass));
             }
             return super.onOptionsItemSelected(item);
         }

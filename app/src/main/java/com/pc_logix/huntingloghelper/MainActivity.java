@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         menu.findItem(R.id.action_Immortal_Flames).setTitle(getCompletionAmount("Immortal Flames"));
         menu.findItem(R.id.action_Maelstrom).setTitle(getCompletionAmount("Maelstrom"));
         menu.findItem(R.id.action_Twin_Adder).setTitle(getCompletionAmount("Order of the Twin Adder"));
+        menu.findItem(R.id.action_markAll).setEnabled(false);
         return true;
     }
 
