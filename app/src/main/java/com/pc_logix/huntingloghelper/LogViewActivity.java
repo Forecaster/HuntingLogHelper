@@ -34,7 +34,7 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //myClass = MainActivity.myClass;
-        this.setTitle(myClass + " " + getCompletionAmount(myClass));
+        this.setTitle(getCompletionAmount(myClass));
         selectedRank = "all";
         setupActionBar();
         setContentView(R.layout.activity_log_view);
@@ -331,6 +331,6 @@ public class LogViewActivity extends AppCompatActivity implements AdapterView.On
             newDB.endTransaction();
             newDB.close();
         }
-        this.setTitle(myClass + " " + getCompletionAmount(myClass));
+        this.setTitle(getCompletionAmount(myClass));
     }
 }
