@@ -12,6 +12,16 @@ android {
         versionName "1.2.2"
         vectorDrawables.useSupportLibrary = true
     }
+
+    signingConfigs {
+        release {
+            storeFile file(project.huntinghelper_storeFile)
+            storePassword project.huntinghelper_storePassword
+            keyAlias project.huntinghelper_keyAlias
+            keyPassword project.huntinghelper_keyAlias
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

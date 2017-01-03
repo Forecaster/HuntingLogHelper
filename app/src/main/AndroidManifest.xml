@@ -22,7 +22,8 @@
         <activity
             android:name=".MySettings"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".LogViewActivity"></activity>
+        <activity android:name=".LogViews.HuntingLogViewActivity"></activity>
+        <activity android:name=".LogViews.CraftingLogViewActivity"></activity>
     </application>
 
 </manifest>

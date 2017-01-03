@@ -1,6 +1,5 @@
 package com.pc_logix.huntingloghelper;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +17,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.pc_logix.huntingloghelper.LogViews.HuntingLogViewActivity;
+import com.pc_logix.huntingloghelper.util.DBHelper;
 
 /**
  * Created by Michi on 12/30/2016.
@@ -95,7 +97,10 @@ public class MySettings extends AppCompatActivity {
                         newDB = dbHelper.getWritableDatabase();
                         newDB.beginTransaction();
                         Cursor cursor = newDB.rawQuery("UPDATE " +
-                                LogViewActivity.tableName +
+                                DBHelper.huntingLogsTable +
+                                " SET done = 0", null);
+                        Cursor cursor2 = newDB.rawQuery("UPDATE " +
+                                DBHelper.craftingLogsTable +
                                 " SET done = 0", null);
                         if (cursor != null) {
                             if (cursor.moveToFirst()) {

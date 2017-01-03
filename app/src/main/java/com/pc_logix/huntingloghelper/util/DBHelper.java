@@ -1,4 +1,4 @@
-package com.pc_logix.huntingloghelper;
+package com.pc_logix.huntingloghelper.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
