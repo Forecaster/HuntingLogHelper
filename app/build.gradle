@@ -23,7 +23,7 @@ android {
             storeFile file(huntinghelper_storeFile)
             storePassword huntinghelper_storePassword
             keyAlias huntinghelper_keyAlias
-            keyPassword huntinghelper_keyAlias
+            keyPassword huntinghelper_keyPassword
         }
     }
 
