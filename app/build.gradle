@@ -1,6 +1,11 @@
 apply plugin: 'com.android.application'
 apply from: "../artifacts.gradle"
 
+if (System.getenv().BUILD_NUMBER != null)
+    ext.buildNumber = System.getenv().BUILD_NUMBER?.toInteger()
+else
+    ext.buildNumber = 0
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -8,8 +13,8 @@ android {
         applicationId "com.pc_logix.huntingloghelper"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode env['BUILD_NUMBER']
-        versionName "1.2." + env['BUILD_NUMBER']
+        versionCode project.ext.buildNumber
+        versionName "1.2." + project.ext.buildNumber
         vectorDrawables.useSupportLibrary = true
     }
 
