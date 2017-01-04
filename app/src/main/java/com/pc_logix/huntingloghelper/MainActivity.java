@@ -1,6 +1,7 @@
 package com.pc_logix.huntingloghelper;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.pc_logix.huntingloghelper.LogViews.CraftingLogViewActivity;
 import com.pc_logix.huntingloghelper.LogViews.HuntingLogViewActivity;
 import com.pc_logix.huntingloghelper.util.DBHelper;
@@ -19,16 +22,26 @@ public class MainActivity extends AppCompatActivity {
     public static DBHelper dbHelper;
     protected static String tableName = DBHelper.huntingLogsTable;
     protected static SQLiteDatabase newDB;
+    private AdView mAdView;
+    public static final String PREFS_NAME = "HuntingHelperPrefs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean showAd = settings.getBoolean("showAds", true);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scrolling);
+        setContentView(R.layout.main_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         dbHelper = new DBHelper(this.getApplicationContext());
 
         TextView t=(TextView)findViewById(R.id.content);
         t.setText(getResources().getText(R.string.welcome_text));
+        if (showAd) {
+            mAdView = (AdView) findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder()
+                    .build();
+            mAdView.loadAd(adRequest);
+        }
     }
 
     @Override
@@ -55,9 +68,34 @@ public class MainActivity extends AppCompatActivity {
             Intent myIntent = new Intent(this, CraftingLogViewActivity.class);
             startActivity(myIntent);
         } else if (id == R.id.action_settings) {
-            Intent myIntent = new Intent(this, MySettings.class);
+            Intent myIntent = new Intent(this, SettingsActivity.class);
             startActivity(myIntent);
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
+    }
+
 }

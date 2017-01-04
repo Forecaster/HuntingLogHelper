@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pc_logix.huntingloghelper">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/launcher"
@@ -20,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MySettings"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".LogViews.HuntingLogViewActivity"></activity>
         <activity android:name=".LogViews.CraftingLogViewActivity"></activity>

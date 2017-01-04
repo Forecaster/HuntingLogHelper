@@ -13,14 +13,14 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-    //signingConfigs {
-    //    release {
-    //        storeFile file(project.huntinghelper_storeFile)
-    //        storePassword project.huntinghelper_storePassword
-    //        keyAlias project.huntinghelper_keyAlias
-    //        keyPassword project.huntinghelper_keyAlias
-    //    }
-    //}
+    signingConfigs {
+        release {
+            storeFile file(project.huntinghelper_storeFile)
+            storePassword project.huntinghelper_storePassword
+            keyAlias project.huntinghelper_keyAlias
+            keyPassword project.huntinghelper_keyAlias
+        }
+    }
 
     buildTypes {
         release {
@@ -41,5 +41,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.1.0'
     compile 'com.android.support:support-vector-drawable:25.1.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    compile 'com.google.android.gms:play-services-ads:8.4.0'
     testCompile 'junit:junit:4.12'
 }

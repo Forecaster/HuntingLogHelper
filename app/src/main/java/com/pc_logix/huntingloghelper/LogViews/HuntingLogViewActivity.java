@@ -23,7 +23,7 @@ import android.widget.Spinner;
 
 import com.pc_logix.huntingloghelper.util.DBHelper;
 import com.pc_logix.huntingloghelper.MainActivity;
-import com.pc_logix.huntingloghelper.MySettings;
+import com.pc_logix.huntingloghelper.SettingsActivity;
 import com.pc_logix.huntingloghelper.R;
 import com.pc_logix.huntingloghelper.util.Helper;
 
@@ -148,7 +148,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                 Intent myIntent = new Intent(this, HuntingLogViewActivity.class);
                 startActivity(myIntent);
             } else if (id == R.id.action_settings) {
-                Intent myIntent = new Intent(this, MySettings.class);
+                Intent myIntent = new Intent(this, SettingsActivity.class);
                 startActivity(myIntent);
             } else if (id == R.id.action_markAll) {
                 ListView listView = (ListView) findViewById(R.id.loglist);
