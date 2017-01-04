@@ -20,15 +20,16 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(project.huntinghelper_storeFile)
-            storePassword project.huntinghelper_storePassword
-            keyAlias project.huntinghelper_keyAlias
-            keyPassword project.huntinghelper_keyAlias
+            storeFile file(huntinghelper_storeFile)
+            storePassword huntinghelper_storePassword
+            keyAlias huntinghelper_keyAlias
+            keyPassword huntinghelper_keyAlias
         }
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             zipAlignEnabled true
