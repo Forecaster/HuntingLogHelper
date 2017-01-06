@@ -211,7 +211,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
         }
     }
 
-    private void openAndQueryDatabase(String rankIn) {
+    private void openAndQueryDatabase(String levelIn) {
         int loop = 0;
         results.clear();
         done.clear();
@@ -227,21 +227,21 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
             DBHelper dbHelper = new DBHelper(this.getApplicationContext());
             newDB = dbHelper.getWritableDatabase();
             Cursor c;
-            if (rankIn.toLowerCase().equals("all")) {
+            if (levelIn.toLowerCase().equals("all")) {
                 //Log.e("Hunting Log", "SELECT * FROM " + tableName +
                 //        " where class='" + myClass + "' ORDER BY _id");
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
                         " where class='" + myClass + "' ORDER BY _id", null);
-            } else if (rankIn.toLowerCase().contains("★")) {
+            } else if (levelIn.toLowerCase().contains("★")) {
                 //Log.e("Hunting Log", "SELECT * FROM " + tableName +
-                //        " where class='" + myClass + "' AND level = '" + rankIn + "' ORDER BY _id");
+                //        " where class='" + myClass + "' AND level = '" + levelIn + "' ORDER BY _id");
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
-                        " where class='" + myClass + "' AND level = '" + rankIn + "' ORDER BY _id", null);
+                        " where class='" + myClass + "' AND level = '" +levelIn + "' ORDER BY _id", null);
             } else {
                 //Log.e("Hunting Log", "SELECT * FROM " + tableName +
-                //        " where class='" + myClass + "' AND level BETWEEN " + rankIn.replace("-", " AND ") + " ORDER BY _id");
+                //        " where class='" + myClass + "' AND level BETWEEN " + levelIn.replace("-", " AND ") + " ORDER BY _id");
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
-                        " where class='" + myClass + "' AND level BETWEEN " + rankIn.replace("-", " AND ") + " ORDER BY _id", null);
+                        " where class='" + myClass + "' AND level BETWEEN " + levelIn.replace("-", " AND ") + " ORDER BY _id", null);
             }
             ranks.add("1-10");
             ranks.add("11-20");
@@ -264,6 +264,11 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                         String level = c.getString(c.getColumnIndex("level"));
                         String item_name = c.getString(c.getColumnIndex("name"));
                         String ingredients = c.getString(c.getColumnIndex("ingredients"));
+                        String requires = c.getString(c.getColumnIndex("requires"));
+                        String requiresOut = "";
+                        if (requires != null && requires.length() > 0) {
+                            requiresOut = "Requires: " + requires + "<br>";
+                        }
                         ingredients = ingredients.replace("[", "");
                         ingredients = ingredients.replace("]", "");
                         ingredients = ingredients.replace(";", "<br>");
@@ -273,6 +278,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                         results.add(
                                 "level: " + level + "<br>" +
                                 "Item: " + "<b>"+item_name + "</b><br>" +
+                                requiresOut +
                                 "Ingredients:<br>" + ingredients
                         );
                         if (isDone == 1)
