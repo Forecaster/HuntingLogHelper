@@ -43,9 +43,9 @@
         android:title="Goldsmith Recipes"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_Leathercraft"
+        android:id="@+id/action_Leatherworker"
         android:orderInCategory="75"
-        android:title="Leathercraft Recipes"
+        android:title="Leatherworker Recipes"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_Weaver"

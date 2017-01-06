@@ -49,7 +49,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
         setupActionBar();
         setContentView(R.layout.activity_log_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        openAndQueryDatabase(selectedRank);
+        openAndQueryDatabase("1-10");
         displayResultList();
     }
 
@@ -80,7 +80,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
             menu.findItem(R.id.action_Carpenter).setTitle(Helper.getCompletionAmount("Carpenter",this.getApplicationContext(),tableName));
             menu.findItem(R.id.action_Culinarian).setTitle(Helper.getCompletionAmount("Culinarian",this.getApplicationContext(),tableName));
             menu.findItem(R.id.action_Goldsmith).setTitle(Helper.getCompletionAmount("Goldsmith",this.getApplicationContext(),tableName));
-            menu.findItem(R.id.action_Leathercraft).setTitle(Helper.getCompletionAmount("Leathercraft",this.getApplicationContext(),tableName));
+            menu.findItem(R.id.action_Leatherworker).setTitle(Helper.getCompletionAmount("Leatherworker",this.getApplicationContext(),tableName));
             menu.findItem(R.id.action_Weaver).setTitle(Helper.getCompletionAmount("Weaver",this.getApplicationContext(),tableName));
         }
         return super.onMenuOpened(featureId, menu);
@@ -119,8 +119,8 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                 CraftingLogViewActivity.myClass = "Goldsmith";
                 Intent myIntent = new Intent(this, CraftingLogViewActivity.class);
                 startActivity(myIntent);
-            } else if (id == R.id.action_Leathercraft) {
-                CraftingLogViewActivity.myClass = "Leathercraft";
+            } else if (id == R.id.action_Leatherworker) {
+                CraftingLogViewActivity.myClass = "Leatherworker";
                 Intent myIntent = new Intent(this, CraftingLogViewActivity.class);
                 startActivity(myIntent);
             } else if (id == R.id.action_Weaver) {
@@ -228,39 +228,53 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
             newDB = dbHelper.getWritableDatabase();
             Cursor c;
             if (rankIn.toLowerCase().equals("all")) {
-                c = newDB.rawQuery("SELECT * FROM " +  tableName +
-                        " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
-            } else {
+                //Log.e("Hunting Log", "SELECT * FROM " + tableName +
+                //        " where class='" + myClass + "' ORDER BY _id");
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
-                        " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+                        " where class='" + myClass + "' ORDER BY _id", null);
+            } else if (rankIn.toLowerCase().contains("★")) {
+                //Log.e("Hunting Log", "SELECT * FROM " + tableName +
+                //        " where class='" + myClass + "' AND level = '" + rankIn + "' ORDER BY _id");
+                c = newDB.rawQuery("SELECT * FROM " + tableName +
+                        " where class='" + myClass + "' AND level = '" + rankIn + "' ORDER BY _id", null);
+            } else {
+                //Log.e("Hunting Log", "SELECT * FROM " + tableName +
+                //        " where class='" + myClass + "' AND level BETWEEN " + rankIn.replace("-", " AND ") + " ORDER BY _id");
+                c = newDB.rawQuery("SELECT * FROM " + tableName +
+                        " where class='" + myClass + "' AND level BETWEEN " + rankIn.replace("-", " AND ") + " ORDER BY _id", null);
             }
-            Cursor c2 = newDB.rawQuery("SELECT * FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
-            ranks.add("All");
-            if (c2 != null) {
-                if (c2.moveToFirst()) {
-                    do {
-                        ranks.add(Integer.toString(c2.getInt(c.getColumnIndex("rank"))));
-                    }while (c2.moveToNext());
-                }
-            }
+            ranks.add("1-10");
+            ranks.add("11-20");
+            ranks.add("21-30");
+            ranks.add("31-40");
+            ranks.add("41-50");
+            ranks.add("51-60");
+            ranks.add("50★");
+            ranks.add("50★★");
+            ranks.add("50★★★");
+            ranks.add("50★★★★");
+            ranks.add("60★");
+            ranks.add("60★★");
+            ranks.add("60★★★");
+            ranks.add("60★★★★");
             if (c != null ) {
                 if (c.moveToFirst()) {
                     do {
-                        String region = c.getString(c.getColumnIndex("region"));
-                        String area = c.getString(c.getColumnIndex("area"));
-                        String enemy = c.getString(c.getColumnIndex("enemy"));
                         int id = c.getInt(c.getColumnIndex("_id"));
-                        int rank = c.getInt(c.getColumnIndex("rank"));
-                        int num = c.getInt(c.getColumnIndex("num"));
-                        int x_loc = c.getInt(c.getColumnIndex("x_loc"));
-                        int y_loc = c.getInt(c.getColumnIndex("y_loc"));
+                        String level = c.getString(c.getColumnIndex("level"));
+                        String item_name = c.getString(c.getColumnIndex("name"));
+                        String ingredients = c.getString(c.getColumnIndex("ingredients"));
+                        ingredients = ingredients.replace("[", "");
+                        ingredients = ingredients.replace("]", "");
+                        ingredients = ingredients.replace(";", "<br>");
+                        ingredients = ingredients.replace(",", "x - ");
                         int isDone = c.getInt(c.getColumnIndex("done"));
                         ids.put(loop, id);
                         results.add(
-                                "Rank: " + rank + "<br>" +
-                                "Area: " + region + " - " + area + "<br>" +
-                                "Enemy: <b>"+enemy+"</b>" + " X" + num + "<br>" +
-                                "Location: X:" + x_loc + " Y:" + y_loc);
+                                "level: " + level + "<br>" +
+                                "Item: " + "<b>"+item_name + "</b><br>" +
+                                "Ingredients:<br>" + ingredients
+                        );
                         if (isDone == 1)
                             done.add(loop);
                         loop++;

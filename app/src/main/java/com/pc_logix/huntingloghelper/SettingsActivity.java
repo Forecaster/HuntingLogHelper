@@ -121,10 +121,17 @@ public class SettingsActivity extends AppCompatActivity {
                                 " SET done = 0", null);
                         if (cursor != null) {
                             if (cursor.moveToFirst()) {
-                                Toast.makeText(SettingsActivity.this, "Done",
+                                Toast.makeText(SettingsActivity.this, "Hunting Logs reset done",
                                         Toast.LENGTH_LONG).show();
                             }
                             cursor.close();
+                        }
+                        if (cursor2 != null) {
+                            if (cursor2.moveToFirst()) {
+                                Toast.makeText(SettingsActivity.this, "Crafting Logs reset done",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                            cursor2.close();
                         }
                         newDB.setTransactionSuccessful();
                         newDB.endTransaction();
