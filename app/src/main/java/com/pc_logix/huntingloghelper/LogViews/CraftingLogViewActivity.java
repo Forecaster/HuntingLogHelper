@@ -271,7 +271,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                         }
                         ingredients = ingredients.replace("[", "");
                         ingredients = ingredients.replace("]", "");
-                        ingredients = ingredients.replace(";", "<br>");
+                        ingredients = ingredients.replace("|", "<br>");
                         ingredients = ingredients.replace(",", "x - ");
                         int isDone = c.getInt(c.getColumnIndex("done"));
                         ids.put(loop, id);
