@@ -210,7 +210,12 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
             listView.setItemChecked(pos, true);
         }
     }
-
+    private static String removeTrailingPipe(String str) {
+        if (str.substring(0,str.length()-1).equals("|")) {
+            return str.substring(0,str.length()-1);
+        }
+        return str;
+    }
     private void openAndQueryDatabase(String levelIn) {
         int loop = 0;
         results.clear();
@@ -271,6 +276,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                         }
                         ingredients = ingredients.replace("[", "");
                         ingredients = ingredients.replace("]", "");
+                        ingredients = removeTrailingPipe(ingredients);
                         ingredients = ingredients.replace("|", "<br>");
                         ingredients = ingredients.replace(",", "x - ");
                         int isDone = c.getInt(c.getColumnIndex("done"));

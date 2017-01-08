@@ -4,7 +4,7 @@ apply from: "../artifacts.gradle"
 if (System.getenv().BUILD_NUMBER != null)
     ext.buildNumber = System.getenv().BUILD_NUMBER?.toInteger()
 else
-    ext.buildNumber = 0
+    ext.buildNumber = 50
 
 android {
     compileSdkVersion 25
