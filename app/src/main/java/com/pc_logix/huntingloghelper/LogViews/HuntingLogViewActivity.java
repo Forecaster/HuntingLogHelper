@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -25,6 +26,7 @@ import com.pc_logix.huntingloghelper.util.DBHelper;
 import com.pc_logix.huntingloghelper.MainActivity;
 import com.pc_logix.huntingloghelper.SettingsActivity;
 import com.pc_logix.huntingloghelper.R;
+import com.pc_logix.huntingloghelper.util.DownloadImageTask;
 import com.pc_logix.huntingloghelper.util.Helper;
 
 import java.util.ArrayList;
@@ -212,6 +214,9 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                     LayoutInflater lInflater = LayoutInflater.from(HuntingLogViewActivity.this);
                     convertView = lInflater.inflate(R.layout.list_item, null);
                 }
+                new DownloadImageTask((ImageView) convertView.findViewById(R.id.logIconView), getContext())
+                        .execute("http://ffxiv.gamerescape.com/w/images/c/c9/Ladybug_Icon.png");
+
                 CheckedTextView tv = (CheckedTextView) convertView.findViewById(R.id.checkedTextView1);
                 tv.setText(Html.fromHtml(results.get(position)));
                 if(position %2 == 1)

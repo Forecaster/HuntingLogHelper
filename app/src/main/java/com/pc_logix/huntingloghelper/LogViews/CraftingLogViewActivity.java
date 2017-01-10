@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -18,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -25,8 +30,10 @@ import com.pc_logix.huntingloghelper.util.DBHelper;
 import com.pc_logix.huntingloghelper.MainActivity;
 import com.pc_logix.huntingloghelper.SettingsActivity;
 import com.pc_logix.huntingloghelper.R;
+import com.pc_logix.huntingloghelper.util.DownloadImageTask;
 import com.pc_logix.huntingloghelper.util.Helper;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -36,6 +43,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
     private ArrayList<String> results = new ArrayList<String>();
     private ArrayList<Integer> done = new ArrayList<Integer>();
     private ArrayList<String> ranks = new ArrayList<String>();
+    private ArrayList<String> icons = new ArrayList<String>();
     private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
     private String selectedRank;
     protected static String tableName = DBHelper.craftingLogsTable;
@@ -140,7 +148,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                     v = listView.getChildAt(i);
                     listView.setItemChecked(i, true);
                     Cursor cursor = newDB.rawQuery("UPDATE " +
-                            CraftingLogViewActivity.tableName +
+                            tableName +
                             " SET done = 1 where class='" + myClass + "' AND _id = " + ids.get(i), null);
                     if (cursor != null) {
                         if (cursor.moveToFirst()) {
@@ -192,6 +200,14 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                     LayoutInflater lInflater = LayoutInflater.from(CraftingLogViewActivity.this);
                     convertView = lInflater.inflate(R.layout.list_item, null);
                 }
+
+                ImageView logImage = (ImageView) convertView.findViewById(R.id.logIconView);
+                if (icons.get(position).length() > 1) {
+                    Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-item-icons" + File.separator + icons.get(position));
+                    BitmapDrawable bitmapDrawable = new BitmapDrawable(bitmap);
+                    logImage.setBackground(bitmapDrawable);
+                }
+
                 CheckedTextView tv = (CheckedTextView) convertView.findViewById(R.id.checkedTextView1);
                 tv.setText(Html.fromHtml(results.get(position)));
                 if(position %2 == 1)
@@ -210,6 +226,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
             listView.setItemChecked(pos, true);
         }
     }
+
     private static String removeTrailingPipe(String str) {
         if (str.substring(0,str.length()-1).equals("|")) {
             return str.substring(0,str.length()-1);
@@ -221,6 +238,7 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
         results.clear();
         done.clear();
         ids.clear();
+        icons.clear();
 
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner2);
@@ -271,6 +289,12 @@ public class CraftingLogViewActivity extends AppCompatActivity implements Adapte
                         String ingredients = c.getString(c.getColumnIndex("ingredients"));
                         String requires = c.getString(c.getColumnIndex("requires"));
                         String requiresOut = "";
+                        String icon = c.getString(c.getColumnIndex("icon"));
+                        if (icon != null && icon.length() > 1){
+                            icons.add(icon);
+                        } else {
+                            icons.add("");
+                        }
                         if (requires != null && requires.length() > 0) {
                             requiresOut = "Requires: " + requires + "<br>";
                         }

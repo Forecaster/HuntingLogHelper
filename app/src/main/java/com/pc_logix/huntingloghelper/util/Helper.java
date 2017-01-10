@@ -4,6 +4,21 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
 /**
  * Created by Michi on 1/2/2017.
  */
@@ -33,5 +48,77 @@ public class Helper {
         } else {
             return classIn + " " + Integer.toString(0) +"%";
         }
+    }
+
+    private static void downloadFile(String url, File outputFile) {
+        try {
+            URL u = new URL(url);
+            URLConnection conn = u.openConnection();
+            int contentLength = conn.getContentLength();
+
+            DataInputStream stream = new DataInputStream(u.openStream());
+
+            byte[] buffer = new byte[contentLength];
+            stream.readFully(buffer);
+            stream.close();
+
+            DataOutputStream fos = new DataOutputStream(new FileOutputStream(outputFile));
+            fos.write(buffer);
+            fos.flush();
+            fos.close();
+        } catch(FileNotFoundException e) {
+            return; // swallow a 404
+        } catch (IOException e) {
+            return; // swallow a 404
+        }
+    }
+
+    public static boolean unpackZip(String path, String zipname)
+    {
+        InputStream is;
+        ZipInputStream zis;
+        try
+        {
+            String filename;
+            is = new FileInputStream(path + zipname);
+            zis = new ZipInputStream(new BufferedInputStream(is));
+            ZipEntry ze;
+            byte[] buffer = new byte[1024];
+            int count;
+
+            while ((ze = zis.getNextEntry()) != null)
+            {
+                // zapis do souboru
+                filename = ze.getName();
+
+                // Need to create directories if not exists, or
+                // it will generate an Exception...
+                if (ze.isDirectory()) {
+                    File fmd = new File(path + filename);
+                    fmd.mkdirs();
+                    continue;
+                }
+
+                FileOutputStream fout = new FileOutputStream(path + filename);
+
+                // cteni zipu a zapis
+                while ((count = zis.read(buffer)) != -1)
+                {
+                    fout.write(buffer, 0, count);
+                }
+
+                fout.close();
+                zis.closeEntry();
+            }
+
+            zis.close();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
     }
 }

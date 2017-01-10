@@ -4,14 +4,14 @@ apply from: "../artifacts.gradle"
 if (System.getenv().BUILD_NUMBER != null)
     ext.buildNumber = System.getenv().BUILD_NUMBER?.toInteger()
 else
-    ext.buildNumber = 50
+    ext.buildNumber = 0
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.pc_logix.huntingloghelper"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode project.ext.buildNumber
         versionName "1.2." + project.ext.buildNumber
