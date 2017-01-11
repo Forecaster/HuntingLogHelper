@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +33,7 @@ import com.pc_logix.huntingloghelper.R;
 import com.pc_logix.huntingloghelper.util.DownloadImageTask;
 import com.pc_logix.huntingloghelper.util.Helper;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -38,6 +43,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
     private ArrayList<String> results = new ArrayList<String>();
     private ArrayList<Integer> done = new ArrayList<Integer>();
     private ArrayList<String> ranks = new ArrayList<String>();
+    private ArrayList<String> icons = new ArrayList<String>();
     private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
     private String selectedRank;
     protected static String tableName = DBHelper.huntingLogsTable;
@@ -214,8 +220,15 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                     LayoutInflater lInflater = LayoutInflater.from(HuntingLogViewActivity.this);
                     convertView = lInflater.inflate(R.layout.list_item, null);
                 }
-                new DownloadImageTask((ImageView) convertView.findViewById(R.id.logIconView), getContext())
-                        .execute("http://ffxiv.gamerescape.com/w/images/c/c9/Ladybug_Icon.png");
+                ImageView logImage = (ImageView) convertView.findViewById(R.id.logIconView);
+                if (icons.get(position).length() > 1) {
+                    File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-item-icons" + File.separator + icons.get(position));
+                    if (f.exists()) {
+                        Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-item-icons" + File.separator + icons.get(position));
+                        BitmapDrawable bitmapDrawable = new BitmapDrawable(getApplicationContext().getResources(), bitmap);
+                        logImage.setBackground(bitmapDrawable);
+                    }
+                }
 
                 CheckedTextView tv = (CheckedTextView) convertView.findViewById(R.id.checkedTextView1);
                 tv.setText(Html.fromHtml(results.get(position)));
@@ -241,6 +254,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
         results.clear();
         done.clear();
         ids.clear();
+        icons.clear();
 
         ListView listView = (ListView) findViewById(R.id.loglist);
         listView.setAdapter(null);
@@ -288,6 +302,12 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         int x_loc = c.getInt(c.getColumnIndex("x_loc"));
                         int y_loc = c.getInt(c.getColumnIndex("y_loc"));
                         int isDone = c.getInt(c.getColumnIndex("done"));
+                        String icon = c.getString(c.getColumnIndex("icon"));
+                        if (icon != null && icon.length() > 1){
+                            icons.add(icon);
+                        } else {
+                            icons.add("");
+                        }
                         ids.put(loop, id);
                         results.add(
                                 "Rank: " + rank + "<br>" +
