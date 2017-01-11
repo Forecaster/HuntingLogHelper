@@ -9,14 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,17 +25,23 @@ import com.pc_logix.huntingloghelper.LogViews.HuntingLogViewActivity;
 import com.pc_logix.huntingloghelper.util.DBHelper;
 import com.pc_logix.huntingloghelper.util.Helper;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressDialog mProgressDialog;
+    ProgressDialog mDownloadProgressDialog;
+    ProgressDialog mUnzipProgressDialog;
     public static String myClass;
     public static DBHelper dbHelper;
     protected static String tableName = DBHelper.huntingLogsTable;
@@ -62,11 +66,17 @@ public class MainActivity extends AppCompatActivity {
                     .build();
             mAdView.loadAd(adRequest);
         }
-        mProgressDialog = new ProgressDialog(MainActivity.this);
-        mProgressDialog.setMessage("A message");
-        mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        mProgressDialog.setCancelable(true);
+        mDownloadProgressDialog = new ProgressDialog(MainActivity.this);
+        mDownloadProgressDialog.setMessage("Downloading Icon Pack");
+        mDownloadProgressDialog.setIndeterminate(true);
+        mDownloadProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        mDownloadProgressDialog.setCancelable(true);
+
+        mUnzipProgressDialog = new ProgressDialog(MainActivity.this);
+        mUnzipProgressDialog.setMessage("Decompressing Icon Pack");
+        mUnzipProgressDialog.setIndeterminate(true);
+        mUnzipProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        mUnzipProgressDialog.setCancelable(true);
     }
 
     @Override
@@ -97,12 +107,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(myIntent);
         } else if (id == R.id.action_DownloadIconPack) {
             final DownloadTask downloadTask = new DownloadTask(MainActivity.this);
-            downloadTask.execute("https://pc-logix.com/ffxiv/ffxiv-item-icons.zip");
-
-            mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            downloadTask.execute("https://pc-logix.com/ffxiv/ffxiv-icons.zip");
+            mDownloadProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                     downloadTask.cancel(true);
+                }
+            });
+
+            mUnzipProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    //unzipTask.cancel(true);
                 }
             });
         }
@@ -153,27 +169,28 @@ public class MainActivity extends AppCompatActivity {
             mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                     getClass().getName());
             mWakeLock.acquire();
-            mProgressDialog.show();
+            mDownloadProgressDialog.show();
         }
 
         @Override
         protected void onProgressUpdate(Integer... progress) {
             super.onProgressUpdate(progress);
             // if we get here, length is known, now set indeterminate to false
-            mProgressDialog.setIndeterminate(false);
-            mProgressDialog.setMax(100);
-            mProgressDialog.setProgress(progress[0]);
+            mDownloadProgressDialog.setIndeterminate(false);
+            mDownloadProgressDialog.setMax(100);
+            mDownloadProgressDialog.setProgress(progress[0]);
         }
 
         @Override
         protected void onPostExecute(String result) {
             mWakeLock.release();
-            mProgressDialog.dismiss();
+            mDownloadProgressDialog.dismiss();
             if (result != null)
                 Toast.makeText(context,"Download error: "+result, Toast.LENGTH_LONG).show();
             else {
                 Toast.makeText(context, "File downloaded", Toast.LENGTH_SHORT).show();
-                Helper.unpackZip(Environment.getExternalStorageDirectory().toString() + File.separator, "ffxiv-item-icons.zip");
+                final Decompress unzipTask = new Decompress(MainActivity.this, Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons.zip", Environment.getExternalStorageDirectory().toString() + File.separator);
+                unzipTask.execute();
             }
         }
 
@@ -255,6 +272,110 @@ public class MainActivity extends AppCompatActivity {
                     connection.disconnect();
             }
             return null;
+        }
+    }
+
+    private class Decompress extends AsyncTask<Void, Integer, Integer> {
+
+        private Context context;
+        private PowerManager.WakeLock mWakeLock;
+
+        private String _zipFile;
+        private String _location;
+        private int per = 0;
+        private ZipFile zip;
+        private ZipEntry ze = null;
+
+        public Decompress(Context context, String zipFile, String location) {
+            this.context = context;
+            this.context = context;
+            _zipFile = zipFile;
+            _location = location;
+            _dirChecker("ffxiv-icons");
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // take CPU lock to prevent CPU from going off if the user
+            // presses the power button during download
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                    getClass().getName());
+            mWakeLock.acquire();
+            mUnzipProgressDialog.show();
+        }
+
+        private void _dirChecker(String dir) {
+            File f = new File(_location + dir);
+            Log.e("Hunting Log", _location + dir);
+            if(!f.isDirectory()) {
+                f.mkdirs();
+            }
+        }
+
+        @Override
+        protected Integer doInBackground(Void... params) {
+                InputStream is;
+                ZipInputStream zis;
+                try {
+                    String filename;
+                    is = new FileInputStream(_zipFile);
+                    zip = new ZipFile(_zipFile);
+                    zis = new ZipInputStream(new BufferedInputStream(is));
+                    ZipEntry ze;
+                    byte[] buffer = new byte[1024];
+                    int count;
+
+                    while ((ze = zis.getNextEntry()) != null) {
+                        // zapis do souboru
+                        filename = ze.getName();
+
+                        // Need to create directories if not exists, or
+                        // it will generate an Exception...
+                        if (ze.isDirectory()) {
+                            File fmd = new File(_location + filename);
+                            fmd.mkdirs();
+                            continue;
+                        }
+                        per++;
+                        publishProgress(per);
+                        FileOutputStream fout = new FileOutputStream(_location + filename);
+
+                        // cteni zipu a zapis
+                        while ((count = zis.read(buffer)) != -1) {
+                            fout.write(buffer, 0, count);
+                        }
+
+                        fout.close();
+                        zis.closeEntry();
+                    }
+
+                    zis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return 0;
+                }
+
+                return 1;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... progress) {
+            mUnzipProgressDialog.setMax(zip.size());
+            mUnzipProgressDialog.setIndeterminate(false);
+            mUnzipProgressDialog.setProgress(progress[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Integer result) {
+            mWakeLock.release();
+            mUnzipProgressDialog.dismiss();
+            if (result != 1)
+                Toast.makeText(context,"Decompression error", Toast.LENGTH_LONG).show();
+            else {
+                Toast.makeText(context, "File Decompressed", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

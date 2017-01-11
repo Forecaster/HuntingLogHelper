@@ -222,9 +222,9 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                 }
                 ImageView logImage = (ImageView) convertView.findViewById(R.id.logIconView);
                 if (icons.get(position).length() > 1) {
-                    File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-item-icons" + File.separator + icons.get(position));
+                    File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icons.get(position));
                     if (f.exists()) {
-                        Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-item-icons" + File.separator + icons.get(position));
+                        Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icons.get(position));
                         BitmapDrawable bitmapDrawable = new BitmapDrawable(getApplicationContext().getResources(), bitmap);
                         logImage.setBackground(bitmapDrawable);
                     }
@@ -304,8 +304,14 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         int isDone = c.getInt(c.getColumnIndex("done"));
                         String icon = c.getString(c.getColumnIndex("icon"));
                         if (icon != null && icon.length() > 1){
+                            Log.e("Hunting Log", "Adding icon for enemy: " + enemy + " " + icon);
+                            File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icon.replaceAll("\\'","%27"));
+                            if (!f.exists()) {
+                                Log.e("Hunting Log", "But it doesn't exist");
+                            }
                             icons.add(icon);
                         } else {
+                            Log.e("Hunting Log", "Missing icon for item: " + enemy);
                             icons.add("");
                         }
                         ids.put(loop, id);
