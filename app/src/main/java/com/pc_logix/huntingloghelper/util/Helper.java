@@ -3,6 +3,8 @@ package com.pc_logix.huntingloghelper.util;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.Html;
+import android.text.Spanned;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
@@ -120,5 +122,16 @@ public class Helper {
         }
 
         return true;
+    }
+
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String html){
+        Spanned result;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            result = Html.fromHtml(html);
+        }
+        return result;
     }
 }
