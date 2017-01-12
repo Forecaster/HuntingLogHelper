@@ -308,7 +308,6 @@ public class MainActivity extends AppCompatActivity {
 
         private void _dirChecker(String dir) {
             File f = new File(_location + dir);
-            Log.e("Hunting Log", _location + dir);
             if(!f.isDirectory()) {
                 f.mkdirs();
             }
@@ -328,11 +327,7 @@ public class MainActivity extends AppCompatActivity {
                     int count;
 
                     while ((ze = zis.getNextEntry()) != null) {
-                        // zapis do souboru
                         filename = ze.getName();
-
-                        // Need to create directories if not exists, or
-                        // it will generate an Exception...
                         if (ze.isDirectory()) {
                             File fmd = new File(_location + filename);
                             fmd.mkdirs();
@@ -341,22 +336,17 @@ public class MainActivity extends AppCompatActivity {
                         per++;
                         publishProgress(per);
                         FileOutputStream fout = new FileOutputStream(_location + filename);
-
-                        // cteni zipu a zapis
                         while ((count = zis.read(buffer)) != -1) {
                             fout.write(buffer, 0, count);
                         }
-
                         fout.close();
                         zis.closeEntry();
                     }
-
                     zis.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                     return 0;
                 }
-
                 return 1;
         }
 

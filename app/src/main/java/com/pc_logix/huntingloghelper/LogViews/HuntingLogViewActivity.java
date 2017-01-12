@@ -43,7 +43,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
     private ArrayList<String> results = new ArrayList<String>();
     private ArrayList<Integer> done = new ArrayList<Integer>();
     private ArrayList<String> ranks = new ArrayList<String>();
-    private ArrayList<String> icons = new ArrayList<String>();
+    private ArrayList<byte[]> icons = new ArrayList<byte[]>();
     private LinkedHashMap<Integer, Integer> ids = new LinkedHashMap<Integer, Integer>();
     private String selectedRank;
     protected static String tableName = DBHelper.huntingLogsTable;
@@ -221,17 +221,13 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                     convertView = lInflater.inflate(R.layout.list_item, null);
                 }
                 ImageView logImage = (ImageView) convertView.findViewById(R.id.logIconView);
-                if (icons.get(position).length() > 1) {
-                    File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icons.get(position));
-                    if (f.exists()) {
-                        Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icons.get(position));
-                        BitmapDrawable bitmapDrawable = new BitmapDrawable(getApplicationContext().getResources(), bitmap);
-                        logImage.setBackground(bitmapDrawable);
-                    }
+                if (icons.get(position).length > 1) {
+                    logImage.setImageBitmap(BitmapFactory.decodeByteArray( icons.get(position),
+                            0,icons.get(position).length));
                 }
 
                 CheckedTextView tv = (CheckedTextView) convertView.findViewById(R.id.checkedTextView1);
-                tv.setText(Html.fromHtml(results.get(position)));
+                tv.setText(Helper.fromHtml(results.get(position)));
                 if(position %2 == 1)
                     convertView.setBackgroundColor(Color.parseColor("#FFDCDCDC"));
                 else
@@ -279,7 +275,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         " where class='" + myClass + "' ORDER BY rank, region, area, y_loc, x_loc", null);
             } else {
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
-                        " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, area, y_loc, x_loc", null);
+                        " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, title, area, y_loc, x_loc", null);
             }
             Cursor c2 = newDB.rawQuery("SELECT * FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
             ranks.add("All");
@@ -296,27 +292,26 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         String region = c.getString(c.getColumnIndex("region"));
                         String area = c.getString(c.getColumnIndex("area"));
                         String enemy = c.getString(c.getColumnIndex("enemy"));
+                        String title = c.getString(c.getColumnIndex("title"));
                         int id = c.getInt(c.getColumnIndex("_id"));
                         int rank = c.getInt(c.getColumnIndex("rank"));
                         int num = c.getInt(c.getColumnIndex("num"));
                         int x_loc = c.getInt(c.getColumnIndex("x_loc"));
                         int y_loc = c.getInt(c.getColumnIndex("y_loc"));
                         int isDone = c.getInt(c.getColumnIndex("done"));
-                        String icon = c.getString(c.getColumnIndex("icon"));
-                        if (icon != null && icon.length() > 1){
+                        //String icon = c.getString(c.getColumnIndex("icon"));
+                        byte[] icon = c.getBlob(c.getColumnIndex("icon"));
+                        if (icon != null && icon.length > 1){
                             Log.e("Hunting Log", "Adding icon for enemy: " + enemy + " " + icon);
-                            File f = new File(Environment.getExternalStorageDirectory().toString() + File.separator + "ffxiv-icons" + File.separator + icon.replaceAll("\\'","%27"));
-                            if (!f.exists()) {
-                                Log.e("Hunting Log", "But it doesn't exist");
-                            }
                             icons.add(icon);
                         } else {
                             Log.e("Hunting Log", "Missing icon for item: " + enemy);
-                            icons.add("");
+                            byte[] emptyArray = new byte[0];
+                            icons.add(emptyArray);
                         }
                         ids.put(loop, id);
                         results.add(
-                                "Rank: " + rank + "<br>" +
+                                "Rank: " + rank + " Log: " + title + "<br>" +
                                 "Area: " + region + " - " + area + "<br>" +
                                 "Enemy: <b>"+enemy+"</b>" + " X" + num + "<br>" +
                                 "Location: X:" + x_loc + " Y:" + y_loc);
