@@ -277,7 +277,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                 c = newDB.rawQuery("SELECT * FROM " + tableName +
                         " where class='" + myClass + "' AND rank='" + rankIn + "' ORDER BY rank, region, title, area, y_loc, x_loc", null);
             }
-            Cursor c2 = newDB.rawQuery("SELECT * FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
+            Cursor c2 = newDB.rawQuery("SELECT rank FROM " + tableName + " where class='" + myClass + "' GROUP BY rank", null);
             ranks.add("All");
             if (c2 != null) {
                 if (c2.moveToFirst()) {
@@ -292,7 +292,7 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         String region = c.getString(c.getColumnIndex("region"));
                         String area = c.getString(c.getColumnIndex("area"));
                         String enemy = c.getString(c.getColumnIndex("enemy"));
-                        String title = c.getString(c.getColumnIndex("title"));
+                        String title = c.getString(c.getColumnIndex("set"));
                         int id = c.getInt(c.getColumnIndex("_id"));
                         int rank = c.getInt(c.getColumnIndex("rank"));
                         int num = c.getInt(c.getColumnIndex("num"));
@@ -302,16 +302,15 @@ public class HuntingLogViewActivity extends AppCompatActivity implements Adapter
                         //String icon = c.getString(c.getColumnIndex("icon"));
                         byte[] icon = c.getBlob(c.getColumnIndex("icon"));
                         if (icon != null && icon.length > 1){
-                            Log.e("Hunting Log", "Adding icon for enemy: " + enemy + " " + icon);
                             icons.add(icon);
                         } else {
-                            Log.e("Hunting Log", "Missing icon for item: " + enemy);
+                            Log.e("Hunting Log", "Missing icon for enemy: " + enemy);
                             byte[] emptyArray = new byte[0];
                             icons.add(emptyArray);
                         }
                         ids.put(loop, id);
                         results.add(
-                                "Rank: " + rank + " Log: " + title + "<br>" +
+                                "Rank: " + rank + " Set: " + myClass + " " + title + "<br>" +
                                 "Area: " + region + " - " + area + "<br>" +
                                 "Enemy: <b>"+enemy+"</b>" + " X" + num + "<br>" +
                                 "Location: X:" + x_loc + " Y:" + y_loc);
