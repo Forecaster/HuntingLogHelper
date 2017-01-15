@@ -28,6 +28,32 @@ import java.util.zip.ZipInputStream;
  */
 
 public class Helper {
+
+    public static boolean isTableExists(String tableName, boolean openDb, Context contextIn) {
+        DBHelper dbHelper = new DBHelper(contextIn);
+        SQLiteDatabase newDB = dbHelper.getWritableDatabase();
+        if(openDb) {
+            if(newDB == null || !newDB.isOpen()) {
+                newDB = dbHelper.getWritableDatabase();
+            }
+
+            if(!newDB.isReadOnly()) {
+                newDB.close();
+                newDB = dbHelper.getWritableDatabase();
+            }
+        }
+
+        Cursor cursor = newDB.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '"+tableName+"'", null);
+        if(cursor!=null) {
+            if(cursor.getCount()>0) {
+                cursor.close();
+                return true;
+            }
+            cursor.close();
+        }
+        return false;
+    }
+
     public static String getCompletionAmount(String classIn, Context contextIn, String tableName) {
         DBHelper dbHelper = new DBHelper(contextIn);
         SQLiteDatabase newDB = dbHelper.getWritableDatabase();

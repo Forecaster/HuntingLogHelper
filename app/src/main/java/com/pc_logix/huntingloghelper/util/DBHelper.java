@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteAssetHelper {
     public static String DBName = "huntinglogs.db";
     public static final int version = 2;
     public static Context currentContext;
-    public static String huntingLogsTable = "logs";
+    public static String huntingLogsTable = "hunting_logs";
     public static String craftingLogsTable = "crafting_logs";
 
     public DBHelper(Context context) {

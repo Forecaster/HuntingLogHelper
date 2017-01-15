@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS crafting_logs; -- due to schema mismatch
+DROP TABLE IF EXISTS crafting_logs;
+DROP TABLE IF EXISTS hunting_logs;
 CREATE TABLE "crafting_logs" (
 	`_id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`class`	TEXT,
@@ -4712,8 +4713,7 @@ INSERT INTO crafting_logs(_id,class,level,name,requires,ingredients,icon,done) V
 INSERT INTO crafting_logs(_id,class,level,name,requires,ingredients,icon,done) VALUES(4701,'Weaver','60â˜…â˜…â˜…â˜…','Star Velvet Sash of Healing','Master Weaver IV','[3,Lightning Cluster|3,Wind Cluster|2,Star Velvet|1,Sewing Thread|1,Cashmere Cloth|1,Grade 3 Mind Dissolvent]','ec25e67ba0189605af4f2140d93b5abb863d6c79.png',0);
 INSERT INTO crafting_logs(_id,class,level,name,requires,ingredients,icon,done) VALUES(4702,'Weaver','60â˜…â˜…â˜…â˜…','Star Velvet Bottoms of Casting','Master Weaver IV','[3,Lightning Cluster|3,Wind Cluster|3,Star Velvet|1,Scintillant Ingot|2,Sewing Thread|1,Cashmere Cloth|3,Grade 3 Intelligence Dissolvent]','1aaab41dd591ebe37c219777e78f0854ebc4466e.png',0);
 INSERT INTO crafting_logs(_id,class,level,name,requires,ingredients,icon,done) VALUES(4703,'Weaver','60â˜…â˜…â˜…â˜…','Star Velvet Bottoms of Healing','Master Weaver IV','[3,Lightning Cluster|3,Wind Cluster|3,Star Velvet|1,Scintillant Ingot|2,Sewing Thread|1,Cashmere Cloth|3,Grade 3 Mind Dissolvent]','62ad0254503ee90b0339acd692d31e0c9277119d.png',0);
-DROP TABLE logs; -- due to schema mismatch
-CREATE TABLE "logs" (
+CREATE TABLE "hunting_logs" (
 	`_id`	INTEGER PRIMARY KEY AUTOINCREMENT,
 	`class`	TEXT,
 	`set`	TEXT,
@@ -4727,2004 +4727,672 @@ CREATE TABLE "logs" (
 	`icon`	TEXT,
 	`done`	INTEGER DEFAULT 0
 );
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(1,'Gladiator','01',1,'Western Thanalan','The Eighty Sins of Sasamo','Little Ladybug',3,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(2,'Gladiator','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',3,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(3,'Gladiator','05',1,'Western Thanalan','Hammerlea','Hammer Beak',3,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(4,'Gladiator','07',1,'Western Thanalan','Hammerlea','Earth Sprite',3,22,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(5,'Gladiator','10',1,'Western Thanalan','Horizon''s Edge','Dusty Mongrel',3,22,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(6,'Gladiator','02',1,'Central Thanalan','Spineless Basin','Star Marmot',3,20,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(7,'Gladiator','04',1,'Central Thanalan','Spineless Basin','Snapping Shrew',3,25,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(8,'Gladiator','06',1,'Central Thanalan','Black Brush','Antling Worker',3,17,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(9,'Gladiator','08',1,'Central Thanalan','Black Brush','Spriggan Graverobber',3,16,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(10,'Gladiator','09',1,'Central Thanalan','Black Brush','Qiqirn Shellsweeper',3,17,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(11,'Gladiator','10',1,'Central Thanalan','The Clutch','Antling Soldier',3,23,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(12,'Gladiator','11',2,'Western Thanalan','Horizon''s Edge','Bomb',3,27,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(13,'Gladiator','11',2,'Western Thanalan','Horizon''s Edge','Copper Coblyn',3,27,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(14,'Gladiator','14',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise ',3,26,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(15,'Gladiator','15',2,'Western Thanalan','The Footfalls','Thickshell',3,16,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(16,'Gladiator ','16',2,'Western Thanalan','The Footfalls','Scaphite',3,17,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(17,'Gladiator','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',3,13,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(18,'Gladiator','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',3,24,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(19,'Gladiator','13',2,'Central Thanalan','The Clutch','Quiveron Guard',3,24,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(20,'Gladiator','17',2,'Eastern Thanalan','Sandgate','Tuco Tuco',3,11,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(21,'Gladiator','18',2,'Eastern Thanalan','Drybone','Myotragus Billy',3,18,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(22,'Gladiator','19',2,'Eastern Thanalan','Drybone','Vandalous Imp',3,14,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(23,'Gladiator','20',2,'Eastern Thanalan','Drybone','Rotting Noble',3,14,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(24,'Gladiator','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,14,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(25,'Gladiator','24',3,'Upper La Noscea','Fool Falls','Coeurl Pup',4,9,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(26,'Gladiator','30',3,'Outer La Noscea','The Long Climb','Pteroc',3,15,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(27,'Gladiator','30',3,'Eastern La Noscea','Bloodshore','Apkallu',4,28,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(28,'Gladiator','27',3,'Eastern Thanalan','Wellwick Wood','Qiqirn Roerunner',4,24,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(29,'Gladiator','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',4,13,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(30,'Gladiator','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(31,'Gladiator','21',3,'South Shroud','Upper Paths','Kedtrap',3,21,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(32,'Gladiator','23',3,'South Shroad','Upper Paths','Overgrown Offering',4,18,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(33,'Gladiator','28',3,'South Shroud','Silent Arbor','Goblin Thug',4,27,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(34,'Gladiator','29',3,'South Shroud','Silent Arbor','Coeurlclaw Cutter',4,28,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(35,'Gladiator','25',3,'North Shroud','Alder Springs','Balloon',4,17,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(36,'Gladiator','31',4,'Central Shroud','Haukke Manor (Landmark)','Floating Eye',4,10,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(37,'Gladiator','34',4,'Central Shroud','Sorrel Haven','Death Gaze',4,16,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(38,'Gladiator','32',4,'South Shroud','Lower Paths','Adamantoise',3,17,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(39,'Gladiator','38',4,'South Shroud','Snakemolt','Treant',4,22,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(40,'Gladiator','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Sophist',3,27,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(41,'Gladiator','32',4,'Upper La Noscea','Bronze Lake','Uragnite',4,29,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(42,'Gladiator','35',4,'Outer La Noscea','The Long Climb','Velociraptor',4,19,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(43,'Gladiator','40',4,'Outer La Noscea','Iron Lake','Grenade',3,22,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(44,'Gladiator','33',4,'Southern Thanalan','Sagolii Desert','Sandworm',4,17,33,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(45,'Gladiator','36',4,'Southern Thanalan','Sagolii Desert','Fallen Wizard',4,20,37,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(46,'Gladiator','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(47,'Gladiator','39',4,'Coerthas Central Highlands','Dragonhead','Vodoriga',4,27,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(48,'Gladiator','40',4,'Coerthas Central Highlands','Whitebrim','Hippocerf',4,8,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(49,'Gladiator','41',5,'Western La Noscea','The Isles of Umbra','Preying Mantis',5,15,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(50,'Gladiator','41',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(51,'Gladiator','43',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',5,12,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(52,'Gladiator','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Hoplomachus',5,25,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(53,'Gladiator','42',5,'East Shroud','Larkscall','Old Growth Treant',5,26,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(54,'Gladiator','42',5,'East Shroud','Larkscall','3rd Cohort Eques',2,29,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(55,'Gladiator','43',5,'East Shroud','Larkscall','Morbol',2,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(56,'Gladiator','48',5,'North Shroud','Proud Creek','Dullahan',5,22,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(57,'Gladiator','44',5,'Mor Dhana','Fogfens','Mudpuppy',5,13,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(58,'Gladiator','45',5,'Mor Dhana','North Silvertear','Lake Cobra',5,27,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(59,'Gladiator','50',5,'Mor Dhana','North Silvertear','Gigas Bhikkhu',5,33,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(60,'Gladiator','46',5,'Coerthas Central Highlands','Boulder Downs','Giant Lugger',3,13,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(61,'Gladiator','47',5,'Southern Thanalan','Zanr''ak','Tempered Orator',5,22,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(62,'Gladiator','49',5,'Northern Thanalan','Bluefog','Basilisk',5,25,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(63,'Pugilist','01',1,'Central Thanalan','Spineless Basin','Huge Hornet',4,21,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(64,'Pugilist','02',1,'Central Thanalan','Spineless Basin','Star Marmot',4,20,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(65,'Pugilist','04',1,'Central Thanalan','Spineless Basin','Snapping Shrew',4,23,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(66,'Pugilist','05',1,'Central Thanalan','Black Brush','Orobon',4,21,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(67,'Pugilist','07',1,'Central Thanalan','Black Brush','Spriggen Graverobber',4,17,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(68,'Pugilist','10',1,'Central Thanalan','The Clutch','Eft',2,23,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(69,'Pugilist','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',4,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(70,'Pugilist','06',1,'Western Thanalan','Hammerlea','Nesting Buzzard',4,21,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(71,'Pugilist','08',1,'Western Thanalan','Hammerlea','Goblin Mugger',4,18,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(72,'Pugilist','09',1,'Western Thanalan','Hammerlea','Sandtoad',4,22,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(73,'Pugilist','10',1,'Western Thanalan','Horizon''s Edge','Sun Midge Swarm',2,17,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(74,'Pugilist','10',1,'Western Thanalan','Horizon''s Edge','Desert Peiste',2,24,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(75,'Pugilist','11',2,'Western Thanalan','Horizon''s Edge','Bomb',4,27,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(76,'Pugilist','14',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise',4,28,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(77,'Pugilist','15',2,'Western Thanalan','The Footfalls','Arbor Buzzard',2,17,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(78,'Pugilist','15',2,'Western Thanalan','The Footfalls','Thickshell',2,16,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(79,'Pugilist','15',2,'Western Thanalan','The Footfalls','Scaphite',2,17,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(80,'Pugilist','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',2,13,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(81,'Pugilist','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',4,24,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(82,'Pugilist','13',2,'Central Thanalan','Black Brush','Antling Sentry',4,16,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(83,'Pugilist','16',2,'Eastern Thanalan','Sandgate','Tuco Tuco',4,11,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(84,'Pugilist','17',2,'Eastern Thanalan','Drybone','Myotragus Nanny',4,18,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(85,'Pugilist','18',2,'Eastern Thanalan','Drybone','Blowfly Swarm',4,11,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(86,'Pugilist','19',2,'Eastern Thanalan','Drybone','Vandalous Imp',4,14,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(87,'Pugilist','20',2,'Eastern Thanalan','The Invisible City','Rotting Corpse',2,15,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(88,'Pugilist','20',2,'Eastern Thanalan','The Invisible City','Rotting Noble',2,15,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(89,'Pugilist','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',5,23,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(90,'Pugilist','22',3,'South Shroud','Upper Paths','Smallmouth Orobon',5,16,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(91,'Pugilist','25',3,'South Shroud','Upper Paths','Bark Eft',3,17,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(92,'Pugilist','30',3,'South Shroud','Lower Paths','Bigmouth Orobon',3,18,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(93,'Pugilist','29',3,'South Shroud','Silend Arbor','Coeurlclaw Hunter',5,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(94,'Pugilist','25',3,'North Shroud','Alder Springs','Shroud Hare',3,17,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(95,'Pugilist','26',3,'North Shroud','Alder Springs','Ziz',5,16,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(96,'Pugilist','28',3,'North Shroud','Alder Springs','Clay Golem',5,16,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(97,'Pugilist','30',3,'Central Shroud','Sorrel Haven','Lindwurm',3,13,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(98,'Pugilist','25',3,'Southern Thanalan','Broken Water','Fallen Mage',3,19,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(99,'Pugilist','27',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',5,24,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(100,'Pugilist','30',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(101,'Pugilist','23',3,'Upper La Noscea','Oakwood','Forrest Yarzon',5,11,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(102,'Pugilist','24',3,'Upper La Noscea','Oakwood','Coeurl Pup',5,9,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(103,'Pugilist','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Breeder',5,33,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(104,'Pugilist','32',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',5,14,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(105,'Pugilist','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',5,19,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(106,'Pugilist','34',4,'Central Shroud','Sorrel Haven','Death Gaze',5,17,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(107,'Pugilist','35',4,'Eastern La Noscea','Raincatcher Gully','Goobbue',3,17,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(108,'Pugilist','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',3,17,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(109,'Pugilist','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(110,'Pugilist','36',4,'Outer La Noscea','The Long Climb','Velociraptor',5,19,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(111,'Pugilist','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',5,23,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(112,'Pugilist ','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,25,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(113,'Pugilist','39',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',5,26,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(114,'Pugilist','40',4,'Coerthas Central Highlands','Whitebrim','Snowstorm Goobbue',3,24,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(115,'Pugilist','40',4,'East Shroud','Larkscall','Ochu',3,26,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(116,'Pugilist','40',4,'East Shroud','Larkscall','Molted Ziz',3,25,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(117,'Pugilist','41',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',6,31,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(118,'Pugilist','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',6,15,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(119,'Pugilist','43',5,'East Shroud','Larkscall','3rd Cohort Signifier',2,32,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(120,'Pugilist','44',5,'South Shroud','Urth''s Gift','Wild Hog',6,29,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(121,'Pugilist','45',5,'Mor Dhona','Fogfens','Raging Harrier',3,16,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(122,'Pugilist','45',5,'Coerthas Central Highlands','Boulder Downs','Biast',3,11,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(123,'Pugilist','45',5,'Mor Dhona','North Silvertear','Gigas Shramana',3,27,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(124,'Pugilist','46',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',6,16,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(125,'Pugilist','47',5,'Mor Dhona','Fogfens','5th Cohort Hoplomachus',6,12,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(126,'Pugilist','48',5,'East Shroud','Sylphlands','Dreamtoad',6,26,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(127,'Pugilist','49',5,'Mor Dhona','North Silvertear','Hapalit',6,31,5,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(128,'Pugilist','50',5,'Southern Thanalan','Zahar''ak','Zahar''ak Battle Drake',3,29,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(129,'Pugilist','50',5,'Northern Thanalan','Bluefog','Basilisk',4,22,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(130,'Pugilist','50',5,'Western La Noscea','Halfstone','Shelfclaw Reaver',3,13,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(131,'Marauder','01',1,'Middle La Noscea','Zephyr Drift','Little Ladybug',3,23,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(132,'Marauder','02',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(133,'Marauder','03',1,'Lower La Noscea','Moraby Bay','Aurelia',3,24,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(134,'Marauder','04',1,'Middle La Noscea','Summerford','Bee Cloud',3,19,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(135,'Marauder','05',1,'Lower La Noscea','Cedarwood','Wild Dodo',3,29,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(136,'Marauder','06',1,'Middle La Noscea','Summerford','Tiny Mandragora',3,22,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(137,'Marauder','07',1,'Middle La Noscea','Summerford','Bogy',3,20,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(138,'Marauder','08',1,'Middle La Noscea','Summerford','Wounded Aurochs',3,18,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(139,'Marauder','09',1,'Middle La Noscea','Summerford','Grounded Raider',3,20,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(140,'Marauder','10',1,'Middle La Noscea','Three-malm Bend','Meglocrab',3,14,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(141,'Marauder','11',2,'Lower La Noscea','The God''s Grip','Firefly',4,26,37,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(142,'Marauder','12',2,'Lower La Noscea','Moraby Bay','Mossless Goobbue',4,22,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(143,'Marauder','13',2,'Western La Noscea','Quarterstone','Fat Dodo',4,32,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(144,'Marauder','14',2,'Lower La Noscea','The God''s Grip','Moraby Mole',4,21,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(145,'Marauder','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',4,18,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(146,'Marauder','16',2,'Western La Noscea','Quarterstone','Rhotana Buccaneer',4,33,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(147,'Marauder','17',2,'Western La Noscea','Skull Valley','Dusk Bat',4,28,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(148,'Marauder','17',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(149,'Marauder','17',2,'Western La Noscea','Skull Valley','Hedgemole',2,26,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(150,'Marauder','18',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',4,24,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(151,'Marauder','19',2,'Western La Noscea','Skull Valley','Killer Mantis',4,21,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(152,'Marauder','20',2,'Upper La Noscea','Oakwood','Wild Wolf',4,13,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(153,'Marauder','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,13,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(154,'Marauder','22',3,'East Shroud','The Bramble Patch','Diseased Treant',4,17,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(155,'Marauder','23',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',4,15,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(156,'Marauder','24',3,'South Shroud','Upper Paths','Redbelly Larcener',4,23,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(157,'Marauder','25',3,'North Shroud','Alder Springs','Shroud Hare',4,17,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(158,'Marauder','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(159,'Marauder','27',3,'North Shroud','Alder Springs','Balloon',4,17,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(160,'Marauder','27',3,'Eastern Thanalan','Wellwick Wood','Phurble',3,22,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(161,'Marauder','27',3,'Southern Thanalan','Broken Water','Sandskin Piest',2,19,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(162,'Marauder','28',3,'Eastern Thanalan','Wellwick Wood','Axe Beak',4,27,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(163,'Marauder','29',3,'Central Shroud','Sorrel Haven','Toadstool',4,14,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(164,'Marauder','30',3,'Central Shroud','Sorrel Haven','Floating Eye',4,10,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(165,'Marauder','31',4,'Central Shroud','Sorrel Haven','Stroper',4,12,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(166,'Marauder','32',4,'South Shroud','Lower Paths','Adamantoise',4,15,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(167,'Marauder','32',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',3,19,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(168,'Marauder','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',2,15,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(169,'Marauder','33',4,'Eastern La Noscea','Bloodshore','Snipper',4,31,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(170,'Marauder','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',4,31,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(171,'Marauder','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',4,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(172,'Marauder','36',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(173,'Marauder','37',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',2,24,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(174,'Marauder','37',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(175,'Marauder','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',3,25,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(176,'Marauder','38',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,26,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(177,'Marauder','39',4,'Coerthas Central Highlands','Whitebrim','Snowstorm Goobbue',4,19,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(178,'Marauder','40',4,'Outer La Noscea','Iron Lake','Grenade',4,23,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(179,'Marauder','41',5,'East Shroud','Larkscall','Molted Ziz',5,25,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(180,'Marauder','42',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',5,31,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(181,'Marauder','42',5,'Western Thanalan','The Isles of Umbra','Dead Man''s Moan',3,15,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(182,'Marauder','42',5,'East Shroud','Larkscall','Morbol',2,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(183,'Marauder','43',5,'Central Shroud','The Standing Corses','Crater Golem',1,11,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(184,'Marauder','44',5,'South Shroud','Urth''s Gift','Wild Hog',5,29,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(185,'Marauder','45',5,'Coerthas Central Highlands','Boulder Downs','Biast',5,16,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(186,'Marauder','46',5,'Mor Dhona','Fogfens','5th Cohort Signifier',5,9,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(187,'Marauder','47',5,'Outer La Noscea','U''Ghamaro Mines','Syntheic Doblyn',5,23,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(188,'Marauder','47',5,'North Shroud','Proud Creek','Watchwofl',3,20,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(189,'Marauder','47',5,'Southern Thanalan','Zanr''ak','Iron Tortoise',2,19,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(190,'Marauder','48',5,'East Shroud','Sylphlands','Milkroot Cluster',5,23,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(191,'Marauder','49',5,'Western Thanalan','Cape Westwind','4th Cohort Secutor',5,10,6,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(192,'Marauder','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Laquearius',5,28,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(193,'Lancer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',3,24,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(194,'Lancer','02',1,'Central Shoud','Jadeite Thick','Ground Squirrel',3,22,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(195,'Lancer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',3,25,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(196,'Lancer','04',1,'North Shroud','Treespeak','Miteling',3,26,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(197,'Lancer','05',1,'North Shroud','Peacegarden','Opo-opo',3,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(198,'Lancer','07',1,'Central Shroud','Greentear','Black Eft',3,26,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(199,'Lancer','07',1,'Central Shroud','Jadeite Thick','Bog Yarzon',3,24,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(200,'Lancer','08',1,'Central Shroud','Greentear','Hoglet',3,30,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(201,'Lancer','09',1,'Central Shroud','Greentear','Anole',3,31,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(202,'Lancer','09',1,'Central Shroud','Bentbranch','Diremite',3,18,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(203,'Lancer','10',1,'East Shroud','The Honey Yard','Tree Slug',3,13,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(204,'Lancer','11',2,'Central Shroud','Bentbranch','Arbor Buzzard',3,25,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(205,'Lancer','12',2,'Central Shroud','Jadeite Thick','Treant Sapling',3,22,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(206,'Lancer','13',2,'East Shroud','The Honey Yard','Mandragora',3,14,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(207,'Lancer','14',2,'East Shroud','The Honey Yard','Wild Hoglet',3,13,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(208,'Lancer','15',2,'East Shroud','Nine Ivies','Lemur',3,20,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(209,'Lancer','15',2,'East Shroud','Nine Ivies','Boring Weevil',3,20,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(210,'Lancer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',3,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(211,'Lancer','17',2,'East Shroud','Nine Ivies','Giant Gnat',3,19,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(212,'Lancer','17',2,'East Shroud','Nine Ivies','Bear Poacher',3,19,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(213,'Lancer','18',2,'East Shroud','Nine Ivies','Ziz Gorlin',3,20,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(214,'Lancer','19',2,'East Shroud','The Bramble Patch','Black Bat',3,17,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(215,'Lancer','19',2,'South Shroud','Upper Paths','Qiqirn Beater',3,15,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(216,'Lancer','20',2,'South Shroud','Upper Paths','Antelope Doe',3,18,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(217,'Lancer','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,13,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(218,'Lancer','22',3,'South Shroud','Upper Paths','Smallmouth Orobon',4,16,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(219,'Lancer','23',3,'North Shroud','The Footfalls','Yarzon Scavenger',4,20,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(220,'Lancer','24',3,'South Shroud','Upper Paths','Redbelly Lookout',4,24,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(221,'Lancer','25',3,'South Shroud','Silend Arbor','Antelope Stag',4,26,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(222,'Lancer','25',3,'Western Thanalan','The Footfalls','Moondrip Piledriver',3,16,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(223,'Lancer','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(224,'Lancer','27',3,'South Shroud','Silent Arbor','Goblin Thug',3,27,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(225,'Lancer','27',3,'Southern Thanalan','Broken Water','Sandskin Peiste',4,19,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(226,'Lancer','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Firedancer',4,24,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(227,'Lancer','29',3,'South Shroud','Silent Arbor','Coeurlclaw Poacher',4,14,33,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(228,'Lancer','29',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(229,'Lancer','30',3,'South Shroud','Lower Paths','Midland Condor',4,17,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(230,'Lancer','31',4,'Central Shroud','Sorrel Haven','Floating Eye',4,10,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(231,'Lancer','32',4,'Eastern La Noscea','Bloodshore','Large Buffalo',4,28,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(232,'Lancer','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',3,19,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(233,'Lancer','33',4,'Southern Thanalan','Sagolii Desert','Sundrake',4,25,38,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(234,'Lancer','34',4,'Central Shroud','The Standing Corses','Spriggen',4,10,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(235,'Lancer','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(236,'Lancer','35',4,'Outer La Noscea','The Long Climb','Ringtail',4,15,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(237,'Lancer','36',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(238,'Lancer','37',4,'South Shroud','Snakemolt','Lesser Kalong',3,22,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(239,'Lancer','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(240,'Lancer','38',4,'North Shroud','Proud Creek','Dryad',4,22,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(241,'Lancer','39',4,'Coerthas Central Highlands','Whitebrim','Bateleur',3,17,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(242,'Lancer','39',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,27,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(243,'Lancer','40',4,'Eastern Thanalan','The Burning Wall','Mirrorknight',4,26,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(244,'Lancer','41',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',5,9,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(245,'Lancer','41',5,'Coerthas Central Highlands','Whitebrim','Baritine Croc',4,3,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(246,'Lancer','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',5,15,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(247,'Lancer','43',5,'East Shroud','Larkscall','3rd Cohort Signifier',2,32,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(248,'Lancer','43',5,'East Shroud','Larkscall','Morbol',5,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(249,'Lancer','44',5,'South Shroud','Urth''s Gift','Wild Hog',5,29,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(250,'Lancer','45',5,'Mor Dhona','Fogfens','Daring Harrier',4,16,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(251,'Lancer','45',5,'Mor Dhona','North Silvertear','Lake Cobra',5,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(252,'Lancer','46',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf ',5,16,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(253,'Lancer','47',5,'Western La Noscea','Halfstone','Sea Wasp',5,13,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(254,'Lancer','47',5,'Mor Dhona','Fogfens','5th Cohort Vanguard',4,10,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(255,'Lancer','48',5,'Coerthas Central Highlands','Natalan','Natalan Watchwolf',5,34,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(256,'Lancer','49',5,'East Shroud','Sylphlands','Sylphlands Sentinel ',5,24,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(257,'Lancer','49',5,'Northern Thanalan','Bluefog','Basilisk',4,22,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(258,'Lancer','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Eques',5,30,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(259,'Archer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',4,22,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(262,'Archer','02',1,'Central Shroud','Jadeite Thick','Ground Squirrel',4,22,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(263,'Archer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',4,24,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(264,'Archer','04',1,'North Shroud','Treespeak','Miteling',4,25,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(265,'Archer','05',1,'North Shroud','Peacegarden','Midge Swarm',4,27,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(266,'Archer','06',1,'Central Shroud','Greentear','Water Sprite',4,25,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(267,'Archer','07',1,'Central Shroud','Greentear','Black Eft',4,26,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(268,'Archer','08',1,'Central Shroud','Greentear','Anole',4,30,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(269,'Archer','09',1,'Central Shroud','Greentear','Trickster Imp',4,26,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(270,'Archer','10',1,'Central Shroud','Bentbranch','Roselet',4,22,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(271,'Archer','11',2,'Central Shroud','Bentbranch','Hornet Swarm ',4,23,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(272,'Archer','12',2,'Central Shroud','Bentbranch','Arbor Buzzard',4,26,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(273,'Archer','13',2,'East Shroud','The Honey Yard','Goblin Hunter',1,13,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(274,'Archer','13',2,'Central Shroud','Jadeite Thick','Treant Sapling',1,27,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(275,'Archer','13',2,'Central Shroud','The Tam-Tara Deepcroft','Magicked Bones',1,19,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(276,'Archer','13',2,'East Shroud','The Honey Yard','Mandragora',1,14,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(277,'Archer','14',2,'East Shroud','The Honey Yard','Wild Hoglet',4,13,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(278,'Archer','15',2,'East Shroud','Nine Ivies','Lemur',4,20,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(279,'Archer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',4,18,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(280,'Archer','17',2,'East Shroud','Nine Ivies','Giant Gnat',4,19,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(281,'Archer','18',2,'East Shroud','Nine Ivies','Raptor Poacher',4,19,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(282,'Archer','19',2,'South Shroud','Upper Paths','Antelope Doe',4,15,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(283,'Archer','20',2,'East Shroud','The Bramble Patch','Wild Boar',4,16,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(284,'Archer','21',3,'Upper La Noscea','Oakwood','Stoneshell',5,13,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(285,'Archer','22',3,'East Shroud','The Bramble Patch','Diseased Treant',5,16,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(286,'Archer','23',3,'East Shroud','The Bramble Patch','Jumping Djigga',2,16,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(287,'Archer','23',3,'South Shroud','Upper Paths','Overgrown Offering',2,18,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(288,'Archer','23',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',2,14,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(289,'Archer','23',3,'Upper La Noscea','Oakwood','Forest Yarzon',2,11,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(290,'Archer','24',3,'South Shroud','Upper Paths','Redbelly Sharpeye',5,23,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(291,'Archer','25',3,'North Shroud','Alder Springs','Banemite',5,18,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(292,'Archer','26',3,'Eastern Thanalan','Wellwick Wood','Chasm Buzzard',5,22,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(293,'Archer','27',3,'Southern Thanalan','Broken Water','Sandskin Peiste',5,19,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(294,'Archer','28',3,'North Shroud','Alder Springs','Ziz',5,15,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(295,'Archer','29',3,'Central Shroud','Sorrel Haven','Toadstool',5,15,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(296,'Archer','30',3,'Eastern La Noscea','Bloodshore','Apkallu',5,28,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(297,'Archer','31',4,'Central Shroud','Haukke Manor (Landmark)','Floating Eye',5,11,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(298,'Archer','32',4,'Southern Thanalan','Sagolii Desert','Sandworm',5,23,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(299,'Archer','33',4,'Central Shroud','The Standing Corses','Spriggan',2,12,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(300,'Archer','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',2,19,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(301,'Archer','33',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',2,13,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(302,'Archer','33',4,'Eastern La Noscea','Raincatcher Gully','Giant Pelican',2,20,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(303,'Archer','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',5,31,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(304,'Archer','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',5,18,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(305,'Archer','36',4,'Southern Thanalan','Sagolii Desert','Fallen Pikeman',2,21,38,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(306,'Archer','36',4,'Upper La Noscea','Bronze Lake','Salamander',2,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(307,'Archer','36',4,'Outer La Noscea','The Long Climb','Highland Condor',2,16,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(308,'Archer','36',4,'Outer La Noscea','The Long Climb','Ringtail',2,15,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(309,'Archer','37',4,'Coerthas Central Highlands','Whitebrim','Ice Sprite',5,20,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(310,'Archer','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,26,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(311,'Archer','39',4,'Coerthas Central Highlands','Dragonhead','Vodoriga',5,27,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(312,'Archer','40',4,'Coerthas Central Highlands','Whitebrim','Baritine Croc',5,3,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(313,'Archer','41',5,'Coerthas Central Highlands','Whitebrim','Hippocerf',5,9,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(314,'Archer','42',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',5,9,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(315,'Archer','43',5,'East Shroud','Larkscall','Old-growth Treant',2,25,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(316,'Archer','43',5,'East Shroud','Larkscall','Morbol',2,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(317,'Archer','43',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(318,'Archer','43',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',2,16,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(319,'Archer','44',5,'Coerthas Central Highlands','Boulder Downs','Mudpuppy',5,16,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(320,'Archer','45',5,'South Shroud','Urth''s Gift','Lesser Kalong',5,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(321,'Archer','46',5,'Southern Thanalan','Zanr''ak','Tempered Gladiator',2,21,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(322,'Archer','46',5,'Coerthas Central Highlands','Boulder Downs','Giant Reader',2,13,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(323,'Archer','46',5,'Mor Dhona','North Silvertear','Hippogryph',2,27,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(324,'Archer','46',5,'Mor Dhona','Fogfens','5th Cohort Secutor',2,11,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(325,'Archer','47',5,'East Shroud','Sylphlands','Sylphlands Condor',5,26,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(326,'Archer','48',5,'East Shroud','Sylphlands','Milkroot Sapling',5,23,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(327,'Archer','49',5,'Northern Thanalan','Bluefog','Ahriman',5,24,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(328,'Archer','50',5,'Western La Noscea','Halfstone','Shelfeye Reaver',5,13,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(329,'Rogue','01',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(330,'Rogue','02',1,'Middle La Noscea','Zephyr Drift','Lost Lamb',3,23,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(331,'Rogue','03',1,'Lower La Noscea','Moraby Bay','Aurelia',3,24,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(332,'Rogue','04',1,'Lower La Noscea','Cedarwood','Wild Dodo',3,29,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(333,'Rogue','05',1,'Middle La Noscea','Summerford','Pugil',2,20,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(334,'Rogue','05',1,'Middle La Noscea','Summerford','Goblin Fisher',1,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(335,'Rogue','06',1,'Middle La Noscea','Summerford','Tiny Mandragora',3,22,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(336,'Rogue','07',1,'Lower La Noscea','Cedarwood','Cave Bat',3,25,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(337,'Rogue','08',1,'Lower La Noscea','Cedarwood','Galago',3,29,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(338,'Rogue','09',1,'Middle La Noscea','Summerford','Grounded Pirate',1,20,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(339,'Rogue ','09',1,'Middle La Noscea','Summerford','Grounded Raider',1,20,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(340,'Rogue','10',1,'Middle La Noscea','Three-malm Bend','Megalocrab',3,14,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(341,'Rogue','11',2,'Lower La Noscea','The God''s Grip','Wild Jackal',3,22,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(342,'Rogue ','12',2,'Western La Noscea','Quarterstone','Roseling',1,34,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(343,'Rogue','12',2,'Western La Noscea','Quarterstone','Sewer Mole',2,33,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(344,'Rogue','13',2,'Western La Noscea','Quarterstone','Fat Dodo',3,32,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(345,'Rogue','14',2,'Lower La Noscea','The God''s Grip','Moraby Mole',3,21,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(346,'Rogue','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',3,18,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(347,'Rogue ','16',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(348,'Rogue','17',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',3,24,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(349,'Rogue','18',2,'Western La Noscea','Skull Valley','Killer Mantis',2,21,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(350,'Rogue','18',2,'Western La Noscea','Skull Valley','Hedgemole',1,26,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(351,'Rogue','19',2,'Upper La Noscea','Oakwood','Wild Wolf',3,13,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(352,'Rogue','20',2,'Upper La Noscea','Oakwood','Bumble Beetle',3,12,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(353,'Rogue','21',3,'East Shroud','The Bramble Patch','Black Bat',3,17,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(354,'Rogue','22',3,'East Shroud','Nine Ivies','Gall Gnat',3,22,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(355,'Rogue','23',3,'East Shroud','Nine Ivies','Overgrown Ivy',3,22,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(356,'Rogue','24',3,'South Shroud','Upper Paths','Bark Eft',3,18,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(357,'Rogue','25',3,'South Shroud','Upper Paths','Redbelly Larcener',2,23,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(358,'Rogue','25',3,'South Shroud','Upper Paths','Redbelly Lookout',1,23,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(359,'Rogue','26',3,'South Shroud','Silent Arbor','Antelope Stag',3,26,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(360,'Rogue','27',3,'South Shroud','Silent Arbor','River Yarzon',3,23,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(361,'Rogue','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',2,24,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(362,'Rogue','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Firedancer',2,24,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(363,'Rogue','29',3,'South Shroud','Silent Arbor','Coeurlclaw Cutter',2,28,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(364,'Rogue','29',3,'South Shroud','Silent Arbor','Coeurlclaw Hunter',2,28,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(365,'Rogue','30',3,'Southern Thanalan','Broken Water','Sandstone Golem',3,22,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(366,'Rogue','31',4,'Eastern La Noscea','Bloodshore','Large Buffalo',3,28,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(367,'Rogue','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',3,16,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(368,'Rogue','33',4,'Eastern La Noscea','Bloodshore','Qiqirn Gullroaster',2,27,33,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(369,'Rogue','33',4,'Eastern La Noscea','Bloodshore','Colibri',2,31,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(370,'Rogue','34',4,'Outer La Noscea','The Long Climb','Coeurl',1,16,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(371,'Rogue','34',4,'Outer La Noscea','The Long Climb','Highland Condor',2,15,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(372,'Rogue','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(373,'Rogue','36',4,'Outer La Noscea','The Long Climb','Velociraptor',4,19,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(374,'Rogue','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',2,25,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(375,'Rogue','37',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',2,25,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(376,'Rogue','38',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',3,26,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(377,'Rogue','39',4,'Coerthas Central Highlands','Providence Point','Taurus',3,32,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(378,'Rogue','40',4,'Coerthas Central Highlands','Whitebrim','Chinchilla',2,16,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(379,'Rogue','40',4,'Coerthas Central Highlands','Whitebrim','Bateleur',2,16,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(380,'Rogue','41',5,'Eastern Thanalan','The Burning Wall','Golden Fleece',4,26,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(381,'Rogue','42',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',4,30,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(382,'Rogue','43',5,'Mor Dhona','Fogfens','Nix',4,19,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(383,'Rogue','44',5,'Mor Dhona','Fogfens','Mudpuppy',4,13,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(384,'Rogue','45',5,'Mor Dhona','Fogfens','Daring Harrier',2,16,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(385,'Rogue','45',5,'Mor Dhona','Fogfens','Raging Harrier',2,16,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(386,'Rogue','46',5,'Mor Dhona','North Silvertear','Gigas Shramana',2,27,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(387,'Rogue','46',5,'Mor Dhona','North Silvertear','Gigas Sozu',2,27,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(388,'Rogue','47',5,'Mor Dhona','North Silvertear','Hippogryph',4,27,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(389,'Rogue','48',5,'Mor Dhona','North Silvertear','Hapalit',4,31,5,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(390,'Rogue','49',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Eques',2,29,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(391,'Rogue','49',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Signifier',2,29,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(392,'Rogue','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Secutor',2,30,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(393,'Rogue','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Vanguard',2,30,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(394,'Conjurer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',3,23,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(395,'Conjurer','02',1,'Central Shroud','Jadeite Thick','Ground Squirrel',3,21,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(396,'Conjurer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',3,25,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(397,'Conjurer','04',1,'North Shroud','Treespeak','Miteling',3,24,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(398,'Conjurer','05',1,'Central Shroud','Greentear','Chigoe',3,24,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(399,'Conjurer','06',1,'Central Shroud','Greentear','Water Sprite',3,24,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(400,'Conjurer','07',1,'North Shroud','Peacegarden','Midge Swarm',3,26,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(401,'Conjurer','08',1,'North Shroud','Peacegarden','Microchu',3,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(402,'Conjurer','09',1,'Central Shroud','Greentear','Syrphid Swarm',3,25,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(403,'Conjurer','10',1,'East Shroud','The Honey Yard','Northern Vulture',3,14,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(404,'Conjurer','11',2,'East Shroud','The Honey Yard','Tree Slug',3,13,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(405,'Conjurer','12',2,'Central Shroud','Bentbranch','Arbor Buzzard',3,26,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(406,'Conjurer','12',2,'East Shroud','The Honey Yard','Goblin Hunter',2,13,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(407,'Conjurer','13',2,'Central Shroud','Bentbranch','Firefly',3,19,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(408,'Conjurer','14',2,'East Shroud','The Honey Yard','Mandragora',3,14,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(409,'Conjurer','15',2,'East Shroud','Nine Ivies','Boring Weevil',3,20,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(410,'Conjurer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',3,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(411,'Conjurer','17',2,'East Shroud','Nine Ivies','Giant Gnat',3,19,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(412,'Conjurer','18',2,'East Shroud','Nine Ivies','Wolf Poacher',3,19,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(413,'Conjurer','19',2,'South Shroud','Upper Paths','Qiqirn Beater',3,15,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(414,'Conjurer','20',2,'East Shroud','The Bramble Patch','Black Bat',3,16,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(415,'Conjurer','21',3,'Upper La Noscea','Oakwood','Stoneshell',3,13,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(416,'Conjurer','22',3,'East Shroud','The Bramble Patch','Diseased Treant',3,16,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(417,'Conjurer','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',2,13,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(418,'Conjurer','22',3,'Western Thanalan','The Footfalls','Laughing Toad',2,14,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(419,'Conjurer','23',3,'South Shroud','Upper Paths','Bark Eft',3,17,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(420,'Conjurer','24',3,'East Shroud','The Bramble Patch','Glowfly',3,15,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(421,'Conjurer','25',3,'South Shroud','Silent Arbor','Antelope Stag',3,22,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(422,'Conjurer','26',3,'Southern Thanalan','Broken Water','Sabotender',3,15,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(423,'Conjurer','27',3,'Eastern Thanalan','Wellwick Wood','Qiqirn Roerunner',3,23,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(424,'Conjurer','28',3,'South Shroud','Silent Arbor','Goblin Thug',3,27,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(425,'Conjurer','29',3,'Central Shroud','Sorrel Haven','Toadstool',3,14,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(426,'Conjurer','30',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(427,'Conjurer','31',4,'Central Shroud','Sorrel Haven','Lindwurm',4,12,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(428,'Conjurer','32',4,'South Shroud','Lower Paths','Bigmouth Orobon',4,18,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(429,'Conjurer','32',4,'Upper La Noscea','Bronze Lake','Mamool Ja Infiltrator',2,28,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(430,'Conjurer','32',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',2,18,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(431,'Conjurer','32',4,'Southern Thanalan','Sagolii Desert','Sandworm',1,22,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(432,'Conjurer','33',4,'Central Shroud','Sorrel Haven','Revenant',4,12,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(433,'Conjurer','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',4,31,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(434,'Conjurer','35',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(435,'Conjurer','36',4,'South Shroud','Snakemolt','Deepvoid Deathmouse',4,25,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(436,'Conjurer','37',4,'North Shroud','Eugenia''s Spire','Dryad',4,22,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(437,'Conjurer','38',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,26,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(438,'Conjurer','39',4,'South Shroud','Snakemolt','Will-o''-the-Wisp',4,22,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(439,'Conjurer','40',4,'Coerthas Central Highlands','Whitebrim','Dragonfly',4,9,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(440,'Conjurer','41',5,'Eastern Thanalan','The Burning Wall','Golden Fleece',4,26,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(441,'Conjurer','42',5,'Outer La Noscea','Iron Lake','Grenade',4,22,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(442,'Conjurer','42',5,'Coerthas Central Highlands','Whitebrim','Hippocerf',2,10,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(443,'Conjurer','42',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(444,'Conjurer','42',5,'Western La Noscea','The Ship Graveyard','Dead Man''s Moan',1,15,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(445,'Conjurer','43',5,'East Shroud','Larkscall','3rd Cohort Hoplomachus',2,29,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(446,'Conjurer','44',5,'South Shroud','Urth''s Gift','Lesser Kalong',4,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(447,'Conjurer','45',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',4,16,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(448,'Conjurer','46',5,'Mor Dhona','Castrum Centri','5th Cohort Eques',4,12,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(449,'Conjurer','47',5,'Western La Noscea','Sahagin Landbase','Sea Wasp',4,14,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(450,'Conjurer','48',5,'East Shroud','Sylphlands','Sylph Bonnet',4,26,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(451,'Conjurer','49',5,'Northern Thanalan','Bluefog','Ahriman',4,24,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(452,'Conjurer','50',5,'Eastern La Noscea','Castrum Occidens','2nd Cohort Vanguard',4,27,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(453,'Thaumaturge','01',1,'Western Thanalan','The Eighty Sins of Sasamo','Little Ladybug',3,28,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(454,'Thaumaturge','02',1,'Central Thanalan','Spineless Basin','Huge Hornet',3,22,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(455,'Thaumaturge','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',3,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(456,'Thaumaturge','04',1,'Central Thanalan','Spineless Basic','Snapping Shrew',3,24,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(457,'Thaumaturge','05',1,'Central Thanalan','Black Brush','Syrphid Cloud',3,18,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(458,'Thaumaturge','06',1,'Western Thanalan','Hammerlea','Yarzon Feeder',3,24,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(459,'Thaumaturge','07',1,'Western Thanalan','Hammerlea','Rusty Coblyn',3,20,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(460,'Thaumaturge','08',1,'Central Thanalan','Sil''dih Excavation Site','Spriggan Groverobber',3,16,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(461,'Thaumaturge','09',1,'Central Thanalan','The Rat''s Nest','Qiqirn Shellsweeper',3,17,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(462,'Thaumaturge','10',1,'Central Thanalan','The Clutch','Sun Bat',3,26,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(463,'Thaumaturge','11',2,'Western Thanalan','Horizon''s Edge','Bomb',3,27,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(464,'Thaumaturge','11',2,'Western Thanalan','Horizon''s Edge','Copper Coblyn',2,27,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(465,'Thaumaturge','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',3,23,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(466,'Thaumaturge','12',2,'Central Thanalan','The Clutch','Quiveron Attendant',2,23,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(467,'Thaumaturge','13',2,'Central Thanalan','Black Brush','Antling Sentry',3,16,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(468,'Thaumaturge','13',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise',2,21,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(469,'Thaumaturge','14',2,'Western Thanalan','The Footfalls','Thickshell',3,16,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(470,'Thaumaturge','15',2,'Central Thanalan','The Clutch','Toxic Toad',3,27,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(471,'Thaumaturge','16',2,'Eastern Thanalan','Sandgate','Tuco-tuco',3,15,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(472,'Thaumaturge','17',2,'Eastern Thanalan','Drybone','Myotragus Nanny',3,18,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(473,'Thaumaturge','18',2,'Eastern Thanalan','Drybone','Blowfly Swarm',3,12,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(474,'Thaumaturge','19',2,'Eastern Thanalan','Drybone','Rotting Corpse',1,15,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(475,'Thaumaturge','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',3,13,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(476,'Thaumaturge','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',4,23,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(477,'Thaumaturge','21',3,'South Shroud','Upper Paths','Kedtrap',2,21,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(478,'Thaumaturge','22',3,'Upper La Noscea','Oakwood','Forest Yarzon',4,11,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(479,'Thaumaturge','22',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',2,15,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(480,'Thaumaturge','23',3,'Western Thanalan','The Footfalls','Laughing Toad',4,15,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(481,'Thaumaturge','23',3,'South Shroud','Upper Paths','Bark Eft',2,17,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(482,'Thaumaturge','24',3,'East Shroud','The Bramble Patch','Jumping Djigga',4,15,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(483,'Thaumaturge','24',3,'East Shroud','The Bramble Patch','Glowfly',2,15,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(484,'Thaumaturge','25',3,'South Shroud','Silent Arbor','River Yarzon',4,23,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(485,'Thaumaturge','26',3,'Southern Thanalan','Broken Water','Potter Wasp Swarm',4,20,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(486,'Thaumaturge','27',3,'Eastern Thanalan','Wellwick Wood','Phurble',4,23,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(487,'Thaumaturge','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',4,24,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(488,'Thaumaturge','29',3,'Southern Thanalan','The Red Labyrinth','Fire Sprite',4,13,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(489,'Thaumaturge','30',3,'Central Shroud','Sorrel Haven','Stroper',4,12,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(490,'Thaumaturge','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Executioner',5,27,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(491,'Thaumaturge','31',4,'South Shroud','Lower Paths','Adamantoise',2,16,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(492,'Thaumaturge','32',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',5,14,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(493,'Thaumaturge','32',4,'Central Shroud','Sorrel Haven','Revenant',2,12,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(494,'Thaumaturge','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',5,19,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(495,'Thaumaturge','33',4,'Eastern La Noscea','Raincatcher Gully','Dung Midge Swarm',2,18,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(496,'Thaumaturge','34',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',5,18,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(497,'Thaumaturge','34',4,'Central Shroud','The Standing Corses','Spriggan',2,11,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(498,'Thaumaturge','35',4,'Upper La Noscea','Bronze Lake','Salamander',5,28,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(499,'Thaumaturge','36',4,'Outer La Noscea','Iron Lake','Plasmoid',5,25,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(500,'Thaumaturge','37',4,'Coerthas Central Highlands','Dragonhead','Ice Sprite',5,20,31,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(501,'Thaumaturge','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,26,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(502,'Thaumaturge','39',4,'South Shroud','Snakemolt','Will-o''-the-Wisp',5,23,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(503,'Thaumaturge','40',4,'Eastern Thanalan','The Burning Wall','Golden Fleece',5,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(504,'Thaumaturge','41',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',6,9,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(505,'Thaumaturge','41',5,'East Shroud','Larkscall','Old-Growth Treant',2,25,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(506,'Thaumaturge','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',6,15,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(507,'Thaumaturge','42',5,'Central Shroud','The Standing Corses','Crator Golem',1,10,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(508,'Thaumaturge','43',5,'East Shroud','Larkscall','Morbol',6,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(509,'Thaumaturge','43',5,'East Shroud','Larkscall','3rd Cohort Secutor',2,32,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(510,'Thaumaturge','44',5,'Mor Dhona','Fogfens','Nix',6,19,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(511,'Thaumaturge','44',5,'South Shroud','Urth''s Gift','Lesser Kalong',2,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(512,'Thaumaturge','45',5,'Coerthas Central Highlands','Boulder Downs','Giant Logger',3,13,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(513,'Thaumaturge','45',5,'Mor Dhona','North Silvertear','Gigas Sozu',2,29,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(514,'Thaumaturge','46',5,'Southern Thanalan','Zanr''ak','Iron Tortoise',6,19,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(515,'Thaumaturge','47',5,'Outer La Noscea','U''Ghamaro Mines','Synthetic Doblyn',6,23,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(516,'Thaumaturge','48',5,'South Shroud','Urth''s Gift','Ked',6,32,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(517,'Thaumaturge','49',5,'Western Thanalan','Cape Westwind','4th Cohort Hoplomachus',6,12,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(518,'Thaumaturge','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Signifier',6,27,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(519,'Arcanist','01',1,'Middle La Noscea','Zephyr Drift','Little Ladybug',3,22,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(520,'Arcanist','02',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(521,'Arcanist','03',1,'Middle La Noscea','Zephyr Drift','Lost Lamb',3,23,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(522,'Arcanist','04',1,'Lower La Noscea','Cedarwood','Wind Sprite',3,28,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(523,'Arcanist','05',1,'Middle La Noscea','Summerford','Puk Hatchling',3,20,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(524,'Arcanist','06',1,'Lower La Noscea','Cedarwood','Nesting Buzzard',3,31,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(525,'Arcanist','07',1,'Middle La Noscea','Summerford','Bogy',3,20,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(526,'Arcanist','08',1,'Lower La Noscea','Cedarwood','Cave Bat',3,25,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(527,'Arcanist','08',1,'Lower La Noscea','Cedarwood','Galago',3,29,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(528,'Arcanist','09',1,'Middle La Noscea','Summerford','Grounded Pirate',3,20,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(529,'Arcanist','10',1,'Lower La Noscea','The God''s Grip','Lightning Sprite',3,20,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(530,'Arcanist','11',2,'Western La Noscea','Quarterstone','Sewer Mole',3,33,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(531,'Arcanist','12',2,'Lower La Noscea','Moraby Bay','Mossless Goobbue',3,32,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(532,'Arcanist','13',2,'Western La Noscea','Quarterstone','Fat Dodo',3,32,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(533,'Arcanist','14',2,'Western La Noscea','Quarterstone','Arbor Buzzard',3,30,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(534,'Arcanist','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',3,18,35,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(535,'Arcanist','16',2,'Western La Noscea','Skull Valley','Dusk Bat',3,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(536,'Arcanist','17',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(537,'Arcanist','18',2,'Western La Noscea','Skull Valley','Hedgemole',3,26,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(538,'Arcanist','18',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',3,24,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(539,'Arcanist','19',2,'Western La Noscea','Skull Valley','Killer Mantis',3,22,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(540,'Arcanist','20',2,'Upper La Noscea','Oakwood','Bumble Beetle',3,12,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(541,'Arcanist','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',4,23,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(542,'Arcanist','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',4,13,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(543,'Arcanist','23',3,'South Shroud','Upper Paths','Kedtrap',4,21,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(544,'Arcanist','24',3,'Upper La Noscea','Oakwood','Coeurl Pup',4,9,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(545,'Arcanist','25',3,'South Shroud','Silent Arbor','Antelope Stag',4,22,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(546,'Arcanist','26',3,'North Shroud','Alder Springs','Balloon',4,17,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(547,'Arcanist','26',3,'Eastern Thanalan','Wellwick Wood','Chasm Buzzard',2,22,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(548,'Arcanist','27',3,'Eastern Thanalan','Wellwick Wood','Axe Beak',4,25,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(549,'Arcanist','28',3,'North Shroud','Alder Springs','Clay Golem',4,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(550,'Arcanist','28',3,'Southern Thanalan','Broken Water','Sandstone Golem',2,22,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(551,'Arcanist','29',3,'Central Shroud','Sorrel Haven','Blood Ziz',4,15,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(552,'Arcanist','30',3,'Central Shroud','Sorrel Haven','Lindwurm',4,13,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(553,'Arcanist','31',4,'Eastern La Noscea','Bloodshore','Qiqirn Gullroaster',4,26,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(554,'Arcanist','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',4,16,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(555,'Arcanist','33',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',4,18,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(556,'Arcanist','34',4,'Southern Thanalan','Sagolii Desert','Sundrake',4,25,38,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(557,'Arcanist','35',4,'Eastern La Noscea','Bloodshore','Colibri',4,30,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(558,'Arcanist','36',4,'Outer La Noscea','The Long Climb','Coeurl',4,14,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(559,'Arcanist','36',4,'Eastern La Noscea','Raincatcher Gully','Mildeweld Goobbue',1,17,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(560,'Arcanist','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(561,'Arcanist','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',4,27,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(562,'Arcanist','38',4,'North Shroud','Proud Creek','Dryad',2,23,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(563,'Arcanist','39',4,'Coerthas Central Highlands','Providence Point','Taurus',4,32,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(564,'Arcanist','40',4,'East Shroud','Larkscall','Molted Ziz',4,25,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(565,'Arcanist','41',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',4,30,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(566,'Arcanist','42',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',4,12,36,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(567,'Arcanist','43',5,'East Shroud','Larkscall','3rd Cohort Laquearius',2,29,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(568,'Arcanist','44',5,'Mor Dhona','Fogfens','Nix',4,19,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(569,'Arcanist','44',5,'Mor Dhona','Fogfens','Mudpuppy',2,13,10,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(570,'Arcanist','45',5,'South Shroud','Urth''s Gift','Wild Hog',4,29,24,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(571,'Arcanist','46',5,'North Shroud','Proud Creek','Watchwolf',4,20,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(572,'Arcanist','46',5,'Mor Dhona','Fogfens','5th Cohort Laquearius',2,11,11,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(573,'Arcanist','47',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',4,16,32,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(574,'Arcanist','48',5,'Coerthas Central Highlands','Natalan','Natalan Watchwolf',4,31,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(575,'Arcanist','48',5,'Western La Noscea','Sapsa Spawning Grounds','Axolotl',2,12,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(576,'Arcanist','49',5,'Souther Thanalan','Zahar''ak','Zahar''ak Battle Drake',4,31,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(577,'Arcanist','50',5,'Western Thanalan','Cape Westwind','4th Cohort Vanguard',4,12,7,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(578,'Order of the Twin Adder','01',1,'Eastern Thanalan','Sandgate','Amalj''aa Javelinier',3,19,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(579,'Order of the Twin Adder','02',1,'Eastern Thanalan','Halatali (Dungeon)','Heckler Imp',5,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(580,'Order of the Twin Adder','03',1,'Eastern Thanalan','Halatali (Dungeon)','Scythe Mantis',5,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(581,'Order of the Twin Adder','04',1,'Eastern Thanalan','Halatali (Dungeon)','Coliseum Python',5,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(582,'Order of the Twin Adder','05',1,'East Shroud','The Bramble Patch','Sylvan Scream',3,19,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(583,'Order of the Twin Adder','06',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,13,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(584,'Order of the Twin Adder','07',1,'Southern Thanalan','Broken Water','Amalj''aa Bruiser',3,21,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(585,'Order of the Twin Adder','08',1,'North Shroud','Alder Springs','Ixali Deftalon',3,22,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(586,'Order of the Twin Adder','09',1,'Eastern Thanalan','Wellwick Wood','Amalj''aa Ranger',3,24,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(587,'Order of the Twin Adder','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Fearcaller',1,31,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(588,'Order of the Twin Adder','11',2,'Southern Thanalan','Sagolii Desert','Amalj''aa Sniper',3,24,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(589,'Order of the Twin Adder','12',2,'Eastern La Noscea','Bloodshore','Kobold Missionary',3,28,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(590,'Order of the Twin Adder','13',2,'Upper La Noscea','Bronze Lake','Kobold Sidesman',3,26,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(591,'Order of the Twin Adder','14',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Bee',4,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(592,'Order of the Twin Adder','15',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Guardian',1,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(593,'Order of the Twin Adder','16',2,'Outer La Noscea','Iron Lake','Kobold Roundsman',3,22,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(594,'Order of the Twin Adder','17',2,'East Shroud','Larkscall','Sylvan Snarl ',3,23,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(595,'Order of the Twin Adder','18',2,'Western La Noscea','Halfstone','Shelfclaw Sahagin',3,18,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(596,'Order of the Twin Adder','19',2,'Southern Thanalan','Zanr''ak','Amalj''aa Lancer',3,22,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(597,'Order of the Twin Adder','20',2,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Roundsman',3,23,9,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(598,'Order of the Twin Adder','21',3,'North Shroud','Proud Creek','Ixali Windtalon',3,20,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(599,'Order of the Twin Adder','22',3,'East Shroud','Sylphlands','Sylpheed Snarl',3,27,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(600,'Order of the Twin Adder','23',3,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Quarryman',3,23,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(601,'Order of the Twin Adder','24',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelftooth',3,17,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(602,'Order of the Twin Adder','25',3,'Southern Thanalan','Zahar''ak','Zahar''ak Pugilist',3,28,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(603,'Order of the Twin Adder','26',3,'Coerthas Central Highlands','Natalan','Natalan Swiftbeak',4,31,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(604,'Order of the Twin Adder','27',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(605,'Order of the Twin Adder','28',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',7,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(606,'Order of the Twin Adder','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Bronze Beetle',6,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(607,'Order of the Twin Adder','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Keeper of Halidom',1,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(608,'Maelstrom','01',1,'Eastern Thanalan','Sandgate','Amalh''aa Hunter',3,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(609,'Maelstrom','02',1,'Eastern Thanalan','Halatali (Dungeon)','Heckler Imp',5,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(610,'Maelstrom','03',1,'Eastern Thanalan','Halatali (Dungeon)','Doctore',3,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(611,'Maelstrom','04',1,'Eastern Thanalan','Halatali (Dungeon)','Firemane',1,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(612,'Maelstrom','05',1,'East Shroud','The Bramble Patch','Sylvan Groan',3,19,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(613,'Maelstrom','06',1,'East Shroud','The Bramble Patch','Sylvan Sough',3,19,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(614,'Maelstrom','07',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,13,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(615,'Maelstrom','08',1,'Southern Thanalan','Broken Water','Amalj''aa Bruiser',3,20,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(616,'Maelstrom','09',1,'North Shroud','Alder Springs','Ixali Straightbeak',3,23,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(617,'Maelstrom','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Wildtalon',1,30,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(618,'Maelstrom','11',2,'Southern Thanalan','Sagolii Desert','Amalj''aa Divinator',3,27,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(619,'Maelstrom','12',2,'Eastern La Noscea','Bloodshore','Kobold Pitman',3,28,26,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(620,'Maelstrom','13',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Bat',5,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(621,'Maelstrom','14',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','The Condemned',6,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(622,'Maelstrom','15',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Teratotaur',1,25,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(623,'Maelstrom','16',2,'Outer La Noscea','Iron Lake','Kobold Bedesman',3,22,13,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(624,'Maelstrom','17',2,'Outer La Noscea','Iron Lake','Kobold Priest',1,22,12,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(625,'Maelstrom','18',2,'East Shroud','Larkscall','Sylvan Sigh',3,23,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(626,'Maelstrom','19',2,'Western La Noscea','Halfstone','Shelfscale Sahagin',3,18,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(627,'Maelstrom','20',2,'Southern Thanalan','Zanr''ak','Amalj''aa Pugilist',3,20,23,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(628,'Maelstrom','21',3,'North Shroud','Proud Creek','Ixali Boldwing',3,21,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(629,'Maelstrom','22',3,'East Shroud','Sylphlands','Sypheed Screech',3,26,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(630,'Maelstrom','23',3,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Priest',3,22,6,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(631,'Maelstrom','24',3,'Western La Noscea','Halfstone','Trenchtooth Sahagin',3,20,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(632,'Maelstrom','25',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelfclaw',3,18,16,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(633,'Maelstrom','26',3,'Southern Thanalan','Zahar''ak','Zahar''ak Archer',3,29,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(634,'Maelstrom','27',3,'Coerthas Central Highlands','Natalan','Natalan Fogcaller',4,32,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(635,'Maelstrom','28',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(636,'Maelstrom','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',5,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(637,'Maelstrom','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Giant Bavarois',1,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(638,'Immortal Flames','01',1,'Eastern Thanalan','Sandgate','Amalj''aa Hunter',3,19,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(639,'Immortal Flames','02',1,'Eastern Thanalan','Halatali (Dungeon)','Doctore',3,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(640,'Immortal Flames','03',1,'Eastern Thanalan','Halatali (Dungeon)','Firemane',1,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(641,'Immortal Flames','04',1,'Eastern Thanalan','Halatali (Dungeon)','Thunderclap Guivre',1,14,30,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(642,'Immortal Flames','05',1,'East Shroud','The Bramble Patch','Sylvan Sough',3,18,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(643,'Immortal Flames','06',1,'Upper La Noscea','Oakwood','Kobold Footman',3,11,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(644,'Immortal Flames','07',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,11,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(645,'Immortal Flames','08',1,'Southern Thanalan','Broken Water','Amalj''aa Seer',3,20,15,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(646,'Immortal Flames','09',1,'North Shroud','Alder Springs','Ixali Lightwing',3,22,28,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(647,'Immortal Flames','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Boundwing',1,32,27,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(648,'Immortal Flames','11',2,'Southern Thanlan','Sagolii Desert','Amalj''aa Halberdier',3,25,34,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(649,'Immortal Flames','12',2,'Eastern La Noscea','Bloodshore','Kobold Missionary',3,28,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(650,'Immortal Flames','13',2,'Upper La Noscea','Bronze Lake','Kobold Sidesman',3,26,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(651,'Immortal Flames','14',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Sand Bat',3,15,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(652,'Immortal Flames','15',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Sabotender Desertor',2,15,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(653,'Immortal Flames','16',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Myrmidon Princess',1,15,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(654,'Immortal Flames','17',2,'Outer La Noscea','Iron Lake','Kobold Quarryman',3,22,14,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(655,'Immortal Flames','18',2,'East Shroud','Larkscall','Sylvan Screech',3,21,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(656,'Immortal Flames','19',2,'Western La Noscea','Halfstone','Shelfspine Sahagin',3,19,21,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(657,'Immortal Flames','20',2,'Southern Thanalan','Zanr''ak','Amalj''aa Archer',3,23,25,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(658,'Immortal Flames','21',3,'North Shroud','Proud Creek','Ixali Windtalon',3,20,20,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(659,'Immortal Flames','22',3,'East Shroud','Sylphlands','Sylpheed Sigh',3,26,19,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(660,'Immortal Flames','23',3,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Priest',3,23,8,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(661,'Immortal Flames','24',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelfspine',3,16,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(662,'Immortal Flames','25',3,'Southern Thanalan','Zahar''ak','Zahar''ak Thaumaturge',3,32,18,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(663,'Immortal Flames','26',3,'Coerthas Central Highlands','Natalan','Natalan Windtalon',4,31,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(664,'Immortal Flames','27',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(665,'Immortal Flames','28',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',8,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(666,'Immortal Flames','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Corrupted Nymian',3,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(667,'Immortal Flames','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Soldier of Nym',3,26,22,'‰PNG
-
-',0);
-INSERT INTO logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(668,'Lancer','06',1,'North Shroud','Peacegarden','Microchu',3,27,21,'‰PNG
-
-',0);
-DELETE FROM sqlite_sequence WHERE rowid=10;
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(1,'Gladiator','01',1,'Western Thanalan','The Eighty Sins of Sasamo','Little Ladybug',3,27,24,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(2,'Gladiator','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',3,27,24,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(3,'Gladiator','05',1,'Western Thanalan','Hammerlea','Hammer Beak',3,26,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(4,'Gladiator','07',1,'Western Thanalan','Hammerlea','Earth Sprite',3,22,27,'Earth_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(5,'Gladiator','10',1,'Western Thanalan','Horizon''s Edge','Dusty Mongrel',3,22,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(6,'Gladiator','02',1,'Central Thanalan','Spineless Basin','Star Marmot',3,20,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(7,'Gladiator','04',1,'Central Thanalan','Spineless Basin','Snapping Shrew',3,25,31,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(8,'Gladiator','06',1,'Central Thanalan','Black Brush','Antling Worker',3,17,15,'Antling_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(9,'Gladiator','08',1,'Central Thanalan','Black Brush','Spriggan Graverobber',3,16,23,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(10,'Gladiator','09',1,'Central Thanalan','Black Brush','Qiqirn Shellsweeper',3,17,19,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(11,'Gladiator','10',1,'Central Thanalan','The Clutch','Antling Soldier',3,23,19,'Antling_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(12,'Gladiator','11',2,'Western Thanalan','Horizon''s Edge','Bomb',3,27,17,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(13,'Gladiator','11',2,'Western Thanalan','Horizon''s Edge','Copper Coblyn',3,27,17,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(14,'Gladiator','14',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise ',3,26,23,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(15,'Gladiator','15',2,'Western Thanalan','The Footfalls','Thickshell',3,16,16,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(16,'Gladiator','16',2,'Western Thanalan','The Footfalls','Scaphite',3,17,14,'Uragnite_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(17,'Gladiator','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',3,13,11,'Ghost_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(18,'Gladiator','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',3,24,19,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(19,'Gladiator','13',2,'Central Thanalan','The Clutch','Quiveron Guard',3,24,21,'Lalafell_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(20,'Gladiator','17',2,'Eastern Thanalan','Sandgate','Tuco Tuco',3,11,19,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(21,'Gladiator','18',2,'Eastern Thanalan','Drybone','Myotragus Billy',3,18,24,'Aldgoat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(22,'Gladiator','19',2,'Eastern Thanalan','Drybone','Vandalous Imp',3,14,18,'Imp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(23,'Gladiator','20',2,'Eastern Thanalan','Drybone','Rotting Noble',3,14,16,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(24,'Gladiator','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,14,24,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(25,'Gladiator','24',3,'Upper La Noscea','Fool Falls','Coeurl Pup',4,9,20,'Coeurl_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(26,'Gladiator','30',3,'Outer La Noscea','The Long Climb','Pteroc',3,15,18,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(27,'Gladiator','30',3,'Eastern La Noscea','Bloodshore','Apkallu',4,28,36,'Apkallu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(28,'Gladiator','27',3,'Eastern Thanalan','Wellwick Wood','Qiqirn Roerunner',4,24,23,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(29,'Gladiator','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',4,13,10,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(30,'Gladiator','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,13,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(31,'Gladiator','21',3,'South Shroud','Upper Paths','Kedtrap',3,21,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(32,'Gladiator','23',3,'South Shroad','Upper Paths','Overgrown Offering',4,18,19,'Ochu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(33,'Gladiator','28',3,'South Shroud','Silent Arbor','Goblin Thug',4,27,20,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(34,'Gladiator','29',3,'South Shroud','Silent Arbor','Coeurlclaw Cutter',4,28,21,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(35,'Gladiator','25',3,'North Shroud','Alder Springs','Balloon',4,17,26,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(36,'Gladiator','31',4,'Central Shroud','Haukke Manor (Landmark)','Floating Eye',4,10,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(37,'Gladiator','34',4,'Central Shroud','Sorrel Haven','Death Gaze',4,16,21,'Death_Gaze_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(38,'Gladiator','32',4,'South Shroud','Lower Paths','Adamantoise',3,17,30,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(39,'Gladiator','38',4,'South Shroud','Snakemolt','Treant',4,22,23,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(40,'Gladiator','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Sophist',3,27,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(41,'Gladiator','32',4,'Upper La Noscea','Bronze Lake','Uragnite',4,29,24,'Uragnite_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(42,'Gladiator','35',4,'Outer La Noscea','The Long Climb','Velociraptor',4,19,15,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(43,'Gladiator','40',4,'Outer La Noscea','Iron Lake','Grenade',3,22,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(44,'Gladiator','33',4,'Southern Thanalan','Sagolii Desert','Sandworm',4,17,33,'Sandworm_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(45,'Gladiator','36',4,'Southern Thanalan','Sagolii Desert','Fallen Wizard',4,20,37,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(46,'Gladiator','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(47,'Gladiator','39',4,'Coerthas Central Highlands','Dragonhead','Vodoriga',4,27,14,'Vodoriga_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(48,'Gladiator','40',4,'Coerthas Central Highlands','Whitebrim','Hippocerf',4,8,20,'Hippogryph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(49,'Gladiator','41',5,'Western La Noscea','The Isles of Umbra','Preying Mantis',5,15,34,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(50,'Gladiator','41',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(51,'Gladiator','43',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',5,12,36,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(52,'Gladiator','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Hoplomachus',5,25,21,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(53,'Gladiator','42',5,'East Shroud','Larkscall','Old Growth Treant',5,26,20,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(54,'Gladiator','42',5,'East Shroud','Larkscall','3rd Cohort Eques',2,29,21,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(55,'Gladiator','43',5,'East Shroud','Larkscall','Morbol',2,23,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(56,'Gladiator','48',5,'North Shroud','Proud Creek','Dullahan',5,22,19,'Dullahan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(57,'Gladiator','44',5,'Mor Dhana','Fogfens','Mudpuppy',5,13,11,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(58,'Gladiator','45',5,'Mor Dhana','North Silvertear','Lake Cobra',5,27,13,'Serpent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(59,'Gladiator','50',5,'Mor Dhana','North Silvertear','Gigas Bhikkhu',5,33,15,'Gigas_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(60,'Gladiator','46',5,'Coerthas Central Highlands','Boulder Downs','Giant Lugger',3,13,27,'Giant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(61,'Gladiator','47',5,'Southern Thanalan','Zanr''ak','Tempered Orator',5,22,19,'Lalafell_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(62,'Gladiator','49',5,'Northern Thanalan','Bluefog','Basilisk',5,25,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(63,'Pugilist','01',1,'Central Thanalan','Spineless Basin','Huge Hornet',4,21,26,'Giant_Hornet_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(64,'Pugilist','02',1,'Central Thanalan','Spineless Basin','Star Marmot',4,20,27,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(65,'Pugilist','04',1,'Central Thanalan','Spineless Basin','Snapping Shrew',4,23,27,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(66,'Pugilist','05',1,'Central Thanalan','Black Brush','Orobon',4,21,24,'Orobon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(67,'Pugilist','07',1,'Central Thanalan','Black Brush','Spriggan Graverobber',4,17,23,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(68,'Pugilist','10',1,'Central Thanalan','The Clutch','Eft',2,23,18,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(69,'Pugilist','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',4,27,24,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(70,'Pugilist','06',1,'Western Thanalan','Hammerlea','Nesting Buzzard',4,21,25,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(71,'Pugilist','08',1,'Western Thanalan','Hammerlea','Goblin Mugger',4,18,26,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(72,'Pugilist','09',1,'Western Thanalan','Hammerlea','Sandtoad',4,22,22,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(73,'Pugilist','10',1,'Western Thanalan','Horizon''s Edge','Sun Midge Swarm',2,17,15,'Swarm_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(74,'Pugilist','10',1,'Western Thanalan','Horizon''s Edge','Desert Peiste',2,24,20,'Peiste_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(75,'Pugilist','11',2,'Western Thanalan','Horizon''s Edge','Bomb',4,27,16,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(76,'Pugilist','14',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise',4,28,25,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(77,'Pugilist','15',2,'Western Thanalan','The Footfalls','Arbor Buzzard',2,17,16,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(78,'Pugilist','15',2,'Western Thanalan','The Footfalls','Thickshell',2,16,16,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(79,'Pugilist','15',2,'Western Thanalan','The Footfalls','Scaphite',2,17,14,'Uragnite_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(80,'Pugilist','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',2,13,11,'Ghost_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(81,'Pugilist','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',4,24,19,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(82,'Pugilist','13',2,'Central Thanalan','Black Brush','Antling Sentry',4,16,14,'Antling_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(83,'Pugilist','16',2,'Eastern Thanalan','Sandgate','Tuco Tuco',4,11,19,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(84,'Pugilist','17',2,'Eastern Thanalan','Drybone','Myotragus Nanny',4,18,22,'Aldgoat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(85,'Pugilist','18',2,'Eastern Thanalan','Drybone','Blowfly Swarm',4,11,22,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(86,'Pugilist','19',2,'Eastern Thanalan','Drybone','Vandalous Imp',4,14,18,'Imp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(87,'Pugilist','20',2,'Eastern Thanalan','The Invisible City','Rotting Corpse',2,15,16,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(88,'Pugilist','20',2,'Eastern Thanalan','The Invisible City','Rotting Noble',2,15,16,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(89,'Pugilist','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',5,23,29,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(90,'Pugilist','22',3,'South Shroud','Upper Paths','Smallmouth Orobon',5,16,18,'Orobon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(91,'Pugilist','25',3,'South Shroud','Upper Paths','Bark Eft',3,17,24,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(92,'Pugilist','30',3,'South Shroud','Lower Paths','Bigmouth Orobon',3,18,30,'Orobon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(93,'Pugilist','29',3,'South Shroud','Silend Arbor','Coeurlclaw Hunter',5,28,22,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(94,'Pugilist','25',3,'North Shroud','Alder Springs','Shroud Hare',3,17,27,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(95,'Pugilist','26',3,'North Shroud','Alder Springs','Ziz',5,16,27,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(96,'Pugilist','28',3,'North Shroud','Alder Springs','Clay Golem',5,16,29,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(97,'Pugilist','30',3,'Central Shroud','Sorrel Haven','Lindwurm',3,13,19,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(98,'Pugilist','25',3,'Southern Thanalan','Broken Water','Fallen Mage',3,19,17,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(99,'Pugilist','27',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',5,24,9,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(100,'Pugilist','30',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'Apkallu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(101,'Pugilist','23',3,'Upper La Noscea','Oakwood','Forest Yarzon',5,11,21,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(102,'Pugilist','24',3,'Upper La Noscea','Oakwood','Coeurl Pup',5,9,20,'Coeurl_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(103,'Pugilist','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Breeder',5,33,25,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(104,'Pugilist','32',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',5,14,32,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(105,'Pugilist','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',5,19,34,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(106,'Pugilist','34',4,'Central Shroud','Sorrel Haven','Death Gaze',5,17,22,'Death_Gaze_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(107,'Pugilist','35',4,'Eastern La Noscea','Raincatcher Gully','Goobbue',3,17,31,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(108,'Pugilist','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',3,17,28,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(109,'Pugilist','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(110,'Pugilist','36',4,'Outer La Noscea','The Long Climb','Velociraptor',5,19,15,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(111,'Pugilist','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',5,23,29,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(112,'Pugilist','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,25,20,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(113,'Pugilist','39',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',5,26,12,'Ogre_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(114,'Pugilist','40',4,'Coerthas Central Highlands','Whitebrim','Snowstorm Goobbue',3,24,17,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(115,'Pugilist','40',4,'East Shroud','Larkscall','Ochu',3,26,21,'Ochu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(116,'Pugilist','40',4,'East Shroud','Larkscall','Molted Ziz',3,25,24,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(117,'Pugilist','41',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',6,31,26,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(118,'Pugilist','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',6,15,35,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(119,'Pugilist','43',5,'East Shroud','Larkscall','3rd Cohort Signifer',2,32,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(120,'Pugilist','44',5,'South Shroud','Urth''s Gift','Wild Hog',6,29,24,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(121,'Pugilist','45',5,'Mor Dhona','Fogfens','Raging Harrier',3,16,15,'Heretic_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(122,'Pugilist','45',5,'Coerthas Central Highlands','Boulder Downs','Biast',3,11,29,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(123,'Pugilist','45',5,'Mor Dhona','North Silvertear','Gigas Shramana',3,27,11,'Gigas_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(124,'Pugilist','46',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',6,16,32,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(125,'Pugilist','47',5,'Mor Dhona','Fogfens','5th Cohort Hoplomachus',6,12,12,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(126,'Pugilist','48',5,'East Shroud','Sylphlands','Dreamtoad',6,26,18,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(127,'Pugilist','49',5,'Mor Dhona','North Silvertear','Hapalit',6,31,5,'Ogre_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(128,'Pugilist','50',5,'Southern Thanalan','Zahar''ak','Zahar''ak Battle Drake',3,29,19,'Drake_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(129,'Pugilist','50',5,'Northern Thanalan','Bluefog','Basilisk',4,22,24,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(130,'Pugilist','50',5,'Western La Noscea','Halfstone','Shelfclaw Reaver',3,13,16,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(131,'Marauder','01',1,'Middle La Noscea','Zephyr Drift','Little Ladybug',3,23,24,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(132,'Marauder','02',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(133,'Marauder','03',1,'Lower La Noscea','Moraby Bay','Aurelia',3,24,26,'Jellyfish_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(134,'Marauder','04',1,'Middle La Noscea','Summerford','Bee Cloud',3,19,18,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(135,'Marauder','05',1,'Lower La Noscea','Cedarwood','Wild Dodo',3,29,19,'Dodo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(136,'Marauder','06',1,'Middle La Noscea','Summerford','Tiny Mandragora',3,22,18,'Mandragora_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(137,'Marauder','07',1,'Middle La Noscea','Summerford','Bogy',3,20,19,'Ghost_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(138,'Marauder','08',1,'Middle La Noscea','Summerford','Wounded Aurochs',3,18,17,'Buffalo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(139,'Marauder','09',1,'Middle La Noscea','Summerford','Grounded Raider',3,20,17,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(140,'Marauder','10',1,'Middle La Noscea','Three-malm Bend','Megalocrab',3,14,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(141,'Marauder','11',2,'Lower La Noscea','The God''s Grip','Firefly',4,26,37,'Firefly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(142,'Marauder','12',2,'Lower La Noscea','Moraby Bay','Mossless Goobbue',4,22,24,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(143,'Marauder','13',2,'Western La Noscea','Quarterstone','Fat Dodo',4,32,27,'Dodo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(144,'Marauder','14',2,'Lower La Noscea','The God''s Grip','Moraby Mole',4,21,34,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(145,'Marauder','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',4,18,35,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(146,'Marauder','16',2,'Western La Noscea','Quarterstone','Rhotano Buccaneer',4,33,27,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(147,'Marauder','17',2,'Western La Noscea','Skull Valley','Dusk Bat',4,28,24,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(148,'Marauder','17',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,24,'Puk_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(149,'Marauder','17',2,'Western La Noscea','Skull Valley','Hedgemole',2,26,23,'Hedgemole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(150,'Marauder','18',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',4,24,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(151,'Marauder','19',2,'Western La Noscea','Skull Valley','Killer Mantis',4,21,22,'Mantis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(152,'Marauder','20',2,'Upper La Noscea','Oakwood','Wild Wolf',4,13,26,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(153,'Marauder','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,13,24,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(154,'Marauder','22',3,'East Shroud','The Bramble Patch','Diseased Treant',4,17,23,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(155,'Marauder','23',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',4,15,7,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(156,'Marauder','24',3,'South Shroud','Upper Paths','Redbelly Larcener',4,23,19,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(157,'Marauder','25',3,'North Shroud','Alder Springs','Shroud Hare',4,17,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(158,'Marauder','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,14,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(159,'Marauder','27',3,'North Shroud','Alder Springs','Balloon',4,17,26,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(160,'Marauder','27',3,'Eastern Thanalan','Wellwick Wood','Phurble',3,22,21,'Snurble_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(161,'Marauder','27',3,'Southern Thanalan','Broken Water','Sandskin Peiste',2,19,10,'Peiste_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(162,'Marauder','28',3,'Eastern Thanalan','Wellwick Wood','Axe Beak',4,27,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(163,'Marauder','29',3,'Central Shroud','Sorrel Haven','Toadstool',4,14,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(164,'Marauder','30',3,'Central Shroud','Sorrel Haven','Floating Eye',4,10,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(165,'Marauder','31',4,'Central Shroud','Sorrel Haven','Stroper',4,12,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(166,'Marauder','32',4,'South Shroud','Lower Paths','Adamantoise',4,15,29,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(167,'Marauder','32',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',3,19,34,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(168,'Marauder','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',2,15,26,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(169,'Marauder','33',4,'Eastern La Noscea','Bloodshore','Snipper',4,31,35,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(170,'Marauder','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',4,31,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(171,'Marauder','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',4,19,28,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(172,'Marauder','36',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(173,'Marauder','37',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',2,24,13,'Ogre_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(174,'Marauder','37',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'Sheep_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(175,'Marauder','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',3,25,19,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(176,'Marauder','38',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,26,10,'Aevis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(177,'Marauder','39',4,'Coerthas Central Highlands','Whitebrim','Snowstorm Goobbue',4,19,17,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(178,'Marauder','40',4,'Outer La Noscea','Iron Lake','Grenade',4,23,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(179,'Marauder','41',5,'East Shroud','Larkscall','Molted Ziz',5,25,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(180,'Marauder','42',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',5,31,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(181,'Marauder','42',5,'Western Thanalan','The Isles of Umbra','Dead Man''s Moan',3,15,35,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(182,'Marauder','42',5,'East Shroud','Larkscall','Morbol',2,23,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(183,'Marauder','43',5,'Central Shroud','The Standing Corses','Crater Golem',1,11,17,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(184,'Marauder','44',5,'South Shroud','Urth''s Gift','Wild Hog',5,29,24,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(185,'Marauder','45',5,'Coerthas Central Highlands','Boulder Downs','Biast',5,16,30,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(186,'Marauder','46',5,'Mor Dhona','Fogfens','5th Cohort Signifer',5,9,14,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(187,'Marauder','47',5,'Outer La Noscea','U''Ghamaro Mines','Synthetic Doblyn',5,23,8,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(188,'Marauder','47',5,'North Shroud','Proud Creek','Watchwolf',3,20,20,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(189,'Marauder','47',5,'Southern Thanalan','Zanr''ak','Iron Tortoise',2,19,23,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(190,'Marauder','48',5,'East Shroud','Sylphlands','Milkroot Cluster',5,23,16,'Ochu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(191,'Marauder','49',5,'Western Thanalan','Cape Westwind','4th Cohort Secutor',5,10,6,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(192,'Marauder','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Laquearius',5,28,21,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(193,'Lancer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',3,24,18,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(194,'Lancer','02',1,'Central Shoud','Jadeite Thick','Ground Squirrel',3,22,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(195,'Lancer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',3,25,19,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(196,'Lancer','04',1,'North Shroud','Treespeak','Miteling',3,26,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(197,'Lancer','05',1,'North Shroud','Peacegarden','Opo-opo',3,27,24,'Opo-opo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(198,'Lancer','07',1,'Central Shroud','Greentear','Black Eft',3,26,20,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(199,'Lancer','07',1,'Central Shroud','Jadeite Thick','Bog Yarzon',3,24,24,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(200,'Lancer','08',1,'Central Shroud','Greentear','Hoglet',3,30,23,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(201,'Lancer','09',1,'Central Shroud','Greentear','Anole',3,31,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(202,'Lancer','09',1,'Central Shroud','Bentbranch','Diremite',3,18,19,'Diremite_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(203,'Lancer','10',1,'East Shroud','The Honey Yard','Tree Slug',3,13,26,'Slug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(204,'Lancer','11',2,'Central Shroud','Bentbranch','Arbor Buzzard',3,25,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(205,'Lancer','12',2,'Central Shroud','Jadeite Thick','Treant Sapling',3,22,16,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(206,'Lancer','13',2,'East Shroud','The Honey Yard','Mandragora',3,14,25,'Mandragora_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(207,'Lancer','14',2,'East Shroud','The Honey Yard','Wild Hoglet',3,13,23,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(208,'Lancer','15',2,'East Shroud','Nine Ivies','Lemur',3,20,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(209,'Lancer','15',2,'East Shroud','Nine Ivies','Boring Weevil',3,20,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(210,'Lancer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',3,19,28,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(211,'Lancer','17',2,'East Shroud','Nine Ivies','Giant Gnat',3,19,27,'Gnat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(212,'Lancer','17',2,'East Shroud','Nine Ivies','Boar Poacher',3,19,30,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(213,'Lancer','18',2,'East Shroud','Nine Ivies','Ziz Gorlin',3,20,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(214,'Lancer','19',2,'East Shroud','The Bramble Patch','Black Bat',3,17,22,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(215,'Lancer','19',2,'South Shroud','Upper Paths','Qiqirn Beater',3,15,17,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(216,'Lancer','20',2,'South Shroud','Upper Paths','Antelope Doe',3,18,22,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(217,'Lancer','21',3,'Upper La Noscea','Oakwood','Stoneshell',4,13,24,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(218,'Lancer','22',3,'South Shroud','Upper Paths','Smallmouth Orobon',4,16,18,'Orobon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(219,'Lancer','23',3,'North Shroud','The Footfalls','Yarzon Scavenger',4,20,31,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(220,'Lancer','24',3,'South Shroud','Upper Paths','Redbelly Lookout',4,24,18,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(221,'Lancer','25',3,'South Shroud','Silend Arbor','Antelope Stag',4,26,18,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(222,'Lancer','25',3,'Western Thanalan','The Footfalls','Moondrip Piledriver',3,16,7,'Giant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(223,'Lancer','26',3,'Southern Thanalan','Broken Water','Sabotender',4,14,14,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(224,'Lancer','27',3,'South Shroud','Silent Arbor','Goblin Thug',3,27,20,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(225,'Lancer','27',3,'Southern Thanalan','Broken Water','Sandskin Peiste',4,19,10,'Peiste_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(226,'Lancer','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Firedancer',4,24,9,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(227,'Lancer','29',3,'South Shroud','Silent Arbor','Coeurlclaw Poacher',4,14,33,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(228,'Lancer','29',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'Apkallu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(229,'Lancer','30',3,'South Shroud','Lower Paths','Midland Condor',4,17,26,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(230,'Lancer','31',4,'Central Shroud','Sorrel Haven','Floating Eye',4,10,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(231,'Lancer','32',4,'Eastern La Noscea','Bloodshore','Large Buffalo',4,28,30,'Buffalo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(232,'Lancer','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',3,19,34,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(233,'Lancer','33',4,'Southern Thanalan','Sagolii Desert','Sundrake',4,25,38,'Drake_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(234,'Lancer','34',4,'Central Shroud','The Standing Corses','Spriggan',4,10,16,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(235,'Lancer','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(236,'Lancer','35',4,'Outer La Noscea','The Long Climb','Ringtail',4,15,11,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(237,'Lancer','36',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'Sheep_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(238,'Lancer','37',4,'South Shroud','Snakemolt','Lesser Kalong',3,22,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(239,'Lancer','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(240,'Lancer','38',4,'North Shroud','Proud Creek','Dryad',4,22,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(241,'Lancer','39',4,'Coerthas Central Highlands','Whitebrim','Bateleur',3,17,17,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(242,'Lancer','39',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,27,10,'Aevis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(243,'Lancer','40',4,'Eastern Thanalan','The Burning Wall','Mirrorknight',4,26,24,'Mirrorknight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(244,'Lancer','41',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',5,9,14,'Dragonfly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(245,'Lancer','41',5,'Coerthas Central Highlands','Whitebrim','Baritine Croc',4,3,21,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(246,'Lancer','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',5,15,35,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(247,'Lancer','43',5,'East Shroud','Larkscall','3rd Cohort Signifer',2,32,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(248,'Lancer','43',5,'East Shroud','Larkscall','Morbol',5,23,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(249,'Lancer','44',5,'South Shroud','Urth''s Gift','Wild Hog',5,29,24,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(250,'Lancer','45',5,'Mor Dhona','Fogfens','Daring Harrier',4,16,15,'Heretic_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(251,'Lancer','45',5,'Mor Dhona','North Silvertear','Lake Cobra',5,25,12,'Serpent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(252,'Lancer','46',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf ',5,16,32,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(253,'Lancer','47',5,'Western La Noscea','Halfstone','Sea Wasp',5,13,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(254,'Lancer','47',5,'Mor Dhona','Fogfens','5th Cohort Vanguard',4,10,13,'Vanguard_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(255,'Lancer','48',5,'Coerthas Central Highlands','Natalan','Natalan Watchwolf',5,34,23,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(256,'Lancer','49',5,'East Shroud','Sylphlands','Sylphlands Sentinel ',5,24,11,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(257,'Lancer','49',5,'Northern Thanalan','Bluefog','Basilisk',4,22,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(258,'Lancer','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Eques',5,30,21,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(259,'Archer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',4,22,18,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(262,'Archer','02',1,'Central Shroud','Jadeite Thick','Ground Squirrel',4,22,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(263,'Archer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',4,24,18,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(264,'Archer','04',1,'North Shroud','Treespeak','Miteling',4,25,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(265,'Archer','05',1,'North Shroud','Peacegarden','Midge Swarm',4,27,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(266,'Archer','06',1,'Central Shroud','Greentear','Water Sprite',4,25,21,'Water_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(267,'Archer','07',1,'Central Shroud','Greentear','Black Eft',4,26,19,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(268,'Archer','08',1,'Central Shroud','Greentear','Anole',4,30,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(269,'Archer','09',1,'Central Shroud','Greentear','Trickster Imp',4,26,25,'Imp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(270,'Archer','10',1,'Central Shroud','Bentbranch','Roselet',4,22,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(271,'Archer','11',2,'Central Shroud','Bentbranch','Hornet Swarm ',4,23,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(272,'Archer','12',2,'Central Shroud','Bentbranch','Arbor Buzzard',4,26,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(273,'Archer','13',2,'East Shroud','The Honey Yard','Goblin Hunter',1,13,27,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(274,'Archer','13',2,'Central Shroud','Jadeite Thick','Treant Sapling',1,27,15,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(275,'Archer','13',2,'Central Shroud','The Tam-Tara Deepcroft','Magicked Bones',1,19,27,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(276,'Archer','13',2,'East Shroud','The Honey Yard','Mandragora',1,14,25,'Mandragora_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(277,'Archer','14',2,'East Shroud','The Honey Yard','Wild Hoglet',4,13,23,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(278,'Archer','15',2,'East Shroud','Nine Ivies','Lemur',4,20,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(279,'Archer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',4,18,28,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(280,'Archer','17',2,'East Shroud','Nine Ivies','Giant Gnat',4,19,27,'Gnat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(281,'Archer','18',2,'East Shroud','Nine Ivies','Raptor Poacher',4,19,30,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(282,'Archer','19',2,'South Shroud','Upper Paths','Antelope Doe',4,15,18,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(283,'Archer','20',2,'East Shroud','The Bramble Patch','Wild Boar',4,16,23,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(284,'Archer','21',3,'Upper La Noscea','Oakwood','Stoneshell',5,13,24,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(285,'Archer','22',3,'East Shroud','The Bramble Patch','Diseased Treant',5,16,23,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(286,'Archer','23',3,'East Shroud','The Bramble Patch','Jumping Djigga',2,16,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(287,'Archer','23',3,'South Shroud','Upper Paths','Overgrown Offering',2,18,19,'Ochu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(288,'Archer','23',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',2,14,8,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(289,'Archer','23',3,'Upper La Noscea','Oakwood','Forest Yarzon',2,11,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(290,'Archer','24',3,'South Shroud','Upper Paths','Redbelly Sharpeye',5,23,19,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(291,'Archer','25',3,'North Shroud','Alder Springs','Banemite',5,18,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(292,'Archer','26',3,'Eastern Thanalan','Wellwick Wood','Chasm Buzzard',5,22,19,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(293,'Archer','27',3,'Southern Thanalan','Broken Water','Sandskin Peiste',5,19,10,'Peiste_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(294,'Archer','28',3,'North Shroud','Alder Springs','Ziz',5,15,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(295,'Archer','29',3,'Central Shroud','Sorrel Haven','Toadstool',5,15,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(296,'Archer','30',3,'Eastern La Noscea','Bloodshore','Apkallu',5,28,35,'Apkallu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(297,'Archer','31',4,'Central Shroud','Haukke Manor (Landmark)','Floating Eye',5,11,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(298,'Archer','32',4,'Southern Thanalan','Sagolii Desert','Sandworm',5,23,32,'Sandworm_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(299,'Archer','33',4,'Central Shroud','The Standing Corses','Spriggan',2,12,16,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(300,'Archer','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',2,19,35,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(301,'Archer','33',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',2,13,32,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(302,'Archer','33',4,'Eastern La Noscea','Raincatcher Gully','Giant Pelican',2,20,32,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(303,'Archer','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',5,31,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(304,'Archer','35',4,'Eastern La Noscea','Raincatcher Gully','Jungle Coeurl',5,18,28,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(305,'Archer','36',4,'Southern Thanalan','Sagolii Desert','Fallen Pikeman',2,21,38,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(306,'Archer','36',4,'Upper La Noscea','Bronze Lake','Salamander',2,27,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(307,'Archer','36',4,'Outer La Noscea','The Long Climb','Highland Condor',2,16,16,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(308,'Archer','36',4,'Outer La Noscea','The Long Climb','Ringtail',2,15,12,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(309,'Archer','37',4,'Coerthas Central Highlands','Whitebrim','Ice Sprite',5,20,31,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(310,'Archer','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,26,24,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(311,'Archer','39',4,'Coerthas Central Highlands','Dragonhead','Vodoriga',5,27,14,'Vodoriga_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(312,'Archer','40',4,'Coerthas Central Highlands','Whitebrim','Baritine Croc',5,3,21,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(313,'Archer','41',5,'Coerthas Central Highlands','Whitebrim','Hippocerf',5,9,20,'Hippogryph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(314,'Archer','42',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',5,9,14,'Dragonfly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(315,'Archer','43',5,'East Shroud','Larkscall','Old-growth Treant',2,25,20,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(316,'Archer','43',5,'East Shroud','Larkscall','Morbol',2,23,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(317,'Archer','43',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(318,'Archer','43',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',2,16,31,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(319,'Archer','44',5,'Coerthas Central Highlands','Boulder Downs','Mudpuppy',5,16,30,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(320,'Archer','45',5,'South Shroud','Urth''s Gift','Lesser Kalong',5,28,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(321,'Archer','46',5,'Southern Thanalan','Zanr''ak','Tempered Gladiator',2,21,19,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(322,'Archer','46',5,'Coerthas Central Highlands','Boulder Downs','Giant Reader',2,13,28,'Giant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(323,'Archer','46',5,'Mor Dhona','North Silvertear','Hippogryph',2,27,7,'Hippogryph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(324,'Archer','46',5,'Mor Dhona','Fogfens','5th Cohort Secutor',2,11,13,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(325,'Archer','47',5,'East Shroud','Sylphlands','Sylphlands Condor',5,26,16,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(326,'Archer','48',5,'East Shroud','Sylphlands','Milkroot Sapling',5,23,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(327,'Archer','49',5,'Northern Thanalan','Bluefog','Ahriman',5,24,22,'Ahriman_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(328,'Archer','50',5,'Western La Noscea','Halfstone','Shelfeye Reaver',5,13,16,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(329,'Rogue','01',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(330,'Rogue','02',1,'Middle La Noscea','Zephyr Drift','Lost Lamb',3,23,24,'Sheep_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(331,'Rogue','03',1,'Lower La Noscea','Moraby Bay','Aurelia',3,24,26,'Jellyfish_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(332,'Rogue','04',1,'Lower La Noscea','Cedarwood','Wild Dodo',3,29,19,'Dodo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(333,'Rogue','05',1,'Middle La Noscea','Summerford','Pugil',2,20,22,'Pugil_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(334,'Rogue','05',1,'Middle La Noscea','Summerford','Goblin Fisher',1,23,21,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(335,'Rogue','06',1,'Middle La Noscea','Summerford','Tiny Mandragora',3,22,18,'Mandragora_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(336,'Rogue','07',1,'Lower La Noscea','Cedarwood','Cave Bat',3,25,15,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(337,'Rogue','08',1,'Lower La Noscea','Cedarwood','Galago',3,29,14,'Opo-opo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(338,'Rogue','09',1,'Middle La Noscea','Summerford','Grounded Pirate',1,20,16,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(339,'Rogue','09',1,'Middle La Noscea','Summerford','Grounded Raider',1,20,17,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(340,'Rogue','10',1,'Middle La Noscea','Three-malm Bend','Megalocrab',3,14,13,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(341,'Rogue','11',2,'Lower La Noscea','The God''s Grip','Wild Jackal',3,22,34,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(342,'Rogue','12',2,'Western La Noscea','Quarterstone','Roseling',1,34,30,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(343,'Rogue','12',2,'Western La Noscea','Quarterstone','Sewer Mole',2,33,28,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(344,'Rogue','13',2,'Western La Noscea','Quarterstone','Fat Dodo',3,32,27,'Dodo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(345,'Rogue','14',2,'Lower La Noscea','The God''s Grip','Moraby Mole',3,21,34,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(346,'Rogue','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',3,18,35,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(347,'Rogue','16',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,22,'Puk_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(348,'Rogue','17',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',3,24,22,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(349,'Rogue','18',2,'Western La Noscea','Skull Valley','Killer Mantis',2,21,22,'Mantis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(350,'Rogue','18',2,'Western La Noscea','Skull Valley','Hedgemole',1,26,23,'Hedgemole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(351,'Rogue','19',2,'Upper La Noscea','Oakwood','Wild Wolf',3,13,26,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(352,'Rogue','20',2,'Upper La Noscea','Oakwood','Bumble Beetle',3,12,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(353,'Rogue','21',3,'East Shroud','The Bramble Patch','Black Bat',3,17,22,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(354,'Rogue','22',3,'East Shroud','Nine Ivies','Gall Gnat',3,22,30,'Gnat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(355,'Rogue','23',3,'East Shroud','Nine Ivies','Overgrown Ivy',3,22,29,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(356,'Rogue','24',3,'South Shroud','Upper Paths','Bark Eft',3,18,24,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(357,'Rogue','25',3,'South Shroud','Upper Paths','Redbelly Larcener',2,23,18,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(358,'Rogue','25',3,'South Shroud','Upper Paths','Redbelly Lookout',1,23,18,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(359,'Rogue','26',3,'South Shroud','Silent Arbor','Antelope Stag',3,26,20,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(360,'Rogue','27',3,'South Shroud','Silent Arbor','River Yarzon',3,23,22,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(361,'Rogue','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',2,24,11,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(362,'Rogue','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Firedancer',2,24,11,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(363,'Rogue','29',3,'South Shroud','Silent Arbor','Coeurlclaw Cutter',2,28,21,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(364,'Rogue','29',3,'South Shroud','Silent Arbor','Coeurlclaw Hunter',2,28,21,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(365,'Rogue','30',3,'Southern Thanalan','Broken Water','Sandstone Golem',3,22,12,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(366,'Rogue','31',4,'Eastern La Noscea','Bloodshore','Large Buffalo',3,28,30,'Buffalo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(367,'Rogue','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',3,16,25,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(368,'Rogue','33',4,'Eastern La Noscea','Bloodshore','Qiqirn Gullroaster',2,27,33,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(369,'Rogue','33',4,'Eastern La Noscea','Bloodshore','Colibri',2,31,24,'Colibri_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(370,'Rogue','34',4,'Outer La Noscea','The Long Climb','Coeurl',1,16,16,'Coeurl_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(371,'Rogue','34',4,'Outer La Noscea','The Long Climb','Highland Condor',2,15,17,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(372,'Rogue','35',4,'Outer La Noscea','The Long Climb','Basalt Golem',3,13,15,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(373,'Rogue','36',4,'Outer La Noscea','The Long Climb','Velociraptor',4,19,15,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(374,'Rogue','37',4,'Coerthas Central Highlands','Dragonhead','Highland Goobbue',2,25,20,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(375,'Rogue','37',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',2,25,20,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(376,'Rogue','38',4,'Coerthas Central Highlands','Providence Point','Redhorn Ogre',3,26,12,'Ogre_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(377,'Rogue','39',4,'Coerthas Central Highlands','Providence Point','Taurus',3,32,12,'Taurus_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(378,'Rogue','40',4,'Coerthas Central Highlands','Whitebrim','Chinchilla',2,16,19,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(379,'Rogue','40',4,'Coerthas Central Highlands','Whitebrim','Bateleur',2,16,19,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(380,'Rogue','41',5,'Eastern Thanalan','The Burning Wall','Golden Fleece',4,26,25,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(381,'Rogue','42',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',4,30,25,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(382,'Rogue','43',5,'Mor Dhona','Fogfens','Nix',4,19,9,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(383,'Rogue','44',5,'Mor Dhona','Fogfens','Mudpuppy',4,13,11,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(384,'Rogue','45',5,'Mor Dhona','Fogfens','Daring Harrier',2,16,15,'Heretic_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(385,'Rogue','45',5,'Mor Dhona','Fogfens','Raging Harrier',2,16,15,'Heretic_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(386,'Rogue','46',5,'Mor Dhona','North Silvertear','Gigas Shramana',2,27,11,'Gigas_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(387,'Rogue','46',5,'Mor Dhona','North Silvertear','Gigas Sozu',2,27,11,'Gigas_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(388,'Rogue','47',5,'Mor Dhona','North Silvertear','Hippogryph',4,27,10,'Hippogryph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(389,'Rogue','48',5,'Mor Dhona','North Silvertear','Hapalit',4,31,5,'Ogre_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(390,'Rogue','49',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Eques',2,29,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(391,'Rogue','49',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Signifer',2,29,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(392,'Rogue','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Secutor',2,30,19,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(393,'Rogue','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Vanguard',2,30,19,'Rodent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(394,'Conjurer','01',1,'Central Shroud','Jadeite Thick','Little Ladybug',3,23,17,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(395,'Conjurer','02',1,'Central Shroud','Jadeite Thick','Ground Squirrel',3,21,16,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(396,'Conjurer','03',1,'Central Shroud','Jadeite Thick','Forest Funguar',3,25,18,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(397,'Conjurer','04',1,'North Shroud','Treespeak','Miteling',3,24,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(398,'Conjurer','05',1,'Central Shroud','Greentear','Chigoe',3,24,21,'Chigoe_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(399,'Conjurer','06',1,'Central Shroud','Greentear','Water Sprite',3,24,21,'Water_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(400,'Conjurer','07',1,'North Shroud','Peacegarden','Midge Swarm',3,26,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(401,'Conjurer','08',1,'North Shroud','Peacegarden','Microchu',3,26,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(402,'Conjurer','09',1,'Central Shroud','Greentear','Syrphid Swarm',3,25,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(403,'Conjurer','10',1,'East Shroud','The Honey Yard','Northern Vulture',3,14,27,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(404,'Conjurer','11',2,'East Shroud','The Honey Yard','Tree Slug',3,13,27,'Slug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(405,'Conjurer','12',2,'Central Shroud','Bentbranch','Arbor Buzzard',3,26,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(406,'Conjurer','12',2,'East Shroud','The Honey Yard','Goblin Hunter',2,13,27,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(407,'Conjurer','13',2,'Central Shroud','Bentbranch','Firefly',3,19,27,'Firefly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(408,'Conjurer','14',2,'East Shroud','The Honey Yard','Mandragora',3,14,26,'Mandragora_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(409,'Conjurer','15',2,'East Shroud','Nine Ivies','Boring Weevil',3,20,28,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(410,'Conjurer','16',2,'East Shroud','Nine Ivies','Faerie Funguar',3,19,28,'Funguar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(411,'Conjurer','17',2,'East Shroud','Nine Ivies','Giant Gnat',3,19,25,'Gnat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(412,'Conjurer','18',2,'East Shroud','Nine Ivies','Wolf Poacher',3,19,30,'Miqo%27te_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(413,'Conjurer','19',2,'South Shroud','Upper Paths','Qiqirn Beater',3,15,17,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(414,'Conjurer','20',2,'East Shroud','The Bramble Patch','Black Bat',3,16,21,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(415,'Conjurer','21',3,'Upper La Noscea','Oakwood','Stoneshell',3,13,24,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(416,'Conjurer','22',3,'East Shroud','The Bramble Patch','Diseased Treant',3,16,23,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(417,'Conjurer','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',2,13,10,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(418,'Conjurer','22',3,'Western Thanalan','The Footfalls','Laughing Toad',2,14,7,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(419,'Conjurer','23',3,'South Shroud','Upper Paths','Bark Eft',3,17,24,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(420,'Conjurer','24',3,'East Shroud','The Bramble Patch','Glowfly',3,15,20,'Firefly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(421,'Conjurer','25',3,'South Shroud','Silent Arbor','Antelope Stag',3,22,19,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(422,'Conjurer','26',3,'Southern Thanalan','Broken Water','Sabotender',3,15,14,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(423,'Conjurer','27',3,'Eastern Thanalan','Wellwick Wood','Qiqirn Roerunner',3,23,23,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(424,'Conjurer','28',3,'South Shroud','Silent Arbor','Goblin Thug',3,27,20,'Goblin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(425,'Conjurer','29',3,'Central Shroud','Sorrel Haven','Toadstool',3,14,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(426,'Conjurer','30',3,'Eastern La Noscea','Bloodshore','Apkallu',3,28,35,'Apkallu_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(427,'Conjurer','31',4,'Central Shroud','Sorrel Haven','Lindwurm',4,12,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(428,'Conjurer','32',4,'South Shroud','Lower Paths','Bigmouth Orobon',4,18,30,'Orobon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(429,'Conjurer','32',4,'Upper La Noscea','Bronze Lake','Mamool Ja Infiltrator',2,28,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(430,'Conjurer','32',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',2,18,26,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(431,'Conjurer','32',4,'Southern Thanalan','Sagolii Desert','Sandworm',1,22,34,'Sandworm_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(432,'Conjurer','33',4,'Central Shroud','Sorrel Haven','Revenant',4,12,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(433,'Conjurer','34',4,'Eastern La Noscea','Bloodshore','Bloodshore Bell',4,31,26,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(434,'Conjurer','35',4,'Coerthas Central Highlands','Dragonhead','Ornery Karakul',4,25,19,'Sheep_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(435,'Conjurer','36',4,'South Shroud','Snakemolt','Deepvoid Deathmouse',4,25,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(436,'Conjurer','37',4,'North Shroud','Eugenia''s Spire','Dryad',4,22,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(437,'Conjurer','38',4,'Coerthas Central Highlands','Providence Point','Downy Aevis',4,26,10,'Aevis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(438,'Conjurer','39',4,'South Shroud','Snakemolt','Will-o''-the-Wisp',4,22,25,'Wisp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(439,'Conjurer','40',4,'Coerthas Central Highlands','Whitebrim','Dragonfly',4,9,14,'Dragonfly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(440,'Conjurer','41',5,'Eastern Thanalan','The Burning Wall','Golden Fleece',4,26,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(441,'Conjurer','42',5,'Outer La Noscea','Iron Lake','Grenade',4,22,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(442,'Conjurer','42',5,'Coerthas Central Highlands','Whitebrim','Hippocerf',2,10,18,'Hippogryph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(443,'Conjurer','42',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',2,12,36,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(444,'Conjurer','42',5,'Western La Noscea','The Ship Graveyard','Dead Man''s Moan',1,15,34,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(445,'Conjurer','43',5,'East Shroud','Larkscall','3rd Cohort Hoplomachus',2,29,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(446,'Conjurer','44',5,'South Shroud','Urth''s Gift','Lesser Kalong',4,28,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(447,'Conjurer','45',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',4,16,32,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(448,'Conjurer','46',5,'Mor Dhona','Castrum Centri','5th Cohort Eques',4,12,17,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(449,'Conjurer','47',5,'Western La Noscea','Sahagin Landbase','Sea Wasp',4,14,17,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(450,'Conjurer','48',5,'East Shroud','Sylphlands','Sylph Bonnet',4,26,13,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(451,'Conjurer','49',5,'Northern Thanalan','Bluefog','Ahriman',4,24,20,'Ahriman_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(452,'Conjurer','50',5,'Eastern La Noscea','Castrum Occidens','2nd Cohort Vanguard',4,27,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(453,'Thaumaturge','01',1,'Western Thanalan','The Eighty Sins of Sasamo','Little Ladybug',3,28,24,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(454,'Thaumaturge','02',1,'Central Thanalan','Spineless Basin','Huge Hornet',3,22,27,'Giant_Hornet_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(455,'Thaumaturge','03',1,'Western Thanalan','The Eighty Sins of Sasamo','Cactuar',3,27,24,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(456,'Thaumaturge','04',1,'Central Thanalan','Spineless Basic','Snapping Shrew',3,24,30,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(457,'Thaumaturge','05',1,'Central Thanalan','Black Brush','Syrphid Cloud',3,18,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(458,'Thaumaturge','06',1,'Western Thanalan','Hammerlea','Yarzon Feeder',3,24,27,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(459,'Thaumaturge','07',1,'Western Thanalan','Hammerlea','Rusty Coblyn',3,20,28,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(460,'Thaumaturge','08',1,'Central Thanalan','Sil''dih Excavation Site','Spriggan Graverobber',3,16,23,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(461,'Thaumaturge','09',1,'Central Thanalan','The Rat''s Nest','Qiqirn Shellsweeper',3,17,19,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(462,'Thaumaturge','10',1,'Central Thanalan','The Clutch','Sun Bat',3,26,18,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(463,'Thaumaturge','11',2,'Western Thanalan','Horizon''s Edge','Bomb',3,27,16,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(464,'Thaumaturge','11',2,'Western Thanalan','Horizon''s Edge','Copper Coblyn',2,27,16,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(465,'Thaumaturge','12',2,'Central Thanalan','The Clutch','Cochineal Cactuar',3,23,19,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(466,'Thaumaturge','12',2,'Central Thanalan','The Clutch','Quiveron Attendant',2,23,20,'Lalafell_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(467,'Thaumaturge','13',2,'Central Thanalan','Black Brush','Antling Sentry',3,16,14,'Antling_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(468,'Thaumaturge','13',2,'Western Thanalan','The Eighty Sins of Sasamo','Giant Tortoise',2,21,26,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(469,'Thaumaturge','14',2,'Western Thanalan','The Footfalls','Thickshell',3,16,16,'Crab_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(470,'Thaumaturge','15',2,'Central Thanalan','The Clutch','Toxic Toad',3,27,18,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(471,'Thaumaturge','16',2,'Eastern Thanalan','Sandgate','Tuco-tuco',3,15,24,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(472,'Thaumaturge','17',2,'Eastern Thanalan','Drybone','Myotragus Nanny',3,18,22,'Aldgoat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(473,'Thaumaturge','18',2,'Eastern Thanalan','Drybone','Blowfly Swarm',3,12,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(474,'Thaumaturge','19',2,'Eastern Thanalan','Drybone','Rotting Corpse',1,15,16,'Fomor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(475,'Thaumaturge','20',2,'Western Thanalan','The Footfalls','Bloated Bogy',3,13,11,'Ghost_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(476,'Thaumaturge','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',4,23,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(477,'Thaumaturge','21',3,'South Shroud','Upper Paths','Kedtrap',2,21,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(478,'Thaumaturge','22',3,'Upper La Noscea','Oakwood','Forest Yarzon',4,11,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(479,'Thaumaturge','22',3,'Western Thanalan','The Footfalls','Yarzon Scavenger',2,15,8,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(480,'Thaumaturge','23',3,'Western Thanalan','The Footfalls','Laughing Toad',4,15,7,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(481,'Thaumaturge','23',3,'South Shroud','Upper Paths','Bark Eft',2,17,24,'Eft_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(482,'Thaumaturge','24',3,'East Shroud','The Bramble Patch','Jumping Djigga',4,15,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(483,'Thaumaturge','24',3,'East Shroud','The Bramble Patch','Glowfly',2,15,21,'Firefly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(484,'Thaumaturge','25',3,'South Shroud','Silent Arbor','River Yarzon',4,23,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(485,'Thaumaturge','26',3,'Southern Thanalan','Broken Water','Potter Wasp Swarm',4,20,9,'Swarm_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(486,'Thaumaturge','27',3,'Eastern Thanalan','Wellwick Wood','Phurble',4,23,20,'Snurble_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(487,'Thaumaturge','28',3,'Southern Thanalan','Broken Water','Corpse Brigade Knuckledancer',4,24,9,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(488,'Thaumaturge','29',3,'Southern Thanalan','The Red Labyrinth','Fire Sprite',4,13,20,'Fire_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(489,'Thaumaturge','30',3,'Central Shroud','Sorrel Haven','Stroper',4,12,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(490,'Thaumaturge','31',4,'Upper La Noscea','Bronze Lake','Mamool Ja Executioner',5,27,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(491,'Thaumaturge','31',4,'South Shroud','Lower Paths','Adamantoise',2,16,30,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(492,'Thaumaturge','32',4,'Southern Thanalan','Sagolii Desert','Russet Yarzon',5,14,32,'Yarzon_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(493,'Thaumaturge','32',4,'Central Shroud','Sorrel Haven','Revenant',2,12,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(494,'Thaumaturge','33',4,'Southern Thanalan','Sagolii Desert','Smoke Bomb',5,19,35,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(495,'Thaumaturge','33',4,'Eastern La Noscea','Raincatcher Gully','Dung Midge Swarm',2,18,28,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(496,'Thaumaturge','34',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',5,18,26,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(497,'Thaumaturge','34',4,'Central Shroud','The Standing Corses','Spriggan',2,11,16,'Spriggan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(498,'Thaumaturge','35',4,'Upper La Noscea','Bronze Lake','Salamander',5,28,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(499,'Thaumaturge','36',4,'Outer La Noscea','Iron Lake','Plasmoid',5,25,18,'Plasmoid_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(500,'Thaumaturge','37',4,'Coerthas Central Highlands','Dragonhead','Ice Sprite',5,20,31,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(501,'Thaumaturge','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',5,26,24,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(502,'Thaumaturge','39',4,'South Shroud','Snakemolt','Will-o''-the-Wisp',5,23,24,'Wisp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(503,'Thaumaturge','40',4,'Eastern Thanalan','The Burning Wall','Golden Fleece',5,27,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(504,'Thaumaturge','41',5,'Coerthas Central Highlands','Whitebrim','Dragonfly',6,9,14,'Dragonfly_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(505,'Thaumaturge','41',5,'East Shroud','Larkscall','Old-Growth Treant',2,25,20,'Treant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(506,'Thaumaturge','42',5,'Western La Noscea','The Isles of Umbra','Dead Man''s Moan',6,15,34,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(507,'Thaumaturge','42',5,'Central Shroud','The Standing Corses','Crater Golem',1,10,16,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(508,'Thaumaturge','43',5,'East Shroud','Larkscall','Morbol',6,23,21,'Morbol_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(509,'Thaumaturge','43',5,'East Shroud','Larkscall','3rd Cohort Secutor',2,32,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(510,'Thaumaturge','44',5,'Mor Dhona','Fogfens','Nix',6,19,9,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(511,'Thaumaturge','44',5,'South Shroud','Urth''s Gift','Lesser Kalong',2,28,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(512,'Thaumaturge','45',5,'Coerthas Central Highlands','Boulder Downs','Giant Logger',3,13,25,'Giant_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(513,'Thaumaturge','45',5,'Mor Dhona','North Silvertear','Gigas Sozu',2,29,14,'Gigas_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(514,'Thaumaturge','46',5,'Southern Thanalan','Zanr''ak','Iron Tortoise',6,19,23,'Adamantoise_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(515,'Thaumaturge','47',5,'Outer La Noscea','U''Ghamaro Mines','Synthetic Doblyn',6,23,8,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(516,'Thaumaturge','48',5,'South Shroud','Urth''s Gift','Ked',6,32,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(517,'Thaumaturge','49',5,'Western Thanalan','Cape Westwind','4th Cohort Hoplomachus',6,12,7,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(518,'Thaumaturge','50',5,'Eastern La Noscea','Agelyss Wise','2nd Cohort Signifer',6,27,21,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(519,'Arcanist','01',1,'Middle La Noscea','Zephyr Drift','Little Ladybug',3,22,24,'Ladybug_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(520,'Arcanist','02',1,'Middle La Noscea','Zephyr Drift','Wharf Rat',3,21,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(521,'Arcanist','03',1,'Middle La Noscea','Zephyr Drift','Lost Lamb',3,23,24,'Sheep_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(522,'Arcanist','04',1,'Lower La Noscea','Cedarwood','Wind Sprite',3,28,20,'Wind_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(523,'Arcanist','05',1,'Middle La Noscea','Summerford','Puk Hatchling',3,20,19,'Puk_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(524,'Arcanist','06',1,'Lower La Noscea','Cedarwood','Nesting Buzzard',3,31,16,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(525,'Arcanist','07',1,'Middle La Noscea','Summerford','Bogy',3,20,19,'Ghost_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(526,'Arcanist','08',1,'Lower La Noscea','Cedarwood','Cave Bat',3,25,15,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(527,'Arcanist','08',1,'Lower La Noscea','Cedarwood','Galago',3,29,14,'Opo-opo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(528,'Arcanist','09',1,'Middle La Noscea','Summerford','Grounded Pirate',3,20,16,'Hyur_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(529,'Arcanist','10',1,'Lower La Noscea','The God''s Grip','Lightning Sprite',3,20,32,'Lightning_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(530,'Arcanist','11',2,'Western La Noscea','Quarterstone','Sewer Mole',3,33,28,'Mole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(531,'Arcanist','12',2,'Lower La Noscea','Moraby Bay','Mossless Goobbue',3,32,15,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(532,'Arcanist','13',2,'Western La Noscea','Quarterstone','Fat Dodo',3,32,27,'Dodo_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(533,'Arcanist','14',2,'Western La Noscea','Quarterstone','Arbor Buzzard',3,30,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(534,'Arcanist','15',2,'Lower La Noscea','The God''s Grip','Qiqirn Eggdigger',3,18,35,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(535,'Arcanist','16',2,'Western La Noscea','Skull Valley','Dusk Bat',3,28,22,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(536,'Arcanist','17',2,'Western La Noscea','Skull Valley','Puk Hatchling',3,28,22,'Puk_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(537,'Arcanist','18',2,'Western La Noscea','Skull Valley','Hedgemole',3,26,23,'Hedgemole_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(538,'Arcanist','18',2,'Western La Noscea','Skull Valley','Rothlyt Pelican',3,24,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(539,'Arcanist','19',2,'Western La Noscea','Skull Valley','Killer Mantis',3,22,20,'Mantis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(540,'Arcanist','20',2,'Upper La Noscea','Oakwood','Bumble Beetle',3,12,23,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(541,'Arcanist','21',3,'East Shroud','Nine Ivies','Overgrown Ivy',4,23,29,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(542,'Arcanist','22',3,'Western Thanalan','The Footfalls','Lead Coblyn',4,13,10,'Coblyn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(543,'Arcanist','23',3,'South Shroud','Upper Paths','Kedtrap',4,21,21,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(544,'Arcanist','24',3,'Upper La Noscea','Oakwood','Coeurl Pup',4,9,20,'Coeurl_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(545,'Arcanist','25',3,'South Shroud','Silent Arbor','Antelope Stag',4,22,20,'Antelope_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(546,'Arcanist','26',3,'North Shroud','Alder Springs','Balloon',4,17,26,'Bomb_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(547,'Arcanist','26',3,'Eastern Thanalan','Wellwick Wood','Chasm Buzzard',2,22,20,'Vulture_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(548,'Arcanist','27',3,'Eastern Thanalan','Wellwick Wood','Axe Beak',4,25,18,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(549,'Arcanist','28',3,'North Shroud','Alder Springs','Clay Golem',4,19,28,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(550,'Arcanist','28',3,'Southern Thanalan','Broken Water','Sandstone Golem',2,22,11,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(551,'Arcanist','29',3,'Central Shroud','Sorrel Haven','Brood Ziz',4,15,20,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(552,'Arcanist','30',3,'Central Shroud','Sorrel Haven','Lindwurm',4,13,19,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(553,'Arcanist','31',4,'Eastern La Noscea','Bloodshore','Qiqirn Gullroaster',4,26,32,'Qiqirn_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(554,'Arcanist','32',4,'Eastern La Noscea','Raincatcher Gully','Grass Raptor',4,16,25,'Raptor_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(555,'Arcanist','33',4,'Eastern La Noscea','Raincatcher Gully','Gigantoad',4,18,26,'Gigantoad_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(556,'Arcanist','34',4,'Southern Thanalan','Sagolii Desert','Sundrake',4,25,38,'Drake_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(557,'Arcanist','35',4,'Eastern La Noscea','Bloodshore','Colibri',4,30,24,'Colibri_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(558,'Arcanist','36',4,'Outer La Noscea','The Long Climb','Coeurl',4,14,14,'Coeurl_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(559,'Arcanist','36',4,'Eastern La Noscea','Raincatcher Gully','Mildewed Goobbue',1,17,32,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(560,'Arcanist','37',4,'Coerthas Central Highlands','Dragonhead','Snow Wolf Pup',4,21,29,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(561,'Arcanist','38',4,'Coerthas Central Highlands','Dragonhead','Feral Croc',4,27,24,'Croc_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(562,'Arcanist','38',4,'North Shroud','Proud Creek','Dryad',2,23,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(563,'Arcanist','39',4,'Coerthas Central Highlands','Providence Point','Taurus',4,32,12,'Taurus_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(564,'Arcanist','40',4,'East Shroud','Larkscall','Molted Ziz',4,25,24,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(565,'Arcanist','41',5,'Eastern Thanalan','The Burning Wall','Quartz Doblyn',4,30,25,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(566,'Arcanist','42',5,'Western La Noscea','The Isles of Umbra','Lammergeyer',4,12,36,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(567,'Arcanist','43',5,'East Shroud','Larkscall','3rd Cohort Laquearius',2,29,20,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(568,'Arcanist','44',5,'Mor Dhona','Fogfens','Nix',4,19,9,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(569,'Arcanist','44',5,'Mor Dhona','Fogfens','Mudpuppy',2,13,10,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(570,'Arcanist','45',5,'South Shroud','Urth''s Gift','Wild Hog',4,29,24,'Boar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(571,'Arcanist','46',5,'North Shroud','Proud Creek','Watchwolf',4,20,18,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(572,'Arcanist','46',5,'Mor Dhona','Fogfens','5th Cohort Laquearius',2,11,11,'Imperial_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(573,'Arcanist','47',5,'Coerthas Central Highlands','Boulder Downs','Snow Wolf',4,16,32,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(574,'Arcanist','48',5,'Coerthas Central Highlands','Natalan','Natalan Watchwolf',4,31,18,'Wolf_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(575,'Arcanist','48',5,'Western La Noscea','Sapsa Spawning Grounds','Axolotl',2,12,15,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(576,'Arcanist','49',5,'Souther Thanalan','Zahar''ak','Zahar''ak Battle Drake',4,31,19,'Drake_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(577,'Arcanist','50',5,'Western Thanalan','Cape Westwind','4th Cohort Vanguard',4,12,7,'Vanguard_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(578,'Order of the Twin Adder','01',1,'Eastern Thanalan','Sandgate','Amalj''aa Javelinier',3,19,27,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(579,'Order of the Twin Adder','02',1,'Eastern Thanalan','Halatali (Dungeon)','Heckler Imp',5,14,30,'Imp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(580,'Order of the Twin Adder','03',1,'Eastern Thanalan','Halatali (Dungeon)','Scythe Mantis',5,14,30,'Mantis_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(581,'Order of the Twin Adder','04',1,'Eastern Thanalan','Halatali (Dungeon)','Coliseum Python',5,14,30,'Serpent_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(582,'Order of the Twin Adder','05',1,'East Shroud','The Bramble Patch','Sylvan Scream',3,19,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(583,'Order of the Twin Adder','06',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,13,22,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(584,'Order of the Twin Adder','07',1,'Southern Thanalan','Broken Water','Amalj''aa Bruiser',3,21,14,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(585,'Order of the Twin Adder','08',1,'North Shroud','Alder Springs','Ixali Deftalon',3,22,28,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(586,'Order of the Twin Adder','09',1,'Eastern Thanalan','Wellwick Wood','Amalj''aa Ranger',3,24,20,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(587,'Order of the Twin Adder','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Fearcaller',1,31,28,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(588,'Order of the Twin Adder','11',2,'Southern Thanalan','Sagolii Desert','Amalj''aa Sniper',3,24,34,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(589,'Order of the Twin Adder','12',2,'Eastern La Noscea','Bloodshore','Kobold Missionary',3,28,26,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(590,'Order of the Twin Adder','13',2,'Upper La Noscea','Bronze Lake','Kobold Sidesman',3,26,19,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(591,'Order of the Twin Adder','14',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Bee',4,25,12,'Giant_Hornet_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(592,'Order of the Twin Adder','15',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Guardian',1,25,12,'Golem_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(593,'Order of the Twin Adder','16',2,'Outer La Noscea','Iron Lake','Kobold Roundsman',3,22,14,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(594,'Order of the Twin Adder','17',2,'East Shroud','Larkscall','Sylpheed Snarl',3,23,20,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(595,'Order of the Twin Adder','18',2,'Western La Noscea','Halfstone','Shelfclaw Sahagin',3,18,21,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(596,'Order of the Twin Adder','19',2,'Southern Thanalan','Zanr''ak','Amalj''aa Lancer',3,22,16,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(597,'Order of the Twin Adder','20',2,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Roundsman',3,23,9,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(598,'Order of the Twin Adder','21',3,'North Shroud','Proud Creek','Ixali Windtalon',3,20,20,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(599,'Order of the Twin Adder','22',3,'East Shroud','Sylphlands','Sylpheed Snarl',3,27,18,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(600,'Order of the Twin Adder','23',3,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Quarryman',3,23,8,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(601,'Order of the Twin Adder','24',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelftooth',3,17,15,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(602,'Order of the Twin Adder','25',3,'Southern Thanalan','Zahar''ak','Zahar''ak Pugilist',3,28,20,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(603,'Order of the Twin Adder','26',3,'Coerthas Central Highlands','Natalan','Natalan Swiftbeak',4,31,17,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(604,'Order of the Twin Adder','27',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(605,'Order of the Twin Adder','28',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',7,26,22,'Tonberry_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(606,'Order of the Twin Adder','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Bronze Beetle',6,26,22,'Beetle_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(607,'Order of the Twin Adder','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Keeper of Halidom',1,26,22,'Goobbue_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(608,'Maelstrom','01',1,'Eastern Thanalan','Sandgate','Amalj''aa Hunter',3,19,28,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(609,'Maelstrom','02',1,'Eastern Thanalan','Halatali (Dungeon)','Heckler Imp',5,14,30,'Imp_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(610,'Maelstrom','03',1,'Eastern Thanalan','Halatali (Dungeon)','Doctore',3,14,30,'Dullahan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(611,'Maelstrom','04',1,'Eastern Thanalan','Halatali (Dungeon)','Firemane',1,14,30,'Fire_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(612,'Maelstrom','05',1,'East Shroud','The Bramble Patch','Sylvan Groan',3,19,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(613,'Maelstrom','06',1,'East Shroud','The Bramble Patch','Sylvan Sough',3,19,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(614,'Maelstrom','07',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,13,22,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(615,'Maelstrom','08',1,'Southern Thanalan','Broken Water','Amalj''aa Bruiser',3,20,15,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(616,'Maelstrom','09',1,'North Shroud','Alder Springs','Ixali Straightbeak',3,23,28,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(617,'Maelstrom','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Wildtalon',1,30,27,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(618,'Maelstrom','11',2,'Southern Thanalan','Sagolii Desert','Amalj''aa Divinator',3,27,34,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(619,'Maelstrom','12',2,'Eastern La Noscea','Bloodshore','Kobold Pitman',3,28,26,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(620,'Maelstrom','13',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Temple Bat',5,25,12,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(621,'Maelstrom','14',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','The Condemned',6,25,12,'Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(622,'Maelstrom','15',2,'Southern Thanalan','The Sunken Temple of Qarn (Dungeon)','Teratotaur',1,25,12,'Taurus_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(623,'Maelstrom','16',2,'Outer La Noscea','Iron Lake','Kobold Bedesman',3,22,13,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(624,'Maelstrom','17',2,'Outer La Noscea','Iron Lake','Kobold Priest',1,22,12,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(625,'Maelstrom','18',2,'East Shroud','Larkscall','Sylvan Sigh',3,23,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(626,'Maelstrom','19',2,'Western La Noscea','Halfstone','Shelfscale Sahagin',3,18,21,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(627,'Maelstrom','20',2,'Southern Thanalan','Zanr''ak','Amalj''aa Pugilist',3,20,23,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(628,'Maelstrom','21',3,'North Shroud','Proud Creek','Ixali Boldwing',3,21,20,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(629,'Maelstrom','23',3,'East Shroud','Sylphlands','Sylpheed Screech',3,26,19,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(630,'Maelstrom','23',3,'Outer La Noscea','U''Ghamaro Mines','Sylpheed Screech',3,22,6,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(631,'Maelstrom','24',3,'Western La Noscea','Halfstone','Trenchtooth Sahagin',3,20,20,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(632,'Maelstrom','25',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelfclaw',3,18,16,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(633,'Maelstrom','26',3,'Southern Thanalan','Zahar''ak','Zahar''ak Archer',3,29,20,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(634,'Maelstrom','27',3,'Coerthas Central Highlands','Natalan','Natalan Fogcaller',4,32,18,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(635,'Maelstrom','28',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(636,'Maelstrom','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',5,26,22,'Tonberry_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(637,'Maelstrom','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Giant Bavarois',1,26,22,'Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(638,'Immortal Flames','01',1,'Eastern Thanalan','Sandgate','Amalj''aa Hunter',3,19,28,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(639,'Immortal Flames','02',1,'Eastern Thanalan','Halatali (Dungeon)','Doctore',3,14,30,'Dullahan_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(640,'Immortal Flames','03',1,'Eastern Thanalan','Halatali (Dungeon)','Firemane',1,14,30,'Fire_Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(641,'Immortal Flames','04',1,'Eastern Thanalan','Halatali (Dungeon)','Thunderclap Guivre',1,14,30,'Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(642,'Immortal Flames','05',1,'East Shroud','The Bramble Patch','Sylvan Sough',3,18,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(643,'Immortal Flames','06',1,'Upper La Noscea','Oakwood','Kobold Footman',3,11,22,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(644,'Immortal Flames','07',1,'Upper La Noscea','Oakwood','Kobold Pickman',3,11,22,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(645,'Immortal Flames','08',1,'Southern Thanalan','Broken Water','Amalj''aa Seer',3,20,15,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(646,'Immortal Flames','09',1,'North Shroud','Alder Springs','Ixali Lightwing',3,22,28,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(647,'Immortal Flames','10',1,'Coerthas Central Highlands','Dragonhead','Ixali Boundwing',1,32,27,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(648,'Immortal Flames','11',2,'Southern Thanlan','Sagolii Desert','Amalj''aa Halberdier',3,25,34,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(649,'Immortal Flames','12',2,'Eastern La Noscea','Bloodshore','Kobold Missionary',3,28,25,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(650,'Immortal Flames','13',2,'Upper La Noscea','Bronze Lake','Kobold Sidesman',3,26,19,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(651,'Immortal Flames','14',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Sand Bat',3,15,14,'Bat_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(652,'Immortal Flames','15',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Sabotender Desertor',2,15,14,'Cactuar_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(653,'Immortal Flames','16',2,'Central Thanalan','Cutter''s Cry (Dungeon)','Myrmidon Princess',1,15,14,'Antling_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(654,'Immortal Flames','17',2,'Outer La Noscea','Iron Lake','Kobold Quarryman',3,22,14,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(655,'Immortal Flames','18',2,'East Shroud','Larkscall','Sylvan Screech',3,21,21,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(656,'Immortal Flames','19',2,'Western La Noscea','Halfstone','Shelfspine Sahagin',3,19,21,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(657,'Immortal Flames','20',2,'Southern Thanalan','Zanr''ak','Amalj''aa Archer',3,23,25,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(658,'Immortal Flames','21',3,'North Shroud','Proud Creek','Ixali Windtalon',3,20,20,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(659,'Immortal Flames','22',3,'East Shroud','Sylphlands','Sylpheed Sigh',3,26,19,'Sylph_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(660,'Immortal Flames','23',3,'Outer La Noscea','U''Ghamaro Mines','U''Ghamaro Priest',3,23,8,'Kobold_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(661,'Immortal Flames','24',3,'Western La Noscea','Sapsa Spawning Grounds','Sapsa Shelfspine',3,16,18,'Sahagin_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(662,'Immortal Flames','25',3,'Southern Thanalan','Zahar''ak','Zahar''ak Thaumaturge',3,32,18,'Amalj%27aa_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(663,'Immortal Flames','26',3,'Coerthas Central Highlands','Natalan','Natalan Windtalon',4,31,17,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(664,'Immortal Flames','27',3,'Coerthas Central Highlands','Natalan','Natalan Boldwing',5,31,17,'Ixal_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(665,'Immortal Flames','28',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Tonberry',8,26,22,'Tonberry_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(666,'Immortal Flames','29',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Corrupted Nymian',3,26,22,'Elemental_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(667,'Immortal Flames','30',3,'Upper La Noscea','The Wanderer''s Palace (Dungeon)','Soldier of Nym',3,26,22,'Wight_Icon.png',0);
+INSERT INTO hunting_logs(_id,class,"set",rank,region,area,enemy,num,x_loc,y_loc,icon,done) VALUES(668,'Lancer','06',1,'North Shroud','Peacegarden','Microchu',3,27,21,'Beetle_Icon.png',0);
+
 INSERT INTO sqlite_sequence(rowid,name,seq) VALUES(14,'crafting_logs',4703);
-INSERT INTO sqlite_sequence(rowid,name,seq) VALUES(29,'logs',668);
+INSERT INTO sqlite_sequence(rowid,name,seq) VALUES(29,'hunting_logs',668);
