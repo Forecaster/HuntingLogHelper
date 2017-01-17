@@ -6,12 +6,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DBHelper(this.getApplicationContext());
         newDB = dbHelper.getWritableDatabase();
 
-        if(Helper.isTableExists("logs", true, this.getApplicationContext())) {
+        if(Helper.isTableExists("logs", true, this.getApplicationContext()) && Helper.isTableExists("hunting_logs", true, this.getApplicationContext())) {
             Log.e("Hunting Log", "Attempting to transfer data");
             Toast.makeText(this.getApplicationContext(),"Attempting to transfer progress", Toast.LENGTH_LONG).show();
             Cursor c = newDB.rawQuery("SELECT _id, done FROM logs", null);
@@ -89,7 +92,11 @@ public class MainActivity extends AppCompatActivity {
                     .build();
             mAdView.loadAd(adRequest);
         }
-
+        if(Helper.canMakeSmores() && !hasPermission("android.permission.WRITE_EXTERNAL_STORAGE") && !hasPermission("android.permission.READ_EXTERNAL_STORAGE")) {
+            String[] perms = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
+            int permsRequestCode = 200;
+            ActivityCompat.requestPermissions(MainActivity.this, perms, permsRequestCode);
+        }
     }
 
     @Override
@@ -145,8 +152,21 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onDestroy();
     }
+    private boolean hasPermission(String permission){
+        if(Helper.canMakeSmores()){
+            return(ContextCompat.checkSelfPermission(MainActivity.this, permission)== PackageManager.PERMISSION_GRANTED);
+        }
+        return true;
+    }
 
-
-
-
+    @Override
+    public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults){
+        switch(permsRequestCode){
+            case 200:
+                boolean externalReadAccepted = grantResults[1]==PackageManager.PERMISSION_GRANTED;
+                boolean externalWriteAccepted = grantResults[0]==PackageManager.PERMISSION_GRANTED;
+                //boolean wakeLockAccepted = grantResults[2]==PackageManager.PERMISSION_GRANTED;
+                break;
+        }
+    }
 }

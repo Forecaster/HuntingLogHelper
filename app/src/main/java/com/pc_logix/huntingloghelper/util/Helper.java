@@ -1,9 +1,11 @@
 package com.pc_logix.huntingloghelper.util;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
 
@@ -28,6 +30,10 @@ import java.util.zip.ZipInputStream;
  */
 
 public class Helper {
+
+    public static boolean canMakeSmores(){
+        return(Build.VERSION.SDK_INT>Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
 
     public static boolean isTableExists(String tableName, boolean openDb, Context contextIn) {
         DBHelper dbHelper = new DBHelper(contextIn);
