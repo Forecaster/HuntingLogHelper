@@ -5,10 +5,10 @@
         "This app was created to assist tracking hunting logs and crafting logs in FFXIV."
         "The logs are organized by class. Hunting logs show the name, the amount needed, the region/area where the monsters are found and the x and y position of the dungeon."
         "There is no exact position of the monsters within the dungeon.\n"
-        "Crafting logs are also organized by class and show the required level, ingredients and skill to craft an item."
-        "Both monster and item icons are available as an optional icon pack (due to the extra size of 35 MB) which can be downloaded in the settings."
-        "The app was designed and written by Michiyo, with the help of Naomi (Data entry, etc) and Forecaster (Data scraping)."
-        "The hunting and crafting logs were scraped from http://ffxiv.gamerescape.com"
+        "Crafting logs are also organized by class and show the required level, ingredients and skill to craft an item.\n"
+        "Both monster and item icons are available as an optional icon pack (due to the extra size of 35 MB) which can be downloaded in the settings.\n"
+        "The app was designed and written by Michiyo, with the help of Naomi (Data entry, etc) and Forecaster (Data scraping).\n"
+        "The hunting and crafting logs were scraped from http://ffxiv.gamerescape.com\n"
         "Make sure to keep the app up-to-date to ensure having the latest updated logs."
     </string>
     <string name="action_settings">Settings</string>
